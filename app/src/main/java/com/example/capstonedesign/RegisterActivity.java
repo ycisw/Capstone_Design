@@ -11,6 +11,10 @@ import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.domain.teacher.Teacher;
 import com.example.capstonedesign.server.service.teacher.RegisterService;
 
+/**
+ * 회원 가입 화면입니다.
+ * 아이디, 비밀번호, 이름을 입력받아 회원가입을 처리합니다.
+ */
 public class RegisterActivity extends AppCompatActivity {
 
     @Override
@@ -30,11 +34,11 @@ public class RegisterActivity extends AppCompatActivity {
                     (teacherAddResult) -> {
                         Toast.makeText(this, "회원가입 성공", Toast.LENGTH_SHORT).show();
                         finish();
-                    },
+                    }, //성공시 로직
                     () -> {
                         Toast.makeText(this, "회원가입 실패", Toast.LENGTH_SHORT).show();
                         finish();
-                    }
+                    } //실패시 로직
             ));
         });
     }

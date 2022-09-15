@@ -38,11 +38,11 @@ public class MainActivity extends AppCompatActivity {
                 (loginResult) -> {
                     Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(MainActivity.this, homepage.class));
-                },
+                }, //성공시 로직
                 () -> {
                     Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show();
 
-                }
+                } //실패시 로직
         ));
     }
 }

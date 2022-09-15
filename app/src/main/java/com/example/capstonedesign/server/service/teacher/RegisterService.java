@@ -11,8 +11,16 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * 회원가입을 위한 서비스입니다.
+ */
 public class RegisterService {
 
+    /**
+     * 회원가입 할때 사용하는 메서드입니다.
+     * @param teacher 회원 가입에 필요한 강사 데이터입니다.
+     * @param logic 회원 가입 성공시와 실패시의 로직을 넣어주세요.
+     */
     public static void register(Teacher teacher, NetworkLogic<TeacherAddResult> logic) {
         HashMap<String, String> keyValueMap = new HashMap<>();
         keyValueMap.put("id", teacher.getId());
