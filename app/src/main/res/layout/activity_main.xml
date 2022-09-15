@@ -29,7 +29,7 @@
             android:id="@+id/name"
             android:layout_width="300dp"
             android:layout_height="100dp"
-            android:hint="아이디를 입력해주세요"/>
+            android:hint="ID를 입력해주세요"/>
         </LinearLayout>
 
         <LinearLayout
@@ -49,14 +49,14 @@
                 android:id="@+id/password"
             android:layout_width="300dp"
             android:layout_height="100dp"
-                android:hint="비밀번호를 입력해주세요"/>
+                android:hint="Password를 입력해주세요"/>
     </LinearLayout>
 
     <Button
         android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="로그인"
+        android:text="Login"
         android:textColor="@color/black"
         android:background="#00ff0000" />
 </LinearLayout>
