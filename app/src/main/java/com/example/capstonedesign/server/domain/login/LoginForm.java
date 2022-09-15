@@ -1,7 +1,5 @@
 package com.example.capstonedesign.server.domain.login;
 
-import com.google.gson.annotations.SerializedName;
-
 public class LoginForm {
 
     private String loginId;

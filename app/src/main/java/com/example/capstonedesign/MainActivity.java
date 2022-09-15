@@ -9,18 +9,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.capstonedesign.server.domain.login.LoginForm;
-import com.example.capstonedesign.server.domain.login.LoginResult;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
-import com.example.capstonedesign.server.repository.RetrofitAPI;
-import com.example.capstonedesign.server.repository.TeacherRepository;
 import com.example.capstonedesign.server.service.login.LoginService;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 
 public class MainActivity extends AppCompatActivity {
