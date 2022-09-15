@@ -9,24 +9,25 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-public abstract class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EditText ID;
-        ID = findViewById(R.id.name);
+
+        EditText ID = findViewById(R.id.name);
         EditText PW = findViewById(R.id.password);
         Button login = findViewById(R.id.login);
-        String id = ID.getText().toString();
-        String pw = PW.getText().toString();
+
+
         String pl = "1234";
         String plz = "4321";
         Intent intent = new Intent(MainActivity.this, homepage.class);
+
         login.setOnClickListener(view -> {
-                if (id.equals(pl) && pw.equals(plz)) {
+                    if (ID.getText().toString().equals(pl) && PW.getText().toString().equals(plz)) {
 
                     startActivity(intent);
                 }else{
@@ -35,4 +36,4 @@ public abstract class MainActivity extends AppCompatActivity {
         });
 
     }
-    }
+}
