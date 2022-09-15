@@ -8,6 +8,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.capstonedesign.server.domain.login.LoginForm;
+import com.example.capstonedesign.server.domain.login.LoginResult;
+import com.example.capstonedesign.server.repository.RetrofitAPI;
+import com.example.capstonedesign.server.repository.TeacherRepository;
+import com.example.capstonedesign.server.service.login.LoginService;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,21 +26,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText ID = findViewById(R.id.name);
-        EditText PW = findViewById(R.id.password);
-        Button login = findViewById(R.id.login);
+        EditText id = findViewById(R.id.name);
+        EditText pw = findViewById(R.id.password);
+        Button loginButton = findViewById(R.id.login);
 
-        String pl = "1234";
-        String plz = "4321";
-
-        Intent intent = new Intent(MainActivity.this, homepage.class);
-
-        login.setOnClickListener(view -> {
-                if (ID.getText().toString().equals(pl) && PW.getText().toString().equals(plz)) {
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(MainActivity.this, "취소하였습니다.", Toast.LENGTH_SHORT).show();
-                }
-        });
+//        loginButton.setOnClickListener(view -> {
+//            boolean isSuccess = LoginService.login(new LoginForm(id.getText().toString(), pw.getText().toString()));
+//
+//            if (isSuccess) {
+//                Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show();
+//                startActivity(new Intent(MainActivity.this, homepage.class));
+//            } else {
+//                Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 }
