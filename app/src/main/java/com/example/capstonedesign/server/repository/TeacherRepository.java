@@ -2,6 +2,7 @@ package com.example.capstonedesign.server.repository;
 
 import java.net.CookieManager;
 import java.net.CookiePolicy;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.JavaNetCookieJar;
 import okhttp3.OkHttpClient;
@@ -18,6 +19,9 @@ public class TeacherRepository {
 
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .cookieJar(new JavaNetCookieJar(cookieManager))
+                .connectTimeout(1, TimeUnit.MINUTES)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .writeTimeout(15, TimeUnit.SECONDS)
                 .build();
 
         Retrofit retrofit = new Retrofit.Builder()

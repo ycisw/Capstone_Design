@@ -19,20 +19,20 @@ public class LoginService {
         keyValueMap.put("loginId", loginForm.getLoginId());
         keyValueMap.put("password", loginForm.getPassword());
 
-        TeacherRepository.api.login(keyValueMap)
-                .enqueue(new Callback<LoginResult>() {
-                    @Override
-                    public void onResponse(Call<LoginResult> call, Response<LoginResult> response) {
-                        if (response.isSuccessful() && response.body().isSuccess()) {
-                            logic.getSuccessLogic().successLogic(response.body());
-                        }
-                        logic.getFailedLogic().failedLogic();
-                    }
+        TeacherRepository.api.login(keyValueMap).enqueue(new Callback<LoginResult>() {
+            @Override
+            public void onResponse(Call<LoginResult> call, Response<LoginResult> response) {
+                if (response.isSuccessful() && response.body().isSuccess()) {
+                    logic.getSuccessLogic().successLogic(response.body());
+                    return;
+                }
+                logic.getFailedLogic().failedLogic();
+            }
 
-                    @Override
-                    public void onFailure(Call<LoginResult> call, Throwable t) {
-                        logic.getFailedLogic().failedLogic();
-                    }
-                });
+            @Override
+            public void onFailure(Call<LoginResult> call, Throwable t) {
+                logic.getFailedLogic().failedLogic();
+            }
+        });
     }
 }

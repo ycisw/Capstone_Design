@@ -1,6 +1,7 @@
 package com.example.capstonedesign.server.repository;
 
 import com.example.capstonedesign.server.domain.login.LoginResult;
+import com.example.capstonedesign.server.domain.teacher.TeacherAddResult;
 
 import java.util.HashMap;
 
@@ -16,4 +17,9 @@ public interface RetrofitAPI {
     @Headers({"Accept: application/json;"})
     @POST("/login")
     Call<LoginResult> login(@FieldMap HashMap<String, String> loginFormMap);
+
+    @FormUrlEncoded
+    @Headers({"Accept: application/json;"})
+    @POST("/teachers/add")
+    Call<TeacherAddResult> register(@FieldMap HashMap<String, String> teacherMap);
 }

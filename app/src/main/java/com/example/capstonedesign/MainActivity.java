@@ -23,11 +23,14 @@ public class MainActivity extends AppCompatActivity {
         EditText id = findViewById(R.id.name);
         EditText pw = findViewById(R.id.password);
         Button loginButton = findViewById(R.id.login);
+        Button registerButton = findViewById(R.id.register);
 
-        loginButton.setOnClickListener(view -> {
+        loginButton.setOnClickListener(v -> {
             LoginForm loginForm = new LoginForm(id.getText().toString(), pw.getText().toString());
             login(loginForm);
         });
+
+        registerButton.setOnClickListener(v -> startActivity(new Intent(this, RegisterActivity.class)));
     }
 
     private void login(LoginForm loginForm) {
