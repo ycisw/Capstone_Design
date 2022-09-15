@@ -12,6 +12,11 @@ public class NetworkLogic<T> {
     private SuccessLogic<T> successLogic;
     private FailedLogic failedLogic;
 
+    /**
+     * 성공했을때와 실패했을때의 로직을 넣어주세요.
+     * @param successLogic (성공시받는결과) -> {성공했을때의 로직}
+     * @param failedLogic () -> {실패했을때의 로직}
+     */
     public NetworkLogic(SuccessLogic<T> successLogic, FailedLogic failedLogic) {
         this.successLogic = successLogic;
         this.failedLogic = failedLogic;

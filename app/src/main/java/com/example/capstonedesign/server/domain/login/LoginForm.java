@@ -8,6 +8,11 @@ public class LoginForm {
     private String loginId;
     private String password;
 
+    /**
+     * 로그인할때 필요한 데이터를 넣어주세요.
+     * @param loginId 로그인시 아이디
+     * @param password 로그인시 비밀번호
+     */
     public LoginForm(String loginId, String password) {
         this.loginId = loginId;
         this.password = password;

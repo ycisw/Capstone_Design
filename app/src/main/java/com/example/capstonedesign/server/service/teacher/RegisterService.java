@@ -22,22 +22,27 @@ public class RegisterService {
      * @param logic 회원 가입 성공시와 실패시의 로직을 넣어주세요.
      */
     public static void register(Teacher teacher, NetworkLogic<TeacherAddResult> logic) {
+        //Teacher를 Map으로 변환하는 과정입니다.
         HashMap<String, String> keyValueMap = new HashMap<>();
         keyValueMap.put("id", teacher.getId());
         keyValueMap.put("password", teacher.getPassword());
         keyValueMap.put("name", teacher.getName());
 
         TeacherRepository.api.register(keyValueMap).enqueue(new Callback<TeacherAddResult>() {
+            //네트워크 통신 성공시의 로직
             @Override
             public void onResponse(Call<TeacherAddResult> call, Response<TeacherAddResult> response) {
                 if (response.isSuccessful() && response.body().isSuccess()) {
+                    //회원가입 성공시의 로직
                     logic.getSuccessLogic().successLogic(response.body());
                     return;
                 }
 
+                //회원가입 실패시의 로직
                 logic.getFailedLogic().failedLogic();
             }
 
+            //네트워크 통신 실패시의 로직
             @Override
             public void onFailure(Call<TeacherAddResult> call, Throwable t) {
                 logic.getFailedLogic().failedLogic();

@@ -28,18 +28,29 @@ public class RegisterActivity extends AppCompatActivity {
 
         Button registerButton = findViewById(R.id.register_register_button);
 
+        //회원 가입 버튼 클릭시
         registerButton.setOnClickListener(v -> {
             Teacher teacher = new Teacher(id.getText().toString(), password.getText().toString(), name.getText().toString());
-            RegisterService.register(teacher, new NetworkLogic<>(
-                    (teacherAddResult) -> {
-                        Toast.makeText(this, "회원가입 성공", Toast.LENGTH_SHORT).show();
-                        finish();
-                    }, //성공시 로직
-                    () -> {
-                        Toast.makeText(this, "회원가입 실패", Toast.LENGTH_SHORT).show();
-                        finish();
-                    } //실패시 로직
-            ));
+            register(teacher); //회원가입
         });
+    }
+
+    /**
+     * 회원가입
+     * @param teacher 강사 데이터를 통해 회원 가입합니다.
+     */
+    private void register(Teacher teacher) {
+        RegisterService.register(teacher, new NetworkLogic<>(
+                //성공시 로직
+                (teacherAddResult) -> {
+                    Toast.makeText(this, "회원가입 성공", Toast.LENGTH_SHORT).show();
+                    finish();
+                },
+                //실패시 로직
+                () -> {
+                    Toast.makeText(this, "회원가입 실패", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+        ));
     }
 }

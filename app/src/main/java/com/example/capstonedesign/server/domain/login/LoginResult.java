@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 /**
  * 로그인 성공 데이터를 결과로 받아오는 클래스입니다.
+ * isSuccess() 메서드를 통해 성공 여부를 받아올 수 있어요.
  */
 public class LoginResult {
 
@@ -14,6 +15,9 @@ public class LoginResult {
         this.success = success;
     }
 
+    /**
+     * @return 로그인 성공 여부 반환
+     */
     public boolean isSuccess() {
         return success;
     }
