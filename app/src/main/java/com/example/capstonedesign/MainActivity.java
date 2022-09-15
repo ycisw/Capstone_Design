@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,19 +20,17 @@ public class MainActivity extends AppCompatActivity {
         EditText PW = findViewById(R.id.password);
         Button login = findViewById(R.id.login);
 
-
         String pl = "1234";
         String plz = "4321";
+
         Intent intent = new Intent(MainActivity.this, homepage.class);
 
         login.setOnClickListener(view -> {
-                    if (ID.getText().toString().equals(pl) && PW.getText().toString().equals(plz)) {
-
+                if (ID.getText().toString().equals(pl) && PW.getText().toString().equals(plz)) {
                     startActivity(intent);
-                }else{
+                } else {
                     Toast.makeText(MainActivity.this, "취소하였습니다.", Toast.LENGTH_SHORT).show();
                 }
         });
-
     }
 }

@@ -7,9 +7,11 @@
     android:background="@drawable/back"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="400dp"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -29,6 +31,7 @@
             android:layout_height="100dp"
             android:hint="아이디를 입력해주세요"/>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
@@ -48,13 +51,12 @@
             android:layout_height="100dp"
                 android:hint="비밀번호를 입력해주세요"/>
     </LinearLayout>
+
     <Button
         android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="로그인"
         android:textColor="@color/black"
-        android:background="#00ff0000"
-        />
-
+        android:background="#00ff0000" />
 </LinearLayout>

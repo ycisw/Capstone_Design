@@ -34,6 +34,7 @@ public class homepage extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
+
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,6 +42,7 @@ public class homepage extends AppCompatActivity {
                 startActivity(intent2);
             }
         });
+
         text1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,4 +50,5 @@ public class homepage extends AppCompatActivity {
                 startActivity(intent3);
             }
         });
-    }}
+    }
+}
