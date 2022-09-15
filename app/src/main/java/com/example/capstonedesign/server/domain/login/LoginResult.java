@@ -4,21 +4,18 @@ import com.google.gson.annotations.SerializedName;
 
 public class LoginResult {
 
-    @SerializedName("isSuccess")
-    private boolean isSuccess;
+    @SerializedName("success")
+    private boolean success;
 
-    public LoginResult() {
-    }
-
-    public LoginResult(boolean isSuccess) {
-        this.isSuccess = isSuccess;
+    public LoginResult(boolean success) {
+        this.success = success;
     }
 
     public boolean isSuccess() {
-        return isSuccess;
+        return success;
     }
 
     public void setSuccess(boolean success) {
-        isSuccess = success;
+        this.success = success;
     }
 }

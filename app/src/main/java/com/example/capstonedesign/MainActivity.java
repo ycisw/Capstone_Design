@@ -10,9 +10,13 @@ import android.widget.Toast;
 
 import com.example.capstonedesign.server.domain.login.LoginForm;
 import com.example.capstonedesign.server.domain.login.LoginResult;
+import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.repository.RetrofitAPI;
 import com.example.capstonedesign.server.repository.TeacherRepository;
 import com.example.capstonedesign.server.service.login.LoginService;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,15 +34,22 @@ public class MainActivity extends AppCompatActivity {
         EditText pw = findViewById(R.id.password);
         Button loginButton = findViewById(R.id.login);
 
-//        loginButton.setOnClickListener(view -> {
-//            boolean isSuccess = LoginService.login(new LoginForm(id.getText().toString(), pw.getText().toString()));
-//
-//            if (isSuccess) {
-//                Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show();
-//                startActivity(new Intent(MainActivity.this, homepage.class));
-//            } else {
-//                Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        loginButton.setOnClickListener(view -> {
+            LoginForm loginForm = new LoginForm(id.getText().toString(), pw.getText().toString());
+            login(loginForm);
+        });
+    }
+
+    private void login(LoginForm loginForm) {
+        LoginService.login(loginForm, new NetworkLogic<>(
+                (loginResult) -> {
+                    Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, homepage.class));
+                },
+                () -> {
+                    Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show();
+
+                }
+        ));
     }
 }

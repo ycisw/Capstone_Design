@@ -1,13 +1,12 @@
 package com.example.capstonedesign.server.service.login;
 
-import android.content.Intent;
-import android.widget.Toast;
+import android.os.Build;
 
-import com.example.capstonedesign.MainActivity;
-import com.example.capstonedesign.homepage;
+import androidx.annotation.RequiresApi;
+
 import com.example.capstonedesign.server.domain.login.LoginForm;
 import com.example.capstonedesign.server.domain.login.LoginResult;
-import com.example.capstonedesign.server.repository.RetrofitAPI;
+import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.repository.TeacherRepository;
 
 import java.util.HashMap;
@@ -16,34 +15,28 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+
 public class LoginService {
 
-
-    public static boolean login(LoginForm loginForm) {
+    public static void login(LoginForm loginForm, NetworkLogic<LoginResult> logic) {
         HashMap<String, String> keyValueMap = new HashMap<>();
         keyValueMap.put("loginId", loginForm.getLoginId());
         keyValueMap.put("password", loginForm.getPassword());
-
-        LoginResult result = new LoginResult();
 
         TeacherRepository.api.login(keyValueMap)
                 .enqueue(new Callback<LoginResult>() {
                     @Override
                     public void onResponse(Call<LoginResult> call, Response<LoginResult> response) {
                         if (response.isSuccessful() && response.body().isSuccess()) {
-                            result.setSuccess(true);
-                            return;
+                            logic.getSuccessLogic().successLogic(response.body());
                         }
-
-                        result.setSuccess(false);
+                        logic.getFailedLogic().failedLogic();
                     }
 
                     @Override
                     public void onFailure(Call<LoginResult> call, Throwable t) {
-                        result.setSuccess(false);
+                        logic.getFailedLogic().failedLogic();
                     }
                 });
-
-        return result.isSuccess();
     }
 }
