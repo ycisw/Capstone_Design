@@ -1,9 +1,5 @@
 package com.example.capstonedesign.server.service.login;
 
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
-
 import com.example.capstonedesign.server.domain.login.LoginForm;
 import com.example.capstonedesign.server.domain.login.LoginResult;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
