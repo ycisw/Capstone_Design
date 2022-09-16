@@ -1,5 +1,7 @@
 package com.example.capstonedesign.server.repository;
 
+import com.example.capstonedesign.server.domain.network.NetworkConst;
+
 import java.net.CookieManager;
 import java.net.CookiePolicy;
 import java.util.concurrent.TimeUnit;
@@ -31,7 +33,7 @@ public class TeacherRepository {
 
         //Retrofit에 OkHttp3와 Gson을 사용하여 동작시킵니다.
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://3.37.89.178") //해당 주소는 aws ec2 주소입니다.
+                .baseUrl(NetworkConst.BASE_URL) //해당 주소는 aws ec2 인스턴스 접속 주소입니다.
                 .addConverterFactory(GsonConverterFactory.create()) //Gson은 JSON과 객체 사이를 상호 변환할 수 있게 해줍니다.
                 .client(client)
                 .build();
