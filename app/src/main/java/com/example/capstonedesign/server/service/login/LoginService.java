@@ -3,7 +3,7 @@ package com.example.capstonedesign.server.service.login;
 import com.example.capstonedesign.server.domain.login.LoginForm;
 import com.example.capstonedesign.server.domain.login.LoginResult;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
-import com.example.capstonedesign.server.repository.TeacherRepository;
+import com.example.capstonedesign.server.repository.teacher.TeacherRepository;
 
 import java.util.HashMap;
 

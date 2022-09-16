@@ -1,6 +1,7 @@
-package com.example.capstonedesign.server.repository;
+package com.example.capstonedesign.server.repository.teacher;
 
 import com.example.capstonedesign.server.domain.network.NetworkConst;
+import com.example.capstonedesign.server.repository.RetrofitAPI;
 
 import java.net.CookieManager;
 import java.net.CookiePolicy;
