@@ -4,77 +4,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E8EFE8"
+    android:backgroundTint="#E7EFDE"
     android:orientation="vertical"
     tools:context=".RegisterActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:textSize="40sp"
-        android:textColor="@color/black"
-        android:text="강사 회원가입 화면 디자인 바꿔주세요" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:orientation="vertical">
+        android:layout_marginTop="100dp"
+        android:orientation="horizontal">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="130dp"
             android:layout_height="50dp"
+            android:gravity="center"
             android:text="아이디"
             android:textColor="@color/black"
-            android:textSize="30sp" />
+            android:textSize="20sp" />
 
         <EditText
+            android:background="@color/white"
             android:id="@+id/register_id"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="아이디를 입력해주세요."/>
+            android:layout_width="250dp"
+            android:layout_height="50dp" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="130dp"
             android:layout_height="50dp"
+            android:gravity="center"
             android:text="비밀번호"
             android:textColor="@color/black"
-            android:textSize="30sp" />
+            android:textSize="20sp" />
 
         <EditText
+            android:background="@color/white"
             android:id="@+id/register_password"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
+            android:layout_height="50dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:gravity="center"
+            android:layout_width="130dp"
             android:layout_height="50dp"
-            android:hint="비밀번호를 입력해주세요."/>
+            android:text="비밀번호 확인"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <EditText
+            android:background="@color/white"
+            android:id="@+id/register_confirm"
+            android:layout_width="250dp"
+            android:layout_height="50dp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="130dp"
             android:layout_height="50dp"
+            android:gravity="center"
             android:text="이름"
             android:textColor="@color/black"
-            android:textSize="30sp" />
+            android:textSize="20sp" />
 
         <EditText
+            android:background="@color/white"
             android:id="@+id/register_name"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="이름을 입력해주세요." />
+            android:layout_width="250dp"
+            android:layout_height="50dp" />
     </LinearLayout>
 
     <Button
         android:id="@+id/register_register_button"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:textSize="30sp"
-        android:text="회원 가입"/>
+        android:layout_marginTop="140dp"
+        android:backgroundTint="#94DD97"
+        android:text="가입하기"
+        android:textColor="@color/black"
+        android:textSize="30sp" />
 </LinearLayout>
