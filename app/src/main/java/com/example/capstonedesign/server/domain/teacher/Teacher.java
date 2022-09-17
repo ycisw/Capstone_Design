@@ -21,7 +21,7 @@ public class Teacher {
     /**
      * @param id 로그인 할 때 사용하는 아이디입니다.
      * @param password 로그인 할 때 사용하는 비밀번호입니다.
-     * @param name 이름이에요.
+     * @param name 닉네임이에요.
      */
     public Teacher(String id, String password, String name) {
         this.id = id;
