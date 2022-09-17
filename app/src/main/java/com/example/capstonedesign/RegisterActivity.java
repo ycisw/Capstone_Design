@@ -29,14 +29,13 @@ public class RegisterActivity extends AppCompatActivity {
 
         Button registerButton = findViewById(R.id.register_register_button);
 
-
-
         //회원 가입 버튼 클릭시
         registerButton.setOnClickListener(v -> {
-            Teacher teacher = new Teacher(id.getText().toString(), password.getText().toString(), name.getText().toString());
-            if( password.getText().toString().equals( confirm.getText().toString())) {
+            if (password.getText().toString().equals(confirm.getText().toString())) {
+                Teacher teacher = new Teacher(id.getText().toString(),
+                        password.getText().toString(), name.getText().toString());
                 register(teacher); //회원가입
-            }else {
+            } else {
                 Toast.makeText(this, "비밀번호가 일치하지 않습니다", Toast.LENGTH_SHORT).show();
                 finish();
             }
