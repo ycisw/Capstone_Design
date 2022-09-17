@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private void login(LoginForm loginForm) {
         LoginService.login(loginForm, new NetworkLogic<>(
                 //성공시 로직
-                (loginResult) -> {
+                loginResult -> {
                     Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(MainActivity.this, homepage.class)); //다음 화면으로 이동
                 },

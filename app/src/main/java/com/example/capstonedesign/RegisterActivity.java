@@ -42,7 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void register(Teacher teacher) {
         RegisterService.register(teacher, new NetworkLogic<>(
                 //성공시 로직
-                (teacherAddResult) -> {
+                teacherAddResult -> {
                     Toast.makeText(this, "회원가입 성공", Toast.LENGTH_SHORT).show();
                     finish();
                 },
