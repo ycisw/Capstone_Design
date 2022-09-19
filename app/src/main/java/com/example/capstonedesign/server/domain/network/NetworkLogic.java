@@ -10,7 +10,7 @@ package com.example.capstonedesign.server.domain.network;
 public class NetworkLogic<T> {
 
     private SuccessLogic<T> successLogic;
-    private FailedLogic failedLogic;
+    private FailedLogic<T> failedLogic;
 
     /**
      * 성공했을때와 실패했을때의 로직을 넣어주세요.

@@ -11,8 +11,12 @@ public class TeacherAddResult {
     @SerializedName("success")
     private boolean success;
 
-    public TeacherAddResult(boolean success) {
+    @SerializedName("message")
+    private String message;
+
+    public TeacherAddResult(boolean success, String message) {
         this.success = success;
+        this.message = message;
     }
 
     /**
@@ -24,5 +28,13 @@ public class TeacherAddResult {
 
     public void setSuccess(boolean success) {
         this.success = success;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

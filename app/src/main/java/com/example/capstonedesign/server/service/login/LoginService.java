@@ -37,13 +37,13 @@ public class LoginService {
                     return;
                 }
                 //로그인 실패시의 로직
-                logic.getFailedLogic().failedLogic();
+                logic.getFailedLogic().failedLogic(response.body());
             }
 
             //네트워크 통신 실패시의 로직
             @Override
             public void onFailure(Call<LoginResult> call, Throwable t) {
-                logic.getFailedLogic().failedLogic();
+                logic.getFailedLogic().failedLogic(new LoginResult(false));
             }
         });
     }

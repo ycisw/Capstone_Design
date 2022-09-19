@@ -39,13 +39,14 @@ public class RegisterService {
                 }
 
                 //회원가입 실패시의 로직
-                logic.getFailedLogic().failedLogic();
+                logic.getFailedLogic().failedLogic(response.body());
             }
 
             //네트워크 통신 실패시의 로직
             @Override
             public void onFailure(Call<TeacherAddResult> call, Throwable t) {
-                logic.getFailedLogic().failedLogic();
+                logic.getFailedLogic().failedLogic(new TeacherAddResult(false,
+                        "통신이 원활하지 않아 회원가입에 실패하였습니다."));
             }
         });
     }

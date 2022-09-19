@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(MainActivity.this, homepage.class)); //다음 화면으로 이동
                 },
                 //실패시 로직
-                () -> {
+                loginResult -> {
                     Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show();
                 }
         ));

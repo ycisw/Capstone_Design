@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.domain.teacher.Teacher;
+import com.example.capstonedesign.server.domain.teacher.TeacherAddResult;
+import com.example.capstonedesign.server.domain.teacher.TeacherAddResultConst;
 import com.example.capstonedesign.server.service.teacher.RegisterService;
 
 /**
@@ -47,15 +49,20 @@ public class RegisterActivity extends AppCompatActivity {
      * @param teacher 강사 데이터를 통해 회원 가입합니다.
      */
     private void register(Teacher teacher) {
-        RegisterService.register(teacher, new NetworkLogic<>(
+        RegisterService.register(teacher, new NetworkLogic<TeacherAddResult>(
                 //성공시 로직
                 teacherAddResult -> {
                     Toast.makeText(this, "회원가입 성공", Toast.LENGTH_SHORT).show();
                     finish();
                 },
                 //실패시 로직
-                () -> {
-                    Toast.makeText(this, "회원가입 실패", Toast.LENGTH_SHORT).show();
+                teacherAddResult -> {
+                    TeacherAddResult result = (TeacherAddResult) teacherAddResult;
+
+                    String message = result.getMessage().equals(TeacherAddResultConst.DUPLICATE_ID) ? //중복된 아이디
+                            "이미 등록된 아이디입니다." : //출력할 메시지
+                            result.getMessage(); //예상치 못한 에러로 인한 메시지
+                    Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
                     finish();
                 }
         ));
