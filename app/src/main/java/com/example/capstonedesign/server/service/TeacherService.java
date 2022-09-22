@@ -1,8 +1,9 @@
-package com.example.capstonedesign.server.service.teacher;
+package com.example.capstonedesign.server.service;
 
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.domain.teacher.Teacher;
 import com.example.capstonedesign.server.domain.teacher.TeacherAddResult;
+import com.example.capstonedesign.server.repository.SingletonContainer;
 import com.example.capstonedesign.server.repository.teacher.TeacherRepository;
 
 import java.util.HashMap;
@@ -12,9 +13,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * 회원가입을 위한 서비스입니다.
+ * 강사와 관련된 서비스입니다.
  */
-public class RegisterService {
+public class TeacherService {
 
     /**
      * 회원가입 할때 사용하는 메서드입니다.
@@ -28,7 +29,7 @@ public class RegisterService {
         keyValueMap.put("password", teacher.getPassword());
         keyValueMap.put("name", teacher.getName());
 
-        TeacherRepository.api.register(keyValueMap).enqueue(new Callback<TeacherAddResult>() {
+        SingletonContainer.getTeacherApi().register(keyValueMap).enqueue(new Callback<TeacherAddResult>() {
             //네트워크 통신 성공시의 로직
             @Override
             public void onResponse(Call<TeacherAddResult> call, Response<TeacherAddResult> response) {

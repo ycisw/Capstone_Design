@@ -1,8 +1,9 @@
-package com.example.capstonedesign.server.service.login;
+package com.example.capstonedesign.server.service;
 
 import com.example.capstonedesign.server.domain.login.LoginForm;
 import com.example.capstonedesign.server.domain.login.LoginResult;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
+import com.example.capstonedesign.server.repository.SingletonContainer;
 import com.example.capstonedesign.server.repository.teacher.TeacherRepository;
 
 import java.util.HashMap;
@@ -27,7 +28,7 @@ public class LoginService {
         keyValueMap.put("loginId", loginForm.getLoginId());
         keyValueMap.put("password", loginForm.getPassword());
 
-        TeacherRepository.api.login(keyValueMap).enqueue(new Callback<LoginResult>() {
+        SingletonContainer.getLoginApi().login(keyValueMap).enqueue(new Callback<LoginResult>() {
             //네트워크 통신 성공시의 로직
             @Override
             public void onResponse(Call<LoginResult> call, Response<LoginResult> response) {

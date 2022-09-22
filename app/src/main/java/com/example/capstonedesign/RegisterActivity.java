@@ -11,7 +11,7 @@ import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.domain.teacher.Teacher;
 import com.example.capstonedesign.server.domain.teacher.TeacherAddResult;
 import com.example.capstonedesign.server.domain.teacher.TeacherAddResultConst;
-import com.example.capstonedesign.server.service.teacher.RegisterService;
+import com.example.capstonedesign.server.service.TeacherService;
 
 /**
  * 회원 가입 화면입니다.
@@ -49,7 +49,7 @@ public class RegisterActivity extends AppCompatActivity {
      * @param teacher 강사 데이터를 통해 회원 가입합니다.
      */
     private void register(Teacher teacher) {
-        RegisterService.register(teacher, new NetworkLogic<TeacherAddResult>(
+        TeacherService.register(teacher, new NetworkLogic<TeacherAddResult>(
                 //성공시 로직
                 teacherAddResult -> {
                     Toast.makeText(this, "회원가입 성공", Toast.LENGTH_SHORT).show();

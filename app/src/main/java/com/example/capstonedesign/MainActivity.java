@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.example.capstonedesign.server.domain.login.LoginForm;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
-import com.example.capstonedesign.server.service.login.LoginService;
+import com.example.capstonedesign.server.service.LoginService;
 
 
 public class MainActivity extends AppCompatActivity {
