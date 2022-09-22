@@ -1,6 +1,5 @@
 package com.example.capstonedesign.server.repository.teacher;
 
-import com.example.capstonedesign.server.domain.login.LoginResult;
 import com.example.capstonedesign.server.domain.teacher.TeacherAddResult;
 
 import java.util.HashMap;

@@ -4,7 +4,6 @@ import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.domain.teacher.Teacher;
 import com.example.capstonedesign.server.domain.teacher.TeacherAddResult;
 import com.example.capstonedesign.server.repository.SingletonContainer;
-import com.example.capstonedesign.server.repository.teacher.TeacherRepository;
 
 import java.util.HashMap;
 

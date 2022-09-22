@@ -15,6 +15,12 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * 여러 서비스들이 사용하는 API들을 한 곳에서 관리할 수 있도록
+ * 싱글톤 컨테이너를 만들었습니다.
+ * 해당 클래스들은 싱글톤 패턴을 구현하지 않게 되어 확장에 용이해졌습니다.
+ * 하나의 Retrofit 클라이언트로 여러 서비스 api들이 쿠키 값 등을 공유할 수 있습니다.
+ */
 public class SingletonContainer {
     private static final SingletonContainer instance = new SingletonContainer();
 
@@ -53,6 +59,9 @@ public class SingletonContainer {
         init();
     }
 
+    /**
+     * 각 api를 얻어오는 클래스들을 초기화 해주는 작업입니다.
+     */
     private void init() {
         teacherRepository = new TeacherRepository(retrofit);
         loginRepository = new LoginRepository(retrofit);

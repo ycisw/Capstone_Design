@@ -10,6 +10,9 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
+/**
+ * 로그인과 관련된 API 입니다.
+ */
 public interface LoginApi {
 
     /**
