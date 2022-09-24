@@ -3,6 +3,8 @@ package com.example.capstonedesign.server.repository;
 import com.example.capstonedesign.server.domain.network.NetworkConst;
 import com.example.capstonedesign.server.repository.login.LoginApi;
 import com.example.capstonedesign.server.repository.login.LoginRepository;
+import com.example.capstonedesign.server.repository.parent.ParentApi;
+import com.example.capstonedesign.server.repository.parent.ParentRepository;
 import com.example.capstonedesign.server.repository.teacher.TeacherApi;
 import com.example.capstonedesign.server.repository.teacher.TeacherRepository;
 
@@ -32,9 +34,23 @@ public class SingletonContainer {
     }
 
     private static LoginRepository loginRepository;
-
     public static LoginApi getLoginApi() {
         return loginRepository.getApi();
+    }
+
+    private static ParentRepository parentRepository;
+    public static ParentApi getParentApi() {
+        return parentRepository.getApi();
+    }
+
+
+    /**
+     * 각 api를 얻어오는 클래스들을 초기화 해주는 작업입니다.
+     */
+    private void init() {
+        teacherRepository = new TeacherRepository(retrofit);
+        loginRepository = new LoginRepository(retrofit);
+        parentRepository = new ParentRepository(retrofit);
     }
 
     private SingletonContainer() {
@@ -57,13 +73,5 @@ public class SingletonContainer {
                 .build();
 
         init();
-    }
-
-    /**
-     * 각 api를 얻어오는 클래스들을 초기화 해주는 작업입니다.
-     */
-    private void init() {
-        teacherRepository = new TeacherRepository(retrofit);
-        loginRepository = new LoginRepository(retrofit);
     }
 }

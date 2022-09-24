@@ -16,10 +16,10 @@ public class startPage extends AppCompatActivity {
         ImageButton parents =findViewById(R.id.parents);
         ImageButton teacher =findViewById(R.id.teacher);
 
-        parents.setOnClickListener(v->
-            startActivity(new Intent(this,MainActivity.class)));
+        parents.setOnClickListener(v ->
+            startActivity(new Intent(this, ParentLoginActivity.class)));
 
-        teacher.setOnClickListener(v->
-            startActivity(new Intent(this,MainActivity.class)));
+        teacher.setOnClickListener(v ->
+            startActivity(new Intent(this, MainActivity.class)));
     }
 }
