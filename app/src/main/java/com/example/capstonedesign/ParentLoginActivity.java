@@ -21,14 +21,14 @@ public class ParentLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parent_login);
 
-        EditText parentPhone = findViewById(R.id.parent_login_parent_phone);
-        EditText studentPhone = findViewById(R.id.parent_login_student_phone);
+        EditText phone = findViewById(R.id.parent_login_phone);
+        EditText name = findViewById(R.id.parent_login_name);
 
         Button loginButton = findViewById(R.id.parent_login_login_button);
 
         loginButton.setOnClickListener(v -> {
             ParentLoginForm loginForm =
-                    new ParentLoginForm(parentPhone.getText().toString(), studentPhone.getText().toString());
+                    new ParentLoginForm(phone.getText().toString(), name.getText().toString());
             parentLogin(loginForm);
         });
     }

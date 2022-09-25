@@ -24,8 +24,8 @@ public class ParentService {
     public static void login(ParentLoginForm parentLoginForm, NetworkLogic<ParentLoginResult> logic) {
         //ParentLoginForm을 Map으로 전환하는 과정입니다.
         HashMap<String, String> keyValueMap = new HashMap<>();
-        keyValueMap.put("parentPhone", parentLoginForm.getParentPhone());
-        keyValueMap.put("studentPhone", parentLoginForm.getStudentPhone());
+        keyValueMap.put("phone", parentLoginForm.getPhone());
+        keyValueMap.put("name", parentLoginForm.getName());
 
         SingletonContainer.getParentApi().login(keyValueMap).enqueue(new Callback<ParentLoginResult>() {
             //네트워크 통신 성공시
