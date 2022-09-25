@@ -16,8 +16,6 @@ public class homepage extends AppCompatActivity {
         setContentView(R.layout.activity_homepage);
         Button dial = (Button)findViewById(R.id.dial);
         Button internet = (Button)findViewById(R.id.internet);
-        Button next = (Button)findViewById(R.id.next);
-        Button text1 = (Button) findViewById(R.id.btn);
 
         dial.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,20 +33,8 @@ public class homepage extends AppCompatActivity {
             }
         });
 
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent2 = new Intent(homepage.this, Sub2.class);
-                startActivity(intent2);
-            }
-        });
 
-        text1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent3 = new Intent(homepage.this, Sub2.class);
-                startActivity(intent3);
-            }
-        });
+
+
     }
 }
