@@ -5,32 +5,32 @@ package com.example.capstonedesign.server.domain.parent;
  */
 public class ParentLoginForm {
 
-    private String parentPhone;
-    private String studentPhone;
+    private String phone;
+    private String name;
 
     /**
-     * 학부모 로그인에 필요한 데이터를 넣어주세요.
-     * @param parentPhone 부모님(본인) 휴대폰 번호입니다.
-     * @param studentPhone 학생 휴대폰 번호입니다.
+     * 학부모 로그인에 필요한 데이터 입니다.
+     * @param phone 학부모 휴대폰 번호
+     * @param name 학부모 이름
      */
-    public ParentLoginForm(String parentPhone, String studentPhone) {
-        this.parentPhone = parentPhone;
-        this.studentPhone = studentPhone;
+    public ParentLoginForm(String phone, String name) {
+        this.phone = phone;
+        this.name = name;
     }
 
-    public String getParentPhone() {
-        return parentPhone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setParentPhone(String parentPhone) {
-        this.parentPhone = parentPhone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getStudentPhone() {
-        return studentPhone;
+    public String getName() {
+        return name;
     }
 
-    public void setStudentPhone(String studentPhone) {
-        this.studentPhone = studentPhone;
+    public void setName(String name) {
+        this.name = name;
     }
 }
