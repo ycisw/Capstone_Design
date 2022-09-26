@@ -28,7 +28,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/parent_login_parent_phone"
+            android:id="@+id/parent_login_phone"
             android:layout_width="300dp"
             android:layout_height="100dp"
             android:hint="핸드폰 번호를 입력해주세요"/>
@@ -43,15 +43,15 @@
         <TextView
             android:layout_width="110dp"
             android:layout_height="100dp"
-            android:text="학생 휴대폰 번호"
+            android:text="학부모 이름"
             android:gravity="center"
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/parent_login_student_phone"
+            android:id="@+id/parent_login_name"
             android:layout_width="300dp"
             android:layout_height="100dp"
-            android:hint="학생의 휴대폰 번호를 입력해주세요"/>
+            android:hint="이름을 입력해주세요."/>
     </LinearLayout>
 
     <LinearLayout
