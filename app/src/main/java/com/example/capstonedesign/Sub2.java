@@ -44,9 +44,8 @@ public class Sub2 extends AppCompatActivity {
 
                 //성공시
                 list -> {
-                    for (StudentParentForAttendance studentParentForAttendance : list) {
-                        adapter.addItem(studentParentForAttendance);
-                    }
+                    adapter.setListViewItemList(list); //리스트 받아서 일일이 넣어주는 거보다, 리스트를 넣어주는게
+                    //더 성능이 좋을 것 같아서 넣었어요.
                     adapter.notifyDataSetChanged(); //리스트뷰 데이터 추가된거 알려주는거에요.
                 },
                 //실패시

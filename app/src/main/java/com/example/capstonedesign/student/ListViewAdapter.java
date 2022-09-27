@@ -11,10 +11,15 @@ import com.example.capstonedesign.R;
 import com.example.capstonedesign.server.domain.attendance.StudentParentForAttendance;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListViewAdapter extends BaseAdapter {
 //    private ArrayList<ListViewItem> listViewItemList = new ArrayList<>();
-    private ArrayList<StudentParentForAttendance> listViewItemList = new ArrayList<>();
+    private List<StudentParentForAttendance> listViewItemList = new ArrayList<>();
+
+    public void setListViewItemList(List<StudentParentForAttendance> listViewItemList) {
+        this.listViewItemList = listViewItemList;
+    }
 
     public ListViewAdapter(){};
 
