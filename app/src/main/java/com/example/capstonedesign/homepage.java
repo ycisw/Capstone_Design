@@ -8,6 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.capstonedesign.server.domain.network.NetworkLogic;
+import com.example.capstonedesign.server.service.AttendanceService;
+
+import java.util.LinkedList;
+import java.util.List;
+
 public class homepage extends AppCompatActivity {
 
     @Override
@@ -38,5 +44,12 @@ public class homepage extends AppCompatActivity {
         attendanceLink.setOnClickListener(v ->
                 startActivity(new Intent(this, Sub2.class)));
 
+
+//        List<Long> studentIdList = new LinkedList<>();
+//        studentIdList.add(8L); //김성규 학생
+//        AttendanceService.attendanceToday(studentIdList, new NetworkLogic<>(
+//                none -> {},
+//                none -> {}
+//        ));
     }
 }

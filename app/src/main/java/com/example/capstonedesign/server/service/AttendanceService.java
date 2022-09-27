@@ -37,4 +37,23 @@ public class AttendanceService {
             }
         });
     }
+
+    public static void attendanceToday(List<Long> studentIdList, NetworkLogic<Void> logic) {
+        SingletonContainer.getAttendanceApi().attendanceToday(studentIdList).enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                if (response.isSuccessful()) {
+                    logic.getSuccessLogic().successLogic(null);
+                    return;
+                }
+
+                logic.getFailedLogic().failedLogic(null);
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                logic.getFailedLogic().failedLogic(null);
+            }
+        });
+    }
 }
