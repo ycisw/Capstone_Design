@@ -15,7 +15,8 @@ public class homepage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
         Button dial = (Button)findViewById(R.id.dial);
-        Button internet = (Button)findViewById(R.id.internet);
+//        Button internet = (Button)findViewById(R.id.internet);
+        Button attendanceLink = findViewById(R.id.main_page_attendance_link); //출결관리 버튼으로 교체했습니다.
 
         dial.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,16 +26,17 @@ public class homepage extends AppCompatActivity {
             }
         });
 
-        internet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent1 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://m.google.co.kr"));
-                startActivity(intent1);
-            }
-        });
+//        internet.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent1 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://m.google.co.kr"));
+//                startActivity(intent1);
+//            }
+//        });
 
-
-
+        //출결관리 링크
+        attendanceLink.setOnClickListener(v ->
+                startActivity(new Intent(this, Sub2.class)));
 
     }
 }

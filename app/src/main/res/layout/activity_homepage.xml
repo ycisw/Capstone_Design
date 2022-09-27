@@ -54,7 +54,7 @@
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/internet"
+            android:id="@+id/main_page_attendance_link"
             android:textColor="@color/design_default_color_primary_dark"
             android:layout_width="205dp"
             android:layout_height="100dp"
