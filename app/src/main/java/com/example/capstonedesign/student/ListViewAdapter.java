@@ -14,12 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListViewAdapter extends BaseAdapter {
-//    private ArrayList<ListViewItem> listViewItemList = new ArrayList<>();
-    private List<StudentParentForAttendance> listViewItemList = new ArrayList<>();
-
-    public void setListViewItemList(List<StudentParentForAttendance> listViewItemList) {
-        this.listViewItemList = listViewItemList;
-    }
+    private ArrayList<ListViewItem> listViewItemList = new ArrayList<>();
 
     public ListViewAdapter(){};
 
@@ -48,34 +43,20 @@ public class ListViewAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.list_view_item,parent,false);
         }
 
-//        TextView sidView = (TextView) convertView.findViewById(R.id.sid);
-        //뷰도 조금 바꿔놓았어요.
-        TextView studentName = convertView.findViewById(R.id.student_parent_for_attendance_student_name);
-        TextView parentPhone = convertView.findViewById(R.id.student_parent_for_attendance_parent_phone);
+        TextView sidView = (TextView) convertView.findViewById(R.id.sid);
 
-//        ListViewItem listViewItem = listViewItemList.get(position);
-        StudentParentForAttendance item = listViewItemList.get(position);
+        ListViewItem listViewItem = listViewItemList.get(position);
 
-//        sidView.setText(listViewItem.getId());
-        studentName.setText(item.getStudent().getName());
-        parentPhone.setText(item.getParent().getPhone());
+        sidView.setText(listViewItem.getId());
 
         return convertView;
     }
 
 
-//    public void addItem(String sid){
-//        ListViewItem item = new ListViewItem();
-//        item.getId();
-//        listViewItemList.add(item);
-//    }
-
-    /**
-     * 서버에서 받아온 데이터를 넣어봤어요.
-     * @param studentParentForAttendance
-     */
-    public void addItem(StudentParentForAttendance studentParentForAttendance) {
-        listViewItemList.add(studentParentForAttendance);
+    public void addItem(String sid){
+        ListViewItem item = new ListViewItem();
+        item.getId();
+        listViewItemList.add(item);
     }
 
     public void delItem(String pos){
