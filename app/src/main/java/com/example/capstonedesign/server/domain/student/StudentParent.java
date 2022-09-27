@@ -1,20 +1,20 @@
-package com.example.capstonedesign.server.domain.attendance;
+package com.example.capstonedesign.server.domain.student;
 
 import com.example.capstonedesign.server.domain.parent.Parent;
 import com.example.capstonedesign.server.domain.student.Student;
 import com.google.gson.annotations.SerializedName;
 
-public class StudentParentForAttendance {
+public class StudentParent {
 
     @SerializedName("student")
     private Student student;
     @SerializedName("parent")
     private Parent parent;
 
-    public StudentParentForAttendance() {
+    public StudentParent() {
     }
 
-    public StudentParentForAttendance(Student student, Parent parent) {
+    public StudentParent(Student student, Parent parent) {
         this.student = student;
         this.parent = parent;
     }

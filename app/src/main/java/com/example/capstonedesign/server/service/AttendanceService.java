@@ -2,7 +2,7 @@ package com.example.capstonedesign.server.service;
 
 import com.example.capstonedesign.server.domain.attendance.Attendance;
 import com.example.capstonedesign.server.domain.attendance.AttendanceStudentResult;
-import com.example.capstonedesign.server.domain.attendance.StudentParentForAttendance;
+import com.example.capstonedesign.server.domain.student.StudentParent;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.repository.SingletonContainer;
 
@@ -22,10 +22,10 @@ public class AttendanceService {
      * 현재 강사에 해당하는 학생과 학부모의 리스트를 얻을 수 있습니다. [ {student, parent}, ...]
      * @param logic
      */
-    public static void studentParentForAttendances(NetworkLogic<List<StudentParentForAttendance>> logic) {
-        SingletonContainer.getAttendanceApi().studentParentListForAttendance().enqueue(new Callback<List<StudentParentForAttendance>>() {
+    public static void studentParentForAttendances(NetworkLogic<List<StudentParent>> logic) {
+        SingletonContainer.getAttendanceApi().studentParentListForAttendance().enqueue(new Callback<List<StudentParent>>() {
             @Override
-            public void onResponse(Call<List<StudentParentForAttendance>> call, Response<List<StudentParentForAttendance>> response) {
+            public void onResponse(Call<List<StudentParent>> call, Response<List<StudentParent>> response) {
                 if (response.isSuccessful()) {
                     logic.getSuccessLogic().successLogic(response.body());
                     return;
@@ -35,7 +35,7 @@ public class AttendanceService {
             }
 
             @Override
-            public void onFailure(Call<List<StudentParentForAttendance>> call, Throwable t) {
+            public void onFailure(Call<List<StudentParent>> call, Throwable t) {
                 logic.getFailedLogic().failedLogic(null);
             }
         });

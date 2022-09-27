@@ -1,7 +1,7 @@
 package com.example.capstonedesign.server.repository.attendance;
 
 import com.example.capstonedesign.server.domain.attendance.AttendanceStudentResult;
-import com.example.capstonedesign.server.domain.attendance.StudentParentForAttendance;
+import com.example.capstonedesign.server.domain.student.StudentParent;
 
 import java.util.HashMap;
 import java.util.List;
@@ -19,7 +19,7 @@ public interface AttendanceApi {
 
     @Headers({"Accept: application/json;"})
     @GET("/attendance")
-    Call<List<StudentParentForAttendance>> studentParentListForAttendance();
+    Call<List<StudentParent>> studentParentListForAttendance();
 
     @FormUrlEncoded
     @Headers({"Accept: application/json;"})

@@ -8,10 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.capstonedesign.R;
-import com.example.capstonedesign.server.domain.attendance.StudentParentForAttendance;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ListViewAdapter extends BaseAdapter {
     private ArrayList<ListViewItem> listViewItemList = new ArrayList<>();

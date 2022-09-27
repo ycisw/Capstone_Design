@@ -8,11 +8,8 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.example.capstonedesign.server.domain.attendance.StudentParentForAttendance;
-import com.example.capstonedesign.server.domain.network.NetworkLogic;
-import com.example.capstonedesign.server.service.AttendanceService;
+import com.example.capstonedesign.server.domain.student.StudentParent;
 import com.example.capstonedesign.student.ListViewAdapter;
 
 import java.util.LinkedList;
@@ -21,7 +18,7 @@ import java.util.List;
 public class Sub2 extends AppCompatActivity {
     Dialog sub2dialog;
     ListViewAdapter adapter;
-    List<StudentParentForAttendance> items = new LinkedList<>();
+    List<StudentParent> items = new LinkedList<>();
 
 
     @Override
