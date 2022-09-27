@@ -1,6 +1,10 @@
 package com.example.capstonedesign.server.repository;
 
 import com.example.capstonedesign.server.domain.network.NetworkConst;
+import com.example.capstonedesign.server.domain.util.LocalDateDeserializer;
+import com.example.capstonedesign.server.domain.util.LocalDateSerializer;
+import com.example.capstonedesign.server.domain.util.LocalDateTimeDeserializer;
+import com.example.capstonedesign.server.domain.util.LocalDateTimeSerializer;
 import com.example.capstonedesign.server.repository.attendance.AttendanceApi;
 import com.example.capstonedesign.server.repository.attendance.AttendanceRepository;
 import com.example.capstonedesign.server.repository.login.LoginApi;
@@ -9,9 +13,13 @@ import com.example.capstonedesign.server.repository.parent.ParentApi;
 import com.example.capstonedesign.server.repository.parent.ParentRepository;
 import com.example.capstonedesign.server.repository.teacher.TeacherApi;
 import com.example.capstonedesign.server.repository.teacher.TeacherRepository;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.net.CookieManager;
 import java.net.CookiePolicy;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.JavaNetCookieJar;
@@ -73,10 +81,18 @@ public class SingletonContainer {
                 .writeTimeout(15, TimeUnit.SECONDS)
                 .build();
 
+        //Gson은 JSON과 객체 사이를 상호 변환할 수 있게 해줍니다.
+        Gson gson = new GsonBuilder()
+                .setDateFormat("yyyy-MM-dd'T'HH:mm:ss") //date 변환시 해당 형태로 변환
+                .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeDeserializer())
+                .registerTypeAdapter(LocalDate.class, new LocalDateDeserializer())
+                .setPrettyPrinting()
+                .create();
+
         //Retrofit에 OkHttp3와 Gson을 사용하여 동작시킵니다.
         retrofit = new Retrofit.Builder()
                 .baseUrl(NetworkConst.BASE_URL) //해당 주소는 aws ec2 인스턴스 접속 주소입니다.
-                .addConverterFactory(GsonConverterFactory.create()) //Gson은 JSON과 객체 사이를 상호 변환할 수 있게 해줍니다.
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(client)
                 .build();
 

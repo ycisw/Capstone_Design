@@ -8,9 +8,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.capstonedesign.server.domain.attendance.AttendanceStudentResult;
 import com.example.capstonedesign.server.domain.login.LoginForm;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.service.LoginService;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -44,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         LoginService.login(loginForm, new NetworkLogic<>(
                 //성공시 로직
                 loginResult -> {
-                    Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(MainActivity.this, homepage.class)); //다음 화면으로 이동
                 },
                 //실패시 로직
