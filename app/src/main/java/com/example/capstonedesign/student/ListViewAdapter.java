@@ -43,19 +43,22 @@ public class ListViewAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.list_view_item,parent,false);
         }
 
-        TextView sidView = (TextView) convertView.findViewById(R.id.sid);
+        TextView nameView = (TextView) convertView.findViewById(R.id.name);
+        TextView pnameView = (TextView) convertView.findViewById(R.id.pname);
 
         ListViewItem listViewItem = listViewItemList.get(position);
 
-        sidView.setText(listViewItem.getId());
+        nameView.setText(listViewItem.getName());
+        pnameView.setText(listViewItem.getPname());
 
         return convertView;
     }
 
 
-    public void addItem(String sid){
+    public void addItem(String name, String pname){
         ListViewItem item = new ListViewItem();
-        item.getId();
+        item.getName();
+        item.getPname();
         listViewItemList.add(item);
     }
 

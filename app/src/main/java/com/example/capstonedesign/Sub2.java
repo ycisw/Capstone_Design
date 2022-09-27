@@ -42,8 +42,8 @@ public class Sub2 extends AppCompatActivity {
         student_add.setOnClickListener(v->{
             showSub2Dialog();
         });
-        adapter.addItem("1");
-        adapter.addItem("2");
+        adapter.addItem("이름1","이름1");
+        adapter.addItem("이름2","이름2");
     }
 
     //커스텀 다이얼로그
@@ -51,7 +51,8 @@ public class Sub2 extends AppCompatActivity {
         sub2dialog.show();
 
         Button noBtn = sub2dialog.findViewById(R.id.noBtn);
-        EditText addSid = sub2dialog.findViewById(R.id.add_sid);
+        EditText addName = sub2dialog.findViewById(R.id.add_name);
+        EditText addPname = sub2dialog.findViewById(R.id.add_pname);
         Button createStudent = sub2dialog.findViewById(R.id.create_student);
 
         noBtn.setOnClickListener(v->{
@@ -59,7 +60,8 @@ public class Sub2 extends AppCompatActivity {
         });
 
         createStudent.setOnClickListener(v->{
-            adapter.addItem(addSid.getText().toString());
+            adapter.addItem(addName.getText().toString(),addPname.getText().toString());
+            sub2dialog.dismiss();
         });
     }
 }
