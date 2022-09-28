@@ -12,10 +12,15 @@ import android.widget.Toast;
 import com.example.capstonedesign.server.domain.attendance.Attendance;
 import com.example.capstonedesign.server.domain.attendance.AttendanceStudentResult;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
+import com.example.capstonedesign.server.domain.parent.Parent;
+import com.example.capstonedesign.server.domain.student.Student;
+import com.example.capstonedesign.server.domain.student.StudentParent;
 import com.example.capstonedesign.server.service.AttendanceService;
+import com.example.capstonedesign.server.service.StudentService;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class homepage extends AppCompatActivity {
 
@@ -50,6 +55,27 @@ public class homepage extends AppCompatActivity {
 //                },
 //                none -> {
 //
+//                }
+//        ));
+
+        //학생 관리 테스트
+//        StudentService.student(new NetworkLogic<List<StudentParent>>(
+//                result -> {
+//                    Toast.makeText(this, String.valueOf(result.get(0).getParent().getName()), Toast.LENGTH_SHORT).show();
+//                },
+//                result -> {
+//
+//                }
+//        ));
+
+//        StudentService.save(new StudentParent(new Student(-1L, "이상원", "01029495920", 10000L,
+//                LocalDate.now(), -1L, -1L),
+//                new Parent(0L, "이상원", "01029495920")), new NetworkLogic<>(
+//                none -> {
+//                    Toast.makeText(this, "성공", Toast.LENGTH_SHORT).show();
+//                },
+//                none -> {
+//                    Toast.makeText(this, "실패", Toast.LENGTH_SHORT).show();
 //                }
 //        ));
     }
