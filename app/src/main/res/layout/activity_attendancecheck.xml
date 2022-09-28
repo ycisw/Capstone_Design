@@ -8,23 +8,40 @@
     android:backgroundTint="#E7EFDE"
     android:orientation="vertical"
     tools:context=".RegisterActivity">
-
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
 
 
         <ListView
             android:id="@+id/listView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:choiceMode="multipleChoice" />
+            android:layout_width="210dp"
+            android:layout_height="wrap_content" />
+    <ListView
+        android:id="@+id/listView2"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:choiceMode="multipleChoice" />
+</LinearLayout>
 
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/checkBT"
-        android:text="출석"/>
+        android:text="등원"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/goToTheHome"
+        android:text="하원"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"/>
 </LinearLayout>

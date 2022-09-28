@@ -3,6 +3,7 @@ package com.example.capstonedesign;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -21,15 +22,20 @@ public class ParentLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parent_login);
 
+
         EditText phone = findViewById(R.id.parent_login_phone);
         EditText validationCode = findViewById(R.id.parent_login_validation_code);
 
         Button sendValidationButton = findViewById(R.id.parent_login_send_validation);
         Button validationButton = findViewById(R.id.parent_login_validation);
         Button loginButton = findViewById(R.id.parent_login_login_button);
+        validationCode.setVisibility(View.GONE);
+        validationButton.setVisibility(View.GONE);
 
         sendValidationButton.setOnClickListener(v -> {
             sendValidation(phone);
+            validationButton.setVisibility(View.VISIBLE);
+            validationCode.setVisibility(View.VISIBLE);
         });
 
         validationButton.setOnClickListener(v -> {
