@@ -50,5 +50,14 @@ public class personal_student extends AppCompatActivity {
 
             }
         });
+
+        check_date.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Toast.makeText(getApplicationContext(),"수정 기능 구현 중", Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 }
