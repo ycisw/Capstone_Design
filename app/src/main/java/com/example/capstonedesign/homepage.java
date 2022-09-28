@@ -31,8 +31,8 @@ public class homepage extends AppCompatActivity {
                 startActivity(new Intent(this, Sub2.class)));
 
         //출결관리 링크
-//        attendanceLink.setOnClickListener(v ->
-//                startActivity(new Intent(this, Sub2.class)));
+        attendanceLink.setOnClickListener(v ->
+                startActivity(new Intent(this, attendancecheck.class)));
 
 //        AttendanceService.studentForm(8L, new NetworkLogic<AttendanceStudentResult>(
 //                result -> {
