@@ -3,9 +3,12 @@ package com.example.capstonedesign;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,9 +39,16 @@ public class personal_student extends AppCompatActivity {
         data2.add("출석");
         data2.add("출석");
         data2.add("출석");
-
-
         adapter.notifyDataSetChanged(); //
         adapter2.notifyDataSetChanged();
+
+        check_log.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Toast.makeText(getApplicationContext(),"수정 기능 구현 중", Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 }
