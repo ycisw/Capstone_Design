@@ -30,10 +30,13 @@ public class personal_student extends AppCompatActivity {
         check_date.setAdapter(adapter);
         check_log.setAdapter(adapter2);
 
-        data1.add("2022년 09월 28일 8시 03분");
-        data1.add("2022년 09월 28일 8시 03분");
+        data1.add("2022년 09월 28일 20시 00분");
+        data1.add("2022년 09월 27일 20시 00분");
+        data1.add("2022년 09월 26일 20시 00분");
         data2.add("출석");
         data2.add("출석");
+        data2.add("출석");
+
 
         adapter.notifyDataSetChanged(); //
         adapter2.notifyDataSetChanged();
