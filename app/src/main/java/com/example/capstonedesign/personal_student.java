@@ -21,8 +21,8 @@ public class personal_student extends AppCompatActivity {
 
         ListView check_log =  findViewById(R.id.check_log);
         ListView check_date = findViewById(R.id.check_date);
-        TextView attendace_date = findViewById(R.id.attendace_date);
-        TextView attendace_record = findViewById(R.id.attendace_record);
+        TextView attendace_date = findViewById(R.id.attendace_date); // 출석 날짜
+        TextView attendace_record = findViewById(R.id.attendace_record); // 출석 기록
 
 
         List<String> data1 = new ArrayList<>();

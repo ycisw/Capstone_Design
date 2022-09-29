@@ -2,6 +2,7 @@ package com.example.capstonedesign;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -26,7 +27,7 @@ public class attendancecheck extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendancecheck);
-
+        Button test = findViewById(R.id.test);
         Button goButton = findViewById(R.id.goToTheHome);
         Button checkButton = findViewById(R.id.checkBT);
         TextView textView = findViewById(R.id.textView);
@@ -64,6 +65,10 @@ public class attendancecheck extends AppCompatActivity{
                 Toast.makeText(getApplicationContext(),listItem.get(i).toString(),Toast.LENGTH_SHORT).show();
         }
     });
+        test.setOnClickListener(v ->
+                startActivity(new Intent(this, personal_student.class)));
+
+
         checkButton.setOnClickListener(v->{
             textView.setText("");
             for (String checkedItem : checkSet) {

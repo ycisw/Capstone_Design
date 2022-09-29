@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 public class startPage extends AppCompatActivity {
@@ -13,8 +14,8 @@ public class startPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_page);
 
-        ImageButton parents =findViewById(R.id.parents);
-        ImageButton teacher =findViewById(R.id.teacher);
+        Button parents =findViewById(R.id.parents);
+        Button teacher =findViewById(R.id.teacher);
 
         parents.setOnClickListener(v ->
             startActivity(new Intent(this, ParentLoginActivity.class)));
