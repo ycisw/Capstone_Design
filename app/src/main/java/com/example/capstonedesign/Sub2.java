@@ -42,6 +42,7 @@ public class Sub2 extends AppCompatActivity {
 
         adapter = new ListViewAdapter();
         listView.setAdapter(adapter);
+        adapter.setActivity(this);
 
         student_add.setOnClickListener(v->{
             showSub2Dialog();
