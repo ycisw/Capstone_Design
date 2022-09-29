@@ -54,7 +54,7 @@ public class Sub2 extends AppCompatActivity {
                 result -> {
                     adapter.getListViewItemList().clear();
                     for(StudentParent studentParent : result){
-                        adapter.addItem(studentParent.getStudent().getName(),studentParent.getParent().getName(),studentParent.getParent().getPhone());
+                        adapter.addItem(studentParent.getStudent().getId(),studentParent.getStudent().getName(),studentParent.getParent().getName(),studentParent.getParent().getPhone());
                     }
                     adapter.notifyDataSetChanged();
                 },
@@ -79,7 +79,6 @@ public class Sub2 extends AppCompatActivity {
         });
 
         createStudent.setOnClickListener(v->{
-            adapter.addItem(addName.getText().toString(),addPname.getText().toString(),addPphone.getText().toString());
             StudentService.save(new StudentParent(new Student(0L,addName.getText().toString(),"",0L, LocalDate.now(),0L,0L),new Parent(0L,addPname.getText().toString(),addPphone.getText().toString())),new NetworkLogic<>(
                     none -> {},
                     none -> {}

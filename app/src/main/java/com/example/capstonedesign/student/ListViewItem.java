@@ -2,9 +2,17 @@ package com.example.capstonedesign.student;
 
 
 public class ListViewItem {
+    private Long sid;
     private String name;
     private String pname;
     private String pphone;
+
+    public void setSid(Long sid){
+        this.sid =sid;
+    }
+
+    public Long getSid(){ return sid; }
+
     public void setName(String name){
         this.name =name;
     }
