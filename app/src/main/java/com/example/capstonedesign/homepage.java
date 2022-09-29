@@ -115,5 +115,12 @@ public class homepage extends AppCompatActivity {
 //                },
 //                none -> {}
 //        ));
+
+//        StudentService.withdraw(13L, new NetworkLogic<>(
+//                none -> {
+//                    Toast.makeText(this, "성공", Toast.LENGTH_SHORT).show();
+//                },
+//                none -> {}
+//        ));
     }
 }

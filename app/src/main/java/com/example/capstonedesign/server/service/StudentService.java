@@ -68,4 +68,23 @@ public class StudentService {
             }
         });
     }
+
+    public static void withdraw(Long studentId, NetworkLogic<Void> logic) {
+        SingletonContainer.getStudentApi().withdraw(studentId).enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                if (response.isSuccessful()) {
+                    logic.getSuccessLogic().successLogic(response.body());
+                    return;
+                }
+
+                logic.getFailedLogic().failedLogic(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                logic.getFailedLogic().failedLogic(null);
+            }
+        });
+    }
 }

@@ -26,4 +26,9 @@ public interface StudentApi {
     @Headers({"Accept: application/json;"})
     @POST("/student/profile")
     Call<StudentParent> profile(@Field("studentId") Long studentId);
+
+    @FormUrlEncoded
+    @Headers({"Accept: application/json;"})
+    @POST("/student/withdraw")
+    Call<Void> withdraw(@Field("studentId") Long studentId);
 }
