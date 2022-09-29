@@ -20,6 +20,7 @@ import com.example.capstonedesign.server.service.StudentService;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class homepage extends AppCompatActivity {
@@ -56,6 +57,14 @@ public class homepage extends AppCompatActivity {
 //                none -> {
 //
 //                }
+//        ));
+
+//        List<Long> studentIdList = new ArrayList<>();
+//        studentIdList.add(8L); //김성규
+//        studentIdList.add(12L); //이상원
+//        AttendanceService.attendanceToday(studentIdList, new NetworkLogic<>(
+//                none -> {},
+//                none -> {}
 //        ));
 
         //학생 관리 테스트
