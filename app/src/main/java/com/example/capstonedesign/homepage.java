@@ -67,6 +67,16 @@ public class homepage extends AppCompatActivity {
 //                none -> {}
 //        ));
 
+//        List<Long> studentIdList = new ArrayList<>();
+//        studentIdList.add(8L); //김성규
+//        studentIdList.add(12L); //이상원
+//        AttendanceService.leaveAcademyToday(studentIdList, new NetworkLogic<>(
+//                none -> {},
+//                none -> {}
+//        ));
+
+
+
         //학생 관리 테스트
 //        StudentService.student(new NetworkLogic<List<StudentParent>>(
 //                result -> {

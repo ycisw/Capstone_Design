@@ -60,6 +60,25 @@ public class AttendanceService {
         });
     }
 
+    public static void leaveAcademyToday(List<Long> studentIdList, NetworkLogic<Void> logic) {
+        SingletonContainer.getAttendanceApi().leaveAcademyToday(studentIdList).enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                if (response.isSuccessful()) {
+                    logic.getSuccessLogic().successLogic(null);
+                    return;
+                }
+
+                logic.getFailedLogic().failedLogic(null);
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                logic.getFailedLogic().failedLogic(null);
+            }
+        });
+    }
+
     public static void studentForm(Long studentId, NetworkLogic<AttendanceStudentResult> logic) {
         SingletonContainer.getAttendanceApi().studentForm(studentId).enqueue(new Callback<AttendanceStudentResult>() {
             @Override

@@ -26,6 +26,11 @@ public interface AttendanceApi {
     @POST("/attendance")
     Call<Void> attendanceToday(@Field("studentIdList") List<Long> studentIdList);
 
+    @FormUrlEncoded
+    @Headers({"Accept: application/json;"})
+    @POST("/attendance/leave")
+    Call<Void> leaveAcademyToday(@Field("studentIdList") List<Long> studentIdList);
+
     @Headers({"Accept: application/json;"})
     @GET("/attendance/student")
     Call<AttendanceStudentResult> studentForm(@Query("studentId") Long studentId);
