@@ -17,11 +17,14 @@ import com.example.capstonedesign.server.domain.student.Student;
 import com.example.capstonedesign.server.domain.student.StudentParent;
 import com.example.capstonedesign.server.service.AttendanceService;
 import com.example.capstonedesign.server.service.StudentService;
+import com.example.capstonedesign.server.service.TeacherService;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class homepage extends AppCompatActivity {
 
@@ -96,6 +99,21 @@ public class homepage extends AppCompatActivity {
 //                none -> {
 //                    Toast.makeText(this, "실패", Toast.LENGTH_SHORT).show();
 //                }
+//        ));
+
+//        TeacherService.profile(new NetworkLogic<>(
+//                teacher -> {
+//                    Toast.makeText(this, teacher.getName(), Toast.LENGTH_SHORT).show();
+//                },
+//                none -> {}
+//        ));
+
+//        StudentService.profile(8L, new NetworkLogic<StudentParent>(
+//                studentParent -> {
+//                    String name = studentParent.getStudent().getName();
+//                    Toast.makeText(this, name, Toast.LENGTH_SHORT).show();
+//                },
+//                none -> {}
 //        ));
     }
 }

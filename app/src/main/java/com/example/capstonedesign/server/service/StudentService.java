@@ -49,4 +49,23 @@ public class StudentService {
             }
         });
     }
+
+    public static void profile(Long studentId, NetworkLogic<StudentParent> logic) {
+        SingletonContainer.getStudentApi().profile(studentId).enqueue(new Callback<StudentParent>() {
+            @Override
+            public void onResponse(Call<StudentParent> call, Response<StudentParent> response) {
+                if (response.isSuccessful()) {
+                    logic.getSuccessLogic().successLogic(response.body());
+                    return;
+                }
+
+                logic.getFailedLogic().failedLogic(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<StudentParent> call, Throwable t) {
+                logic.getFailedLogic().failedLogic(null);
+            }
+        });
+    }
 }
