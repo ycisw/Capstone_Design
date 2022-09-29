@@ -12,7 +12,7 @@ public class startPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_page);
-        startActivity(new Intent(startPage.this,Sub2.class));
+//        startActivity(new Intent(startPage.this,Sub2.class));
 
         ImageButton parents =findViewById(R.id.parents);
         ImageButton teacher =findViewById(R.id.teacher);
