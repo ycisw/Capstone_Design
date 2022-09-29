@@ -11,6 +11,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 
 public interface StudentApi {
 
@@ -31,4 +32,8 @@ public interface StudentApi {
     @Headers({"Accept: application/json;"})
     @POST("/student/withdraw")
     Call<Void> withdraw(@Field("studentId") Long studentId);
+
+    @Headers({"Accept: application/json;"})
+    @PUT("/student/profile")
+    Call<Void> update(@Body StudentParent studentParent);
 }

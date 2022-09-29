@@ -122,5 +122,11 @@ public class homepage extends AppCompatActivity {
 //                },
 //                none -> {}
 //        ));
+
+//        StudentService.update(new StudentParent(new Student(8L, "김성규학생", "01090663150", 10000L, LocalDate.now(), -1L, -1L),
+//                new Parent(-1L, "김성규부모", "01090663150")), new NetworkLogic<>(
+//                none -> {},
+//                none -> {}
+//        ));
     }
 }
