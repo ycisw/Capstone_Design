@@ -43,20 +43,23 @@ public class ListViewAdapter extends BaseAdapter {
 
         TextView nameView = (TextView) convertView.findViewById(R.id.name);
         TextView pnameView = (TextView) convertView.findViewById(R.id.pname);
+        TextView pphoneView = (TextView) convertView.findViewById(R.id.pphone);
 
         ListViewItem listViewItem = listViewItemList.get(position);
 
         nameView.setText(listViewItem.getName());
         pnameView.setText(listViewItem.getPname());
+        pphoneView.setText(listViewItem.getPphone());
 
         return convertView;
     }
 
 
-    public void addItem(String name, String pname){
+    public void addItem(String name, String pname, String pphone){
         ListViewItem item = new ListViewItem();
-        item.getName();
-        item.getPname();
+        item.setName(name);
+        item.setPname(pname);
+        item.setPphone(pphone);
         listViewItemList.add(item);
     }
 

@@ -55,6 +55,17 @@
             android:layout_height="50dp"
             android:hint="부모님 이름을 입력해주세요"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="부모님 전화번호"
+            android:textSize="30dp"/>
+        <EditText
+            android:id="@+id/add_pphone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="부모님 전화번호를 입력해주세요"/>
+
         <Button
             android:id="@+id/create_student"
             android:layout_width="match_parent"
