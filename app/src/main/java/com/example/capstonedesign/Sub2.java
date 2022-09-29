@@ -46,6 +46,7 @@ public class Sub2 extends AppCompatActivity {
                     for(StudentParent studentParent : result){
                         adapter.addItem(studentParent.getStudent().getName(),studentParent.getParent().getName(),studentParent.getParent().getPhone());
                     }
+                    adapter.notifyDataSetChanged();
                 },
                 result -> {
 
