@@ -51,6 +51,10 @@ public class TeacherService {
         });
     }
 
+    /**
+     * 현재 로그인한 강사 데이터
+     * @param logic
+     */
     public static void profile(NetworkLogic<Teacher> logic) {
         SingletonContainer.getTeacherApi().profile().enqueue(new Callback<Teacher>() {
             @Override
