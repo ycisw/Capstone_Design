@@ -10,10 +10,13 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
+import com.example.capstonedesign.server.domain.parent.Parent;
+import com.example.capstonedesign.server.domain.student.Student;
 import com.example.capstonedesign.server.domain.student.StudentParent;
 import com.example.capstonedesign.server.service.StudentService;
 import com.example.capstonedesign.student.ListViewAdapter;
 
+import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -69,8 +72,23 @@ public class Sub2 extends AppCompatActivity {
         });
 
         createStudent.setOnClickListener(v->{
-
             adapter.addItem(addName.getText().toString(),addPname.getText().toString(),addPphone.getText().toString());
+            StudentService.save(new StudentParent(new Student(0L,addName.getText().toString(),"",0L, LocalDate.now(),0L,0L),new Parent(0L,addPname.getText().toString(),addPphone.getText().toString())),new NetworkLogic<>(
+                    none -> {},
+                    none -> {}
+            ));
+            StudentService.student(new NetworkLogic<List<StudentParent>>(
+                    result -> {
+                        for(StudentParent studentParent : result){
+                            adapter.addItem(studentParent.getStudent().getName(),studentParent.getParent().getName(),studentParent.getParent().getPhone());
+                        }
+                        adapter.notifyDataSetChanged();
+                    },
+                    result -> {
+
+                    }
+            ));
+
             sub2dialog.dismiss();
         });
     }
