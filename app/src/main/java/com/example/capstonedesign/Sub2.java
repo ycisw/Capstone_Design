@@ -19,6 +19,8 @@ import com.example.capstonedesign.student.ListViewAdapter;
 import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Sub2 extends AppCompatActivity {
     Dialog sub2dialog;
@@ -44,8 +46,13 @@ public class Sub2 extends AppCompatActivity {
         student_add.setOnClickListener(v->{
             showSub2Dialog();
         });
+        updateStudent();
+    }
+
+    private void updateStudent() {
         StudentService.student(new NetworkLogic<List<StudentParent>>(
                 result -> {
+                    adapter.getListViewItemList().clear();
                     for(StudentParent studentParent : result){
                         adapter.addItem(studentParent.getStudent().getName(),studentParent.getParent().getName(),studentParent.getParent().getPhone());
                     }
@@ -77,19 +84,13 @@ public class Sub2 extends AppCompatActivity {
                     none -> {},
                     none -> {}
             ));
-            StudentService.student(new NetworkLogic<List<StudentParent>>(
-                    result -> {
-                        for(StudentParent studentParent : result){
-                            adapter.addItem(studentParent.getStudent().getName(),studentParent.getParent().getName(),studentParent.getParent().getPhone());
-                        }
-                        adapter.notifyDataSetChanged();
-                    },
-                    result -> {
-
-                    }
-            ));
-
             sub2dialog.dismiss();
+            new Timer().schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    updateStudent();
+                }
+            }, 500);
         });
     }
 }

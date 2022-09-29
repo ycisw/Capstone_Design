@@ -16,6 +16,10 @@ public class ListViewAdapter extends BaseAdapter {
 
     public ListViewAdapter(){};
 
+    public ArrayList<ListViewItem> getListViewItemList() {
+        return listViewItemList;
+    }
+
     @Override
     public int getCount() {
         return listViewItemList.size();
