@@ -1,6 +1,8 @@
 package com.example.capstonedesign.student;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,13 +10,19 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.capstonedesign.R;
+import com.example.capstonedesign.StudentProfile;
 
 import java.util.ArrayList;
 
 public class ListViewAdapter extends BaseAdapter {
     private ArrayList<ListViewItem> listViewItemList = new ArrayList<>();
+    private Activity activity;
 
     public ListViewAdapter(){};
+
+    public ArrayList<ListViewItem> getListViewItemList() {
+        return listViewItemList;
+    }
 
     @Override
     public int getCount() {
@@ -43,20 +51,31 @@ public class ListViewAdapter extends BaseAdapter {
 
         TextView nameView = (TextView) convertView.findViewById(R.id.name);
         TextView pnameView = (TextView) convertView.findViewById(R.id.pname);
+        TextView pphoneView = (TextView) convertView.findViewById(R.id.pphone);
 
         ListViewItem listViewItem = listViewItemList.get(position);
-
         nameView.setText(listViewItem.getName());
         pnameView.setText(listViewItem.getPname());
+        pphoneView.setText(listViewItem.getPphone());
 
+        convertView.setOnClickListener(v->{
+            Intent intent = new Intent(activity, StudentProfile.class);
+            intent.putExtra("sid",listViewItem.getSid());
+            activity.startActivity(intent);
+        });
         return convertView;
     }
 
+    public void setActivity(Activity activity){
+        this.activity =activity;
+    }
 
-    public void addItem(String name, String pname){
+    public void addItem(Long sid,String name, String pname, String pphone){
         ListViewItem item = new ListViewItem();
-        item.getName();
-        item.getPname();
+        item.setSid(sid);
+        item.setName(name);
+        item.setPname(pname);
+        item.setPphone(pphone);
         listViewItemList.add(item);
     }
 

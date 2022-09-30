@@ -17,11 +17,14 @@ import com.example.capstonedesign.server.domain.student.Student;
 import com.example.capstonedesign.server.domain.student.StudentParent;
 import com.example.capstonedesign.server.service.AttendanceService;
 import com.example.capstonedesign.server.service.StudentService;
+import com.example.capstonedesign.server.service.TeacherService;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class homepage extends AppCompatActivity {
 
@@ -67,6 +70,16 @@ public class homepage extends AppCompatActivity {
 //                none -> {}
 //        ));
 
+//        List<Long> studentIdList = new ArrayList<>();
+//        studentIdList.add(8L); //김성규
+//        studentIdList.add(12L); //이상원
+//        AttendanceService.leaveAcademyToday(studentIdList, new NetworkLogic<>(
+//                none -> {},
+//                none -> {}
+//        ));
+
+
+
         //학생 관리 테스트
 //        StudentService.student(new NetworkLogic<List<StudentParent>>(
 //                result -> {
@@ -86,6 +99,34 @@ public class homepage extends AppCompatActivity {
 //                none -> {
 //                    Toast.makeText(this, "실패", Toast.LENGTH_SHORT).show();
 //                }
+//        ));
+
+//        TeacherService.profile(new NetworkLogic<>(
+//                teacher -> {
+//                    Toast.makeText(this, teacher.getName(), Toast.LENGTH_SHORT).show();
+//                },
+//                none -> {}
+//        ));
+
+//        StudentService.profile(8L, new NetworkLogic<StudentParent>(
+//                studentParent -> {
+//                    String name = studentParent.getStudent().getName();
+//                    Toast.makeText(this, name, Toast.LENGTH_SHORT).show();
+//                },
+//                none -> {}
+//        ));
+
+//        StudentService.withdraw(13L, new NetworkLogic<>(
+//                none -> {
+//                    Toast.makeText(this, "성공", Toast.LENGTH_SHORT).show();
+//                },
+//                none -> {}
+//        ));
+
+//        StudentService.update(new StudentParent(new Student(8L, "김성규학생", "01090663150", 10000L, LocalDate.now(), -1L, -1L),
+//                new Parent(-1L, "김성규부모", "01090663150")), new NetworkLogic<>(
+//                none -> {},
+//                none -> {}
 //        ));
     }
 }

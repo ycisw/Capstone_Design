@@ -50,4 +50,27 @@ public class TeacherService {
             }
         });
     }
+
+    /**
+     * 현재 로그인한 강사 데이터
+     * @param logic
+     */
+    public static void profile(NetworkLogic<Teacher> logic) {
+        SingletonContainer.getTeacherApi().profile().enqueue(new Callback<Teacher>() {
+            @Override
+            public void onResponse(Call<Teacher> call, Response<Teacher> response) {
+                if (response.isSuccessful()) {
+                    logic.getSuccessLogic().successLogic(response.body());
+                    return;
+                }
+
+                logic.getFailedLogic().failedLogic(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<Teacher> call, Throwable t) {
+                logic.getFailedLogic().failedLogic(null);
+            }
+        });
+    }
 }

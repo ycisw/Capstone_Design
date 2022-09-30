@@ -41,6 +41,11 @@ public class AttendanceService {
         });
     }
 
+    /**
+     * 학생들의 아이디들을 통해 등원 시간을 현재시간으로 등록합니다.
+     * @param studentIdList 현재 시간으로 등원처리할 학생 아이디 리스트
+     * @param logic 성공 실패 로직
+     */
     public static void attendanceToday(List<Long> studentIdList, NetworkLogic<Void> logic) {
         SingletonContainer.getAttendanceApi().attendanceToday(studentIdList).enqueue(new Callback<Void>() {
             @Override
@@ -60,6 +65,35 @@ public class AttendanceService {
         });
     }
 
+    /**
+     * 하원 처리
+     * @param studentIdList 현재 시간으로 하원 처리할 학생
+     * @param logic 성공 실패 로직
+     */
+    public static void leaveAcademyToday(List<Long> studentIdList, NetworkLogic<Void> logic) {
+        SingletonContainer.getAttendanceApi().leaveAcademyToday(studentIdList).enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                if (response.isSuccessful()) {
+                    logic.getSuccessLogic().successLogic(null);
+                    return;
+                }
+
+                logic.getFailedLogic().failedLogic(null);
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                logic.getFailedLogic().failedLogic(null);
+            }
+        });
+    }
+
+    /**
+     * 학생 한명의 출석 기록을 조회
+     * @param studentId 조회할 학생 아이디
+     * @param logic 성공실패 로직
+     */
     public static void studentForm(Long studentId, NetworkLogic<AttendanceStudentResult> logic) {
         SingletonContainer.getAttendanceApi().studentForm(studentId).enqueue(new Callback<AttendanceStudentResult>() {
             @Override
@@ -78,6 +112,11 @@ public class AttendanceService {
         });
     }
 
+    /**
+     * 학생의 출석기록 수정
+     * @param attendance 수정할 출석정보
+     * @param logic 성공 실패 로직
+     */
     public static void studentUpdate(Attendance attendance, NetworkLogic<Void> logic) {
         HashMap<String, Object> keyValueMap = new HashMap<>();
         keyValueMap.put("id", attendance.getId());

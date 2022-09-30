@@ -9,11 +9,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.example.capstonedesign.server.domain.network.NetworkLogic;
+import com.example.capstonedesign.server.domain.parent.Parent;
+import com.example.capstonedesign.server.domain.student.Student;
 import com.example.capstonedesign.server.domain.student.StudentParent;
+import com.example.capstonedesign.server.service.StudentService;
 import com.example.capstonedesign.student.ListViewAdapter;
 
+import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Sub2 extends AppCompatActivity {
     Dialog sub2dialog;
@@ -35,12 +42,27 @@ public class Sub2 extends AppCompatActivity {
 
         adapter = new ListViewAdapter();
         listView.setAdapter(adapter);
+        adapter.setActivity(this);
 
         student_add.setOnClickListener(v->{
             showSub2Dialog();
         });
-        adapter.addItem("이름1","이름1");
-        adapter.addItem("이름2","이름2");
+        updateStudent();
+    }
+
+    private void updateStudent() {
+        StudentService.student(new NetworkLogic<List<StudentParent>>(
+                result -> {
+                    adapter.getListViewItemList().clear();
+                    for(StudentParent studentParent : result){
+                        adapter.addItem(studentParent.getStudent().getId(),studentParent.getStudent().getName(),studentParent.getParent().getName(),studentParent.getParent().getPhone());
+                    }
+                    adapter.notifyDataSetChanged();
+                },
+                result -> {
+
+                }
+        ));
     }
 
     //커스텀 다이얼로그
@@ -50,6 +72,7 @@ public class Sub2 extends AppCompatActivity {
         Button noBtn = sub2dialog.findViewById(R.id.noBtn);
         EditText addName = sub2dialog.findViewById(R.id.add_name);
         EditText addPname = sub2dialog.findViewById(R.id.add_pname);
+        EditText addPphone = sub2dialog.findViewById(R.id.add_pphone);
         Button createStudent = sub2dialog.findViewById(R.id.create_student);
 
         noBtn.setOnClickListener(v->{
@@ -57,8 +80,17 @@ public class Sub2 extends AppCompatActivity {
         });
 
         createStudent.setOnClickListener(v->{
-            adapter.addItem(addName.getText().toString(),addPname.getText().toString());
+            StudentService.save(new StudentParent(new Student(0L,addName.getText().toString(),"",0L, LocalDate.now(),0L,0L),new Parent(0L,addPname.getText().toString(),addPphone.getText().toString())),new NetworkLogic<>(
+                    none -> {},
+                    none -> {}
+            ));
             sub2dialog.dismiss();
+            new Timer().schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    updateStudent();
+                }
+            }, 500);
         });
     }
 }
