@@ -1,7 +1,6 @@
 package com.example.capstonedesign;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -12,6 +11,8 @@ import com.example.capstonedesign.server.domain.attendance.AttendanceStudentResu
 import com.example.capstonedesign.server.domain.login.LoginForm;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.service.LoginService;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -23,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText id = findViewById(R.id.name);
-        EditText pw = findViewById(R.id.password);
+        TextInputEditText id = findViewById(R.id.name);
+        TextInputEditText pw = findViewById(R.id.password);
         Button loginButton = findViewById(R.id.login);
         Button registerButton = findViewById(R.id.register);
 
