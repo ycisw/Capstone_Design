@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:textSize="30dp"
-                android:text="학생정보 관리 페이지"/>
+                android:text="학생 관리     "/>
 
             <Button
                 android:id="@+id/student_add"
@@ -30,6 +30,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:text="학생 추가" />
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="뒤로 가기"
+                android:id="@+id/back1"/>
         </LinearLayout>
 
 

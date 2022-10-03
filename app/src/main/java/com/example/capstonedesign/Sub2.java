@@ -38,11 +38,16 @@ public class Sub2 extends AppCompatActivity {
         sub2dialog.setContentView(R.layout.activity_sub2_dialog);
 
         Button student_add = findViewById(R.id.student_add);
+        Button back = findViewById(R.id.back1);
         ListView listView = findViewById(R.id.listView1);
 
         adapter = new ListViewAdapter();
         listView.setAdapter(adapter);
         adapter.setActivity(this);
+
+        back.setOnClickListener(v->{
+            finish();
+        });
 
         student_add.setOnClickListener(v->{
             showSub2Dialog();
