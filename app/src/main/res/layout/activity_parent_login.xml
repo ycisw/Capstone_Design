@@ -5,61 +5,92 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/back"
+    android:background="#FFFFFFFF"
     tools:context=".ParentLoginActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="400dp"/>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="350dp"
+        android:background="#FFFFFFFF"
+        android:gravity="bottom"
+        android:orientation="vertical">
 
+        <ImageView
 
-
-        <EditText
-            android:id="@+id/parent_login_phone"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:hint="핸드폰 번호를 입력해주세요"/>
-        <Button
-            android:id="@+id/parent_login_send_validation"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:textColor="@color/black"
-            android:layout_marginTop="10dp"
-            android:text="인증번호\n요청"
-            android:backgroundTint="#94DD97"
-            android:textSize="15sp" />
+            android:layout_width="350dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:src="@drawable/parent" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="55dp"
+            android:src="@drawable/select_stu_text" />
+    </LinearLayout>
+
+    <LinearLayout
         android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
-        <EditText
-            android:id="@+id/parent_login_validation_code"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:hint="인증번호를 입력해주세요."/>
+        >
+        <com.google.android.material.textfield.TextInputLayout
 
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:hint="핸드폰 번호를 입력해주세요"
+            android:textColorHint="#3F51B5">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/parent_login_phone"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
+        <Button
+
+            android:id="@+id/parent_login_send_validation"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:text="인증번호 요청"
+            android:backgroundTint="#9148C8"
+            android:textSize="15sp">
+        </Button>
+    </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:textColorHint="#3F51B5"
+            android:hint="인증번호를 입력해주세요.">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/parent_login_validation_code"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/parent_login_validation"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
             android:text="인증번호 확인"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/black"
-            android:backgroundTint="#94DD97"
-            android:textSize="15sp"/>
-
+            android:textColor="@color/white"
+            android:backgroundTint="#9148C8"
+            android:textSize="15sp"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -69,12 +100,24 @@
         android:gravity="center"
         android:orientation="horizontal">
 
+
         <Button
+
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/login"
+            android:layout_marginTop="5dp"
+            android:textSize="17dp"
+            android:textAlignment="center"
+            android:backgroundTint="#9148C8"
             android:id="@+id/parent_login_login_button"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:textColor="@color/black"
-            android:background="#00ff0000" />
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:paddingRight="50dp"
+            android:text="@string/start_select"
+            android:textColor="@color/white"
+            />
+
+
     </LinearLayout>
+
 </LinearLayout>
