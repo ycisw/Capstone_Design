@@ -18,6 +18,7 @@ import com.example.capstonedesign.server.service.AttendanceService;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 
 public class attendancecheck extends AppCompatActivity{
@@ -26,7 +27,7 @@ public class attendancecheck extends AppCompatActivity{
     ArrayList<String> listItem;
     ArrayList<String> listItem2;
     List<StudentParent> listItem3;
-    HashSet<String> checkSet;
+    HashSet<StudentParent> checkSet;
     String textV;
 
     @Override
@@ -62,7 +63,7 @@ public class attendancecheck extends AppCompatActivity{
                     checkSet.remove(listItem.get(i));
                     return;
                 }
-                checkSet.add(listItem.get(i));
+                checkSet.add(listItem3.get(i));
             }
         });
 
@@ -76,17 +77,25 @@ public class attendancecheck extends AppCompatActivity{
         });
 
         checkButton.setOnClickListener(v->{
-            textView.setText("");
-            for (String checkedItem : checkSet) {
-                textView.append(checkedItem);
+            List<Long> studentIdList = new LinkedList<>();
+            for (StudentParent checked : checkSet) {
+                studentIdList.add(checked.getStudent().getId());
             }
+            AttendanceService.attendanceToday(studentIdList, new NetworkLogic<>(
+                    none -> {},
+                    none -> {}
+            ));
         });
 
         goButton.setOnClickListener(v->{
-            textView1.setText("");
-            for (String checkedItem : checkSet) {
-                textView1.append(checkedItem);
+            List<Long> studentIdList = new LinkedList<>();
+            for (StudentParent checked : checkSet) {
+                studentIdList.add(checked.getStudent().getId());
             }
+            AttendanceService.leaveAcademyToday(studentIdList, new NetworkLogic<>(
+                    none -> {},
+                    none -> {}
+            ));
         });
 
         AttendanceService.studentParentForAttendances(new NetworkLogic<List<StudentParent>>(
