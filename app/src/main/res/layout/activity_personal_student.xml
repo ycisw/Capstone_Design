@@ -8,24 +8,24 @@
     android:backgroundTint="#E7EFDE"
     android:orientation="vertical"
     tools:context=".personal_student">
+
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <TextView
-            android:layout_marginRight="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="학생 이름"
-            android:textSize="25dp" />
 
         <TextView
-            android:gravity="right"
-            android:layout_marginLeft="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="학생 출석 정보 관리 "
+            android:layout_marginRight="10dp"
+            android:text="학생 이름 : "
             android:textSize="25dp" />
+        <TextView
+            android:textSize="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/student_name"/>
+
 
     </LinearLayout>
 
@@ -59,6 +59,9 @@
     </LinearLayout>
 
 
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -68,13 +71,13 @@
             <ListView
                 android:id="@+id/check_date"
                 android:layout_width="210dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="600dp" />
 
             <ListView
                 android:id="@+id/check_log"
                 android:layout_width="210dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="600dp" />
         </LinearLayout>
-
+    </ScrollView>
 
 </LinearLayout>

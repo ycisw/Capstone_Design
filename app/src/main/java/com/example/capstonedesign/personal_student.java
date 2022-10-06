@@ -25,10 +25,10 @@ public class personal_student extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_student);
-
+        String name = null;
         Intent intent = getIntent();
         Long studentId = intent.getLongExtra("studentId", 0L); //만약 값이 없으면 0L 값이 들어감
-
+        TextView  student_name = findViewById(R.id.student_name);
         ListView check_log =  findViewById(R.id.check_log);
         ListView check_date = findViewById(R.id.check_date);
         TextView attendace_date = findViewById(R.id.attendace_date); // 출석 날짜
@@ -43,15 +43,7 @@ public class personal_student extends AppCompatActivity {
         // 데이터를 담은 어댑터 생성
         check_date.setAdapter(adapter);
         check_log.setAdapter(adapter2);
-//
-//        data1.add("2022년 09월 28일 20시 00분");
-//        data1.add("2022년 09월 27일 20시 00분");
-//        data1.add("2022년 09월 26일 20시 00분");
-//        data2.add("출석");
-//        data2.add("출석");
-//        data2.add("출석");
-//        adapter.notifyDataSetChanged(); //
-//        adapter2.notifyDataSetChanged();
+
 
         check_log.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -73,17 +65,19 @@ public class personal_student extends AppCompatActivity {
 
         AttendanceService.studentForm(studentId, new NetworkLogic<AttendanceStudentResult>(
                 result -> {
+                    student_name.setText(result.getStudent().getName()); // 학생 이름 추출
                     List<Attendance> attendances = result.getAttendances();
+
                     for (Attendance attendance : attendances) {
-                        LocalDateTime inTime = attendance.getInTime();
-                        if (inTime == null) {
+                        LocalDateTime inTime = attendance.getInTime(); // 학생 개인별 출석 기록 추출
+                        if (inTime == null) { // 출석 기록이 null이면 결석 처리
                             data1.add("등원하지 않았음");
                             data2.add("결석");
                             continue;
                         }
                         data1.add(inTime.getYear() + "년 " + inTime.getMonthValue() + "월 " + inTime.getDayOfMonth() + "일 "
-                                + inTime.getHour() + "시 " + inTime.getMinute() + "분");
-                        data2.add("출석");
+                                + inTime.getHour() + "시 " + inTime.getMinute() + "분"); // 학생 개인별 출석 날짜 추출
+                        data2.add("출석"); // 출석 처리
                     }
 
                     refresh(adapter, adapter2);
