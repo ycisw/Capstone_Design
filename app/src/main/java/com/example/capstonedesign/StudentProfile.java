@@ -32,11 +32,16 @@ public class StudentProfile extends AppCompatActivity {
         //학생정보 출력
         long sid = getIntent().getLongExtra("sid",0);
         TextView sname = findViewById(R.id.sname);
+        StudentParent student1 = new StudentParent();
 
         StudentService.profile(sid, new NetworkLogic<StudentParent>(
                 studentParent -> {
                     String name = studentParent.getStudent().getName();
-                    sname.setText(name);
+                    student1.setStudent(studentParent.getStudent());
+                    student1.setParent(studentParent.getParent());
+
+                    sname.setText(student1.getStudent().getName());
+
                     Toast.makeText(this, name, Toast.LENGTH_SHORT).show();
                 },
                 none -> {}
