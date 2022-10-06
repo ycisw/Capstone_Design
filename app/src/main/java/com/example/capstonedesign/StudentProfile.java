@@ -79,6 +79,7 @@ public class StudentProfile extends AppCompatActivity {
                 none -> {},
                 none -> {}
         ));
+            dialog.dismiss();
         });
 
         back.setOnClickListener(v->{
