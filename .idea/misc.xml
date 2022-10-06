@@ -3,6 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.122" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/button_round.xml" value="0.122" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/ic_launcher_background.xml" value="0.122" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/ic_menu_camera.xml" value="0.122" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/login_button.xml" value="0.122" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/login_text_from.xml" value="0.172" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/person2.xml" value="0.122" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/register_btn.xml" value="0.122" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/side_nav_bar.xml" value="0.24" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/start_page_btn.xml" value="0.193" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/activity_attendancecheck.xml" value="0.2" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/activity_homepage.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/activity_main.xml" value="0.2982456140350877" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/activity_parent_login.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/activity_personal_student.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/activity_register.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/activity_start_page.xml" value="0.33" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/activity_student_profile.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/activity_sub2.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/activity_sub2_dialog.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/list_view_item.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/startpage_button.xml" value="0.270703125" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/menu/activity_main_drawer.xml" value="0.18489583333333334" />
         <entry key="..\:/Users/swsw5/AndroidStudioProjects/CapstoneDesign/app/src/main/res/layout/activity_homepage.xml" value="0.22146739130434784" />
         <entry key="..\:/Users/swsw5/AndroidStudioProjects/CapstoneDesign/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/swsw5/AndroidStudioProjects/CapstoneDesign/app/src/main/res/layout/activity_main2.xml" value="0.4" />
