@@ -13,8 +13,7 @@
         android:id="@+id/sname"
         android:gravity="center"
         android:text="학생이름"
-        android:textSize="30dp"
-        />
+        android:textSize="30dp"/>
 
     <Button
         android:layout_width="match_parent"

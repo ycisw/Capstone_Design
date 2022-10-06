@@ -120,7 +120,6 @@ public class StudentService {
      * @param logic
      */
     public static void update(StudentParent studentParent, NetworkLogic<Void> logic) {
-        studentParent.getStudent().setId(-1L);
         studentParent.getStudent().setParentId(-1L);
         studentParent.getStudent().setRegDate(LocalDate.now());
         studentParent.getStudent().setTeacherLesson(-1L);

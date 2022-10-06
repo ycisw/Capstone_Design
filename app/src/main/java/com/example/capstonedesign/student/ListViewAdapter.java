@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.capstonedesign.R;
 import com.example.capstonedesign.StudentProfile;
+import com.example.capstonedesign.server.service.StudentService;
 
 import java.util.ArrayList;
 
@@ -57,10 +58,11 @@ public class ListViewAdapter extends BaseAdapter {
         nameView.setText(listViewItem.getName());
         pnameView.setText(listViewItem.getPname());
         pphoneView.setText(listViewItem.getPphone());
+        long sid = listViewItem.getSid();
 
         convertView.setOnClickListener(v->{
             Intent intent = new Intent(activity, StudentProfile.class);
-            intent.putExtra("name",listViewItem.getName());
+            intent.putExtra("sid",sid);
             activity.startActivity(intent);
         });
         return convertView;
