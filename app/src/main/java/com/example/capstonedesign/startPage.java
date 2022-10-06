@@ -15,6 +15,7 @@ public class startPage extends AppCompatActivity {
         setContentView(R.layout.activity_start_page);
         Button parents =findViewById(R.id.parents);
         Button teacher =findViewById(R.id.teacher);
+        startActivity(new Intent(this,StudentProfile.class));
 
         parents.setOnClickListener(v ->
             startActivity(new Intent(this, ParentLoginActivity.class)));

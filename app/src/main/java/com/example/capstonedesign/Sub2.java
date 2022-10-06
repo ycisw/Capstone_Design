@@ -74,13 +74,13 @@ public class Sub2 extends AppCompatActivity {
    public void showSub2Dialog(){
         sub2dialog.show();
 
-        Button noBtn = sub2dialog.findViewById(R.id.noBtn);
+        Button back = sub2dialog.findViewById(R.id.back3);
         EditText addName = sub2dialog.findViewById(R.id.add_name);
         EditText addPname = sub2dialog.findViewById(R.id.add_pname);
         EditText addPphone = sub2dialog.findViewById(R.id.add_pphone);
         Button createStudent = sub2dialog.findViewById(R.id.create_student);
 
-        noBtn.setOnClickListener(v->{
+        back.setOnClickListener(v->{
             sub2dialog.dismiss();
         });
 

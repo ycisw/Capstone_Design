@@ -60,7 +60,7 @@ public class ListViewAdapter extends BaseAdapter {
 
         convertView.setOnClickListener(v->{
             Intent intent = new Intent(activity, StudentProfile.class);
-            intent.putExtra("name",listViewItem.getName());
+            intent.putExtra("position",pos);
             activity.startActivity(intent);
         });
         return convertView;
