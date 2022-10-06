@@ -20,7 +20,19 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.CapstoneDesign.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="EditText" parent="Widget.Design.TextInputLayout"> // important : parent 를 이것으로.
 
+        <item name="colorControlNormal">#9148C8</item>  // unFocus 상태일때 밑줄 색.
+        <item name="boxStrokeColor">#E696FF</item> // Focus 상태일때 밑줄 색.
+        <item name="android:textCursorDrawable">@color/black</item>  // cursor 색.
+
+        <item name="android:textColorHint">@color/theme1</item>  // hint 색
+        <item name="hintTextColor">@color/theme1</item>   // floating hint 색
+
+    </style>
+
+
+
+    <style name="Theme.CapstoneDesign.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.CapstoneDesign.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

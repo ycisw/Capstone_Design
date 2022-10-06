@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.capstonedesign.server.domain.attendance.AttendanceStudentResult;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         TextInputEditText pw = findViewById(R.id.password);
         Button loginButton = findViewById(R.id.login);
         Button registerButton = findViewById(R.id.register);
+        ImageButton back = findViewById(R.id.back);
 
         //로그인 버튼 클릭시
         loginButton.setOnClickListener(v -> {
@@ -38,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
         //회원 가입버튼 클릭시 회원가입 화면으로 이동
         registerButton.setOnClickListener(v ->
                 startActivity(new Intent(this, RegisterActivity.class)));
+
+        //뒤로가기 버튼
+        back.setOnClickListener(v->{
+            finish();
+        });
     }
 
     /**

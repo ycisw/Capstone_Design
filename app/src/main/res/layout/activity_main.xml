@@ -15,6 +15,15 @@
         android:gravity="bottom"
         android:orientation="vertical">
 
+        <ImageButton
+            android:id="@+id/back"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="10dp"
+            android:layout_width="40dp"
+            android:background="@android:color/transparent"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_baseline_arrow_t2" />
+
         <ImageView
 
             android:layout_width="350dp"
@@ -62,7 +71,7 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:textColorHint="#3F51B5"
-            android:hint="학생 전화번호">
+            android:hint="비밀번호">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password"
                 android:layout_width="300dp"
@@ -72,7 +81,7 @@
         <Button
 
             android:layout_gravity="center"
-            android:drawableLeft="@drawable/login"
+
             android:layout_marginTop="5dp"
             android:textSize="17dp"
             android:textAlignment="center"
@@ -80,7 +89,7 @@
             android:id="@+id/login"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:paddingRight="50dp"
+
             android:text="Login"
             android:textColor="@color/white"
             />

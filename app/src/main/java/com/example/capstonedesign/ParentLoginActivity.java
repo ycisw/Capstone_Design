@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
@@ -29,6 +30,7 @@ public class ParentLoginActivity extends AppCompatActivity {
         Button sendValidationButton = findViewById(R.id.parent_login_send_validation);
         Button validationButton = findViewById(R.id.parent_login_validation);
         Button loginButton = findViewById(R.id.parent_login_login_button);
+        ImageButton back = findViewById(R.id.back);
         validationCode.setVisibility(View.GONE);
         validationButton.setVisibility(View.GONE);
 
@@ -45,6 +47,11 @@ public class ParentLoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(v -> {
             ParentLoginForm loginForm = new ParentLoginForm(phone.getText().toString());
             parentLogin(loginForm);
+        });
+
+        //뒤로가기 버튼
+        back.setOnClickListener(v ->{
+            finish();
         });
     }
 
