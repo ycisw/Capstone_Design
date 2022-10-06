@@ -73,6 +73,10 @@ public class StudentProfile extends AppCompatActivity {
         EditText update_pname = dialog.findViewById(R.id.update_pname);
         EditText update_pphone = dialog.findViewById(R.id.update_pphone);
 
+        update_name.setText(student1.getStudent().getName());
+        update_pname.setText(student1.getParent().getName());
+        update_pphone.setText(student1.getParent().getPhone());
+
         update_student.setOnClickListener(v->{
             StudentService.update(new StudentParent(new Student(student1.getStudent().getId(), update_name.getText().toString(), "01090663150", 10000L, LocalDate.now(), -1L, -1L),
                 new Parent(-1L, update_pname.getText().toString(), update_pphone.getText().toString())), new NetworkLogic<>(
