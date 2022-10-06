@@ -23,7 +23,7 @@ import java.util.List;
 
 public class StudentProfile extends AppCompatActivity {
     Dialog dialog;
-    StudentParent student1;
+    StudentParent student1 = new StudentParent();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,6 @@ public class StudentProfile extends AppCompatActivity {
         //학생정보 출력
         long sid = getIntent().getLongExtra("sid",0);
         TextView sname = findViewById(R.id.sname);
-        student1 = new StudentParent();
 
         StudentService.profile(sid, new NetworkLogic<StudentParent>(
                 studentParent -> {
