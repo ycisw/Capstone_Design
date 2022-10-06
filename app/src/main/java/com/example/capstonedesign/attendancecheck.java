@@ -12,14 +12,20 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.capstonedesign.server.domain.network.NetworkLogic;
+import com.example.capstonedesign.server.domain.student.StudentParent;
+import com.example.capstonedesign.server.service.AttendanceService;
+
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 public class attendancecheck extends AppCompatActivity{
     ArrayAdapter<String> adapter1;
     ArrayAdapter<String> adapter2;
     ArrayList<String> listItem;
     ArrayList<String> listItem2;
+    List<StudentParent> listItem3;
     HashSet<String> checkSet;
     String textV;
 
@@ -35,11 +41,10 @@ public class attendancecheck extends AppCompatActivity{
 
         listItem = new ArrayList<String>();
         listItem2 = new ArrayList<String>();
+        listItem3 = new ArrayList<>();
+
         checkSet = new HashSet<>();
-        add("홍길동");
-        add("이순신");
-        add("강감찬");
-        add("조자룡");
+
         adapter1 = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,listItem);
         adapter2 = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_multiple_choice,listItem2);
         ListView listView1 = findViewById(R.id.listView1);
@@ -47,6 +52,7 @@ public class attendancecheck extends AppCompatActivity{
         ListView listView2 = findViewById(R.id.listView2);
         listView2.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         listView2.setAdapter(adapter2);
+
         listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             // 콜백매개변수는 순서대로 어댑터뷰, 해당 아이템의 뷰, 클릭한 순번, 항목의 아이디
 
@@ -59,15 +65,15 @@ public class attendancecheck extends AppCompatActivity{
                 checkSet.add(listItem.get(i));
             }
         });
+
         listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getApplicationContext(),listItem.get(i).toString(),Toast.LENGTH_SHORT).show();
-        }
-    });
-        test.setOnClickListener(v ->
-                startActivity(new Intent(this, personal_student.class)));
-
+                Intent intent = new Intent(attendancecheck.this, personal_student.class);
+                intent.putExtra("studentId", listItem3.get(i).getStudent().getId());
+                startActivity(intent);
+            }
+        });
 
         checkButton.setOnClickListener(v->{
             textView.setText("");
@@ -82,11 +88,28 @@ public class attendancecheck extends AppCompatActivity{
                 textView1.append(checkedItem);
             }
         });
+
+        AttendanceService.studentParentForAttendances(new NetworkLogic<List<StudentParent>>(
+                result -> {
+                    //성공
+                    for (StudentParent studentParent : result) {
+                        add(studentParent);
+                    }
+                    refresh();
+                },
+                result -> {}
+        ));
     }
 
-    private void add(String student) {
-        listItem.add(student);
-        listItem2.add("");
+    private void refresh() {
+        adapter1.notifyDataSetChanged();
+        adapter2.notifyDataSetChanged();
+    }
+
+    private void add(StudentParent studentParent) {
+        listItem3.add(studentParent); //실제 데이터
+        listItem.add(studentParent.getStudent().getName()); //학생 이름 출력 하는 부분
+        listItem2.add(""); //체크박스 옆에 텍스트 없애기
     }
 
 }
