@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.domain.student.StudentParent;
@@ -17,22 +18,32 @@ import com.example.capstonedesign.student.ListViewItem;
 import java.util.List;
 
 public class StudentProfile extends AppCompatActivity {
-    private ListViewAdapter adapter = new ListViewAdapter();
-    private ListViewItem listViewItem;
     Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_profile);
-
-        int pos = getIntent().getIntExtra("position",0);
+        //다이얼로그
         dialog = new Dialog(StudentProfile.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.activity_student_profile_dialog);
 
-        TextView sname = (TextView) findViewById(R.id.sname);
-//        sname.setText(listViewItem.getName());
+        //학생정보 출력
+        long sid = getIntent().getLongExtra("sid",0);
+        TextView sname = findViewById(R.id.sname);
+
+        StudentService.profile(sid, new NetworkLogic<StudentParent>(
+                studentParent -> {
+                    String name = studentParent.getStudent().getName();
+                    sname.setText(name);
+                    Toast.makeText(this, name, Toast.LENGTH_SHORT).show();
+                },
+                none -> {}
+        ));
+
+
+
         Button back = (Button) findViewById(R.id.back2);
         Button student_update = (Button) findViewById(R.id.student_update);
 
