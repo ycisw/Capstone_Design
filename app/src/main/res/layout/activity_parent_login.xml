@@ -14,12 +14,24 @@
         android:gravity="bottom"
         android:orientation="vertical">
 
+        <ImageButton
+            android:id="@+id/back"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="10dp"
+            android:layout_width="40dp"
+            android:background="@android:color/transparent"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_baseline_arrow_t1" />
+
+
         <ImageView
 
             android:layout_width="350dp"
             android:layout_height="300dp"
             android:layout_gravity="center"
-            android:src="@drawable/parent" />
+            android:src="@drawable/parent_login_img1" />
+
+
     </LinearLayout>
 
     <LinearLayout
@@ -31,8 +43,8 @@
             android:layout_width="130dp"
             android:layout_height="40dp"
             android:layout_gravity="left"
-            android:layout_marginLeft="55dp"
-            android:src="@drawable/select_stu_text" />
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/parent_login_header" />
     </LinearLayout>
 
     <LinearLayout
@@ -51,6 +63,7 @@
                 android:id="@+id/parent_login_phone"
                 android:layout_width="260dp"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#9148C8"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -69,7 +82,10 @@
         <LinearLayout
             android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:theme="@style/EditText"
+
+            >
         <com.google.android.material.textfield.TextInputLayout
 
             android:layout_width="260dp"
@@ -79,7 +95,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/parent_login_validation_code"
                 android:layout_width="260dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:backgroundTint="#9148C8"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -103,8 +120,8 @@
 
         <Button
 
-            android:layout_gravity="center"
-            android:drawableLeft="@drawable/login"
+
+
             android:layout_marginTop="5dp"
             android:textSize="17dp"
             android:textAlignment="center"
@@ -112,7 +129,7 @@
             android:id="@+id/parent_login_login_button"
             android:layout_width="260dp"
             android:layout_height="50dp"
-            android:paddingRight="50dp"
+
             android:text="@string/start_select"
             android:textColor="@color/white"
             />

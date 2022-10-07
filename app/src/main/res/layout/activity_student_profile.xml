@@ -6,36 +6,25 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".StudentProfile">
-    <LinearLayout
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="학생 이름 :"
-            android:textSize="30dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/sname"
-            android:gravity="center"
-            android:text=""
-            android:textSize="30dp"/>
+        android:id="@+id/student_name"
+        android:gravity="center"
+        android:text="학생이름"
+        android:textSize="30dp"/>
 
-    </LinearLayout>
-
-
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/student_update"
-        android:text="학생 정보 수정하기" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/back2"
         android:text="뒤로가기" />
+
+<Button
+    android:text="update"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/student_update" />
 
 </LinearLayout>
