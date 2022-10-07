@@ -21,12 +21,12 @@
         <ImageView
             android:layout_width="300dp"
             android:layout_height="200dp"
-            android:src="@drawable/start_page"
+            android:src="@drawable/start_page_img1"
             android:layout_gravity="center"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/header"
+            android:src="@drawable/start_page_img2"
             android:layout_gravity="center"/>
     </LinearLayout>
 
@@ -78,7 +78,7 @@
             android:layout_gravity="bottom"
             android:layout_width="150dp"
             android:layout_height="30dp"
-            android:src="@drawable/team" />
+            android:src="@drawable/start_page_img3" />
     </LinearLayout>
 
 

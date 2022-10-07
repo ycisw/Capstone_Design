@@ -29,7 +29,9 @@
             android:layout_width="350dp"
             android:layout_height="300dp"
             android:layout_gravity="center"
-            android:src="@drawable/parent" />
+            android:src="@drawable/parent_login_img1" />
+
+
     </LinearLayout>
 
     <LinearLayout
@@ -41,8 +43,8 @@
             android:layout_width="130dp"
             android:layout_height="40dp"
             android:layout_gravity="left"
-            android:layout_marginLeft="55dp"
-            android:src="@drawable/select_stu_text" />
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/parent_login_header" />
     </LinearLayout>
 
     <LinearLayout
