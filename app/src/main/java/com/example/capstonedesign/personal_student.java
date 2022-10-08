@@ -77,7 +77,7 @@ public class personal_student extends AppCompatActivity {
                         }
                         data1.add(inTime.getYear() + "년 " + inTime.getMonthValue() + "월 " + inTime.getDayOfMonth() + "일 "
                                 + inTime.getHour() + "시 " + inTime.getMinute() + "분"); // 학생 개인별 출석 날짜 추출
-                        data2.add("출석"); // 출석 처리
+                        data2.add("출석"); // 출석처리
                     }
 
                     refresh(adapter, adapter2);

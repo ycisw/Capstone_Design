@@ -34,7 +34,6 @@ public class attendancecheck extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendancecheck);
-        Button test = findViewById(R.id.test);
         Button goButton = findViewById(R.id.goToTheHome);
         Button checkButton = findViewById(R.id.checkBT);
         TextView textView = findViewById(R.id.textView);
