@@ -28,7 +28,7 @@
             android:layout_gravity="center"
             android:layout_width="300dp"
             android:layout_height="2pt"
-            android:background="@color/theme1" />
+            android:background="#002060" />
 
 
 
@@ -114,7 +114,7 @@
             android:layout_gravity="center"
             android:layout_width="300dp"
             android:layout_height="2pt"
-            android:background="@color/theme1" />
+            android:background="#002060" />
 
 
     </LinearLayout>

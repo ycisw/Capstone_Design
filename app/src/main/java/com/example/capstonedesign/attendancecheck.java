@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,9 +37,7 @@ public class attendancecheck extends AppCompatActivity{
         setContentView(R.layout.activity_attendancecheck);
         Button goButton = findViewById(R.id.goToTheHome);
         Button checkButton = findViewById(R.id.checkBT);
-        TextView textView = findViewById(R.id.textView);
-        TextView textView1 = findViewById(R.id.textView1);
-
+        ImageButton back_btn = findViewById(R.id.back_btn);
         listItem = new ArrayList<String>();
         listItem2 = new ArrayList<String>();
         listItem3 = new ArrayList<>();
@@ -65,7 +64,12 @@ public class attendancecheck extends AppCompatActivity{
                 checkSet.add(listItem3.get(i));
             }
         });
-
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

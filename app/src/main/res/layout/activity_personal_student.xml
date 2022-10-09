@@ -53,7 +53,7 @@
 
         <TextView
             android:layout_gravity="left"
-            android:textColor="@color/black"
+            android:textColor="#002060"
             android:id="@+id/attendace_date"
             android:layout_width="63dp"
             android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
             android:layout_width="121dp"
             android:layout_height="wrap_content"
             android:text="출석 기록"
-            android:textColor="@color/black"
+            android:textColor="#002060"
             android:textSize="25dp"
             android:textStyle="bold" />
 
@@ -95,6 +95,7 @@
                 android:layout_height="380dp" />
 
             <ListView
+
                 android:id="@+id/check_log"
                 android:layout_width="150dp"
                 android:layout_height="380dp" />
