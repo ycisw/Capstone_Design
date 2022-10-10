@@ -3,6 +3,7 @@ package com.example.capstonedesign;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.widget.Button;
@@ -46,7 +47,7 @@ public class Sub2 extends AppCompatActivity {
         adapter.setActivity(this);
 
         back.setOnClickListener(v->{
-            finish();
+            startActivity(new Intent(this,homepage.class));
         });
 
         student_add.setOnClickListener(v->{
@@ -75,21 +76,24 @@ public class Sub2 extends AppCompatActivity {
         sub2dialog.show();
 
         Button back = sub2dialog.findViewById(R.id.back3);
-        EditText addName = sub2dialog.findViewById(R.id.add_name);
+        EditText addSname = sub2dialog.findViewById(R.id.add_sname);
+        EditText addSphone = sub2dialog.findViewById(R.id.add_sphone);
+        EditText addTuition = sub2dialog.findViewById(R.id.add_tuition);
+
         EditText addPname = sub2dialog.findViewById(R.id.add_pname);
         EditText addPphone = sub2dialog.findViewById(R.id.add_pphone);
         Button createStudent = sub2dialog.findViewById(R.id.create_student);
 
         back.setOnClickListener(v->{
-            sub2dialog.dismiss();
+            startActivity(new Intent(this,Sub2.class));
         });
 
         createStudent.setOnClickListener(v->{
-            StudentService.save(new StudentParent(new Student(0L,addName.getText().toString(),"",0L, LocalDate.now(),0L,0L),new Parent(0L,addPname.getText().toString(),addPphone.getText().toString())),new NetworkLogic<>(
+            StudentService.save(new StudentParent(new Student(0L,addSname.getText().toString(),addSphone.getText().toString(),Long.parseLong(addTuition.getText().toString()), LocalDate.now(),0L,0L),new Parent(0L,addPname.getText().toString(),addPphone.getText().toString())),new NetworkLogic<>(
                     none -> {},
                     none -> {}
             ));
-            sub2dialog.dismiss();
+            startActivity(new Intent(this,Sub2.class));
             new Timer().schedule(new TimerTask() {
                 @Override
                 public void run() {

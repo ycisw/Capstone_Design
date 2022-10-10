@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="30dp"
     android:orientation="vertical">
 
     <LinearLayout
@@ -13,7 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="학생정보 수정       "
+            android:text="학생정보 수정  "
             android:textSize="40dp" />
 
         <Button
@@ -30,41 +31,64 @@
         android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="이름"
+            android:layout_height="40dp"
+            android:text="학생 이름"
             android:textSize="30dp"/>
         <EditText
-            android:id="@+id/update_name"
+            android:id="@+id/update_sname"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="이름을 입력해주세요"/>
+            android:layout_height="40dp"
+            android:hint="학생 이름을 입력해주세요"/>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
+            android:text="학생 전화번호"
+            android:textSize="30dp"/>
+        <EditText
+            android:id="@+id/update_sphone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="학생 전화번호를 입력해주세요"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="학생 등록금"
+            android:textSize="30dp"/>
+        <EditText
+            android:id="@+id/update_tuition"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="학생 등록금을 입력해주세요"/>\
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:text="부모님 이름"
             android:textSize="30dp"/>
         <EditText
             android:id="@+id/update_pname"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:hint="부모님 이름을 입력해주세요"/>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:text="부모님 전화번호"
             android:textSize="30dp"/>
         <EditText
             android:id="@+id/update_pphone"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:hint="부모님 전화번호를 입력해주세요"/>
 
         <Button
             android:id="@+id/update_student"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:text="수정하기"/>
 
     </LinearLayout>
