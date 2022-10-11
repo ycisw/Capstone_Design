@@ -2,9 +2,12 @@ package com.example.capstonedesign;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
@@ -19,11 +22,13 @@ import com.example.capstonedesign.server.service.TeacherService;
  */
 public class RegisterActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        ImageButton btn_back = findViewById(R.id.btn_back);
         EditText id = findViewById(R.id.register_id);
         EditText password = findViewById(R.id.register_password);
         EditText confirm = findViewById(R.id.register_confirm);
@@ -39,6 +44,14 @@ public class RegisterActivity extends AppCompatActivity {
                 register(teacher); //회원가입
             } else {
                 Toast.makeText(this, "비밀번호가 일치하지 않습니다", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
+
+        //뒤로가기 버튼 클릭시
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 finish();
             }
         });
