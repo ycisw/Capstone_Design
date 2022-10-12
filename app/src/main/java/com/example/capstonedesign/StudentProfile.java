@@ -2,7 +2,9 @@ package com.example.capstonedesign;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
@@ -15,7 +17,9 @@ import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.domain.parent.Parent;
 import com.example.capstonedesign.server.domain.student.Student;
 import com.example.capstonedesign.server.domain.student.StudentParent;
+import com.example.capstonedesign.server.domain.teacher.Teacher;
 import com.example.capstonedesign.server.service.StudentService;
+import com.example.capstonedesign.server.service.TeacherService;
 import com.example.capstonedesign.student.ListViewAdapter;
 import com.example.capstonedesign.student.ListViewItem;
 
@@ -39,6 +43,7 @@ public class StudentProfile extends AppCompatActivity {
 
         //학생정보 출력
         long sid = getIntent().getLongExtra("sid",0);
+        TextView teacher_name = findViewById(R.id.teacher_name);
         TextView student_name = findViewById(R.id.student_name);
         TextView student_phone = findViewById(R.id.student_phone);
         TextView student_tuition = findViewById(R.id.student_tuition);
@@ -47,6 +52,13 @@ public class StudentProfile extends AppCompatActivity {
 
         TextView parent_name = findViewById(R.id.parent_name);
         TextView parent_phone = findViewById(R.id.parent_phone);
+
+        TeacherService.profile(new NetworkLogic<>(
+                teacher -> {
+                    teacher_name.setText(teacher.getName());
+                },
+                none -> {}
+        ));
 
         StudentService.profile(sid, new NetworkLogic<StudentParent>(
                 studentParent -> {
@@ -67,6 +79,7 @@ public class StudentProfile extends AppCompatActivity {
 
         Button back = findViewById(R.id.back2);
         Button student_update = findViewById(R.id.student_update);
+        Button student_delete = findViewById(R.id.student_delete);
 
         back.setOnClickListener(v->{
             startActivity(new Intent(this,Sub2.class));
@@ -74,6 +87,31 @@ public class StudentProfile extends AppCompatActivity {
 
         student_update.setOnClickListener(v->{
             showProfileDialog();
+        });
+
+        student_delete.setOnClickListener(v->{
+            AlertDialog.Builder dlg = new AlertDialog.Builder(this);
+            dlg.setTitle("정말로 삭제하시겠습니까?");
+            dlg.setPositiveButton("네", (dialogInterface, i) -> {
+
+                StudentService.withdraw(student1.getStudent().getId(), new NetworkLogic<>(
+                     none -> {
+                        Toast.makeText(this, "성공", Toast.LENGTH_SHORT).show();
+                    },
+                    none -> {}
+                ));
+
+
+                startActivity(new Intent(StudentProfile.this, Sub2.class));
+            });
+
+            dlg.setNegativeButton("아니요", (dialogInterface, i) -> {
+                Intent intent = new Intent(this,StudentProfile.class);
+                intent.putExtra("sid",student1.getStudent().getId());
+                startActivity(intent);
+            });
+
+            dlg.show();
         });
 
     }

@@ -160,11 +160,24 @@
         android:layout_height="wrap_content"
         android:id="@+id/back2"
         android:text="뒤로가기" />
-
-    <Button
-        android:text="update"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/student_update" />
+        android:orientation="horizontal">
+
+        <Button
+            android:text="update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/student_update" />
+        <Button
+            android:text="delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/student_delete" />
+
+    </LinearLayout>
+
+
 
 </LinearLayout>
