@@ -7,16 +7,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ListView;
 
+import android.widget.ListView;
+import com.google.android.material.textfield.TextInputEditText;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.domain.parent.Parent;
 import com.example.capstonedesign.server.domain.student.Student;
 import com.example.capstonedesign.server.domain.student.StudentParent;
 import com.example.capstonedesign.server.service.StudentService;
 import com.example.capstonedesign.student.ListViewAdapter;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.time.LocalDate;
 import java.util.LinkedList;
@@ -75,14 +76,12 @@ public class Sub2 extends AppCompatActivity {
     //커스텀 다이얼로그
    public void showSub2Dialog(){
         sub2dialog.show();
-
-        Button back = sub2dialog.findViewById(R.id.back3);
-        EditText addSname = sub2dialog.findViewById(R.id.add_sname);
-        EditText addSphone = sub2dialog.findViewById(R.id.add_sphone);
-        EditText addTuition = sub2dialog.findViewById(R.id.add_tuition);
-
-        EditText addPname = sub2dialog.findViewById(R.id.add_pname);
-        EditText addPphone = sub2dialog.findViewById(R.id.add_pphone);
+        ImageButton back = sub2dialog.findViewById(R.id.back3);
+       TextInputEditText addSname = sub2dialog.findViewById(R.id.add_sname);
+       TextInputEditText addSphone = sub2dialog.findViewById(R.id.add_sphone);
+       TextInputEditText addTuition = sub2dialog.findViewById(R.id.add_tuition);
+       TextInputEditText addPname = sub2dialog.findViewById(R.id.add_pname);
+       TextInputEditText addPphone = sub2dialog.findViewById(R.id.add_pphone);
         Button createStudent = sub2dialog.findViewById(R.id.create_student);
 
         back.setOnClickListener(v->{
