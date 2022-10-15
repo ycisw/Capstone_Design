@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
@@ -39,7 +40,7 @@ public class Sub2 extends AppCompatActivity {
         sub2dialog.setContentView(R.layout.activity_sub2_dialog);
 
         Button student_add = findViewById(R.id.student_add);
-        Button back = findViewById(R.id.back1);
+        ImageButton back = findViewById(R.id.back1);
         ListView listView = findViewById(R.id.listView1);
 
         adapter = new ListViewAdapter();
