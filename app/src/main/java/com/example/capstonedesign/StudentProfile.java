@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ import com.example.capstonedesign.server.service.StudentService;
 import com.example.capstonedesign.server.service.TeacherService;
 import com.example.capstonedesign.student.ListViewAdapter;
 import com.example.capstonedesign.student.ListViewItem;
+import com.google.android.material.textfield.TextInputEditText;
 
 import org.w3c.dom.Text;
 
@@ -77,13 +79,14 @@ public class StudentProfile extends AppCompatActivity {
 
 
 
-        Button back = findViewById(R.id.back2);
+        ImageButton back = findViewById(R.id.back2);
         Button student_update = findViewById(R.id.student_update);
         Button student_delete = findViewById(R.id.student_delete);
 
         back.setOnClickListener(v->{
             startActivity(new Intent(this,Sub2.class));
         });
+
 
         student_update.setOnClickListener(v->{
             showProfileDialog();
@@ -116,17 +119,22 @@ public class StudentProfile extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed(){
+        startActivity(new Intent(this,Sub2.class));
+    }
+
     public void showProfileDialog(){
         dialog.show();
 
-        Button back = dialog.findViewById(R.id.back4);
+        ImageButton back = dialog.findViewById(R.id.back4);
         Button update_student = dialog.findViewById(R.id.update_student);
-        EditText update_sname = dialog.findViewById(R.id.update_sname);
-        EditText update_sphone = dialog.findViewById(R.id.update_sphone);
-        EditText update_tuition = dialog.findViewById(R.id.update_tuition);
+        TextInputEditText update_sname = dialog.findViewById(R.id.update_sname);
+        TextInputEditText update_sphone = dialog.findViewById(R.id.update_sphone);
+        TextInputEditText update_tuition = dialog.findViewById(R.id.update_tuition);
 
-        EditText update_pname = dialog.findViewById(R.id.update_pname);
-        EditText update_pphone = dialog.findViewById(R.id.update_pphone);
+        TextInputEditText update_pname = dialog.findViewById(R.id.update_pname);
+        TextInputEditText update_pphone = dialog.findViewById(R.id.update_pphone);
 
         update_sname.setText(student1.getStudent().getName());
         update_sphone.setText(student1.getStudent().getPhone());

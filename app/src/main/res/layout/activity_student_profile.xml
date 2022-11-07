@@ -4,177 +4,210 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="20dp"
     android:orientation="vertical"
     tools:context=".StudentProfile">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="강사 이름:"
-            android:textSize="30dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="30dp"
-            android:id="@+id/teacher_name"
-            android:gravity="center"
-            android:text="데이터 없음"
-            android:textSize="30dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="학생 번호:"
-            android:textSize="30dp"/>
+        android:layout_height="50dp">
+        <ImageButton
+            android:id="@+id/back2"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="#00000000"
+            android:scaleType="fitXY"
+            android:src="@drawable/back_btn" />
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/student_id"
-            android:gravity="center"
-            android:text="데이터 없음"
-            android:textSize="30dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="학생 이름:"
-            android:textSize="30dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/student_name"
-            android:gravity="center"
-            android:text="데이터 없음"
-            android:textSize="30dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="학생 전화번호:"
-            android:textSize="30dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/student_phone"
-            android:gravity="center"
-            android:text="데이터 없음"
-            android:textSize="30dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="학생 등록금:"
-            android:textSize="30dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/student_tuition"
-            android:gravity="center"
-            android:text="데이터 없음"
-            android:textSize="30dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="학생 등록일자:"
-            android:textSize="30dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/student_regDate"
-            android:gravity="center"
-            android:paddingBottom="30dp"
-            android:text="데이터 없음"
-            android:textSize="30dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="학부모 이름:"
-            android:textSize="30dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/parent_name"
-            android:gravity="center"
-            android:text="데이터 없음"
-            android:textSize="30dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="학부모 전화번호:"
-            android:layout_gravity="center"
-            android:textSize="20dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/parent_phone"
-            android:gravity="center"
-            android:text="데이터 없음"
-            android:textSize="30dp"/>
+            android:layout_height="match_parent"
+            android:text="학생 정보"
+            android:textAlignment="center"
+            android:textSize="40dp"
+            />
     </LinearLayout>
 
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/back2"
-        android:text="뒤로가기" />
     <LinearLayout
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
-            android:text="update"
+            android:id="@+id/student_update"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/student_update" />
+            android:layout_marginRight="20dp"
+            android:background="@drawable/start_page_btn"
+            android:text="학생 수정" />
+
         <Button
-            android:text="delete"
+            android:id="@+id/student_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/student_delete" />
+            android:backgroundTint="#FF6464"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/start_page_btn"
+            android:text="학생 삭제" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        android:background="@drawable/sub2_background"
+        android:backgroundTint="#A8FF98"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="강사 이름:"
+                android:textSize="30dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="30dp"
+                android:id="@+id/teacher_name"
+                android:gravity="center"
+                android:text="데이터 없음"
+                android:textSize="30dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="학생 번호:"
+                android:textSize="30dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/student_id"
+                android:gravity="center"
+                android:text="데이터 없음"
+                android:textSize="30dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="학생 이름:"
+                android:textSize="30dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/student_name"
+                android:gravity="center"
+                android:text="데이터 없음"
+                android:textSize="30dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="학생 전화번호:"
+                android:textSize="30dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/student_phone"
+                android:gravity="center"
+                android:text="데이터 없음"
+                android:textSize="30dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="학생 등록금:"
+                android:textSize="30dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/student_tuition"
+                android:gravity="center"
+                android:text="데이터 없음"
+                android:textSize="30dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="학생 등록일자:"
+                android:textSize="30dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/student_regDate"
+                android:gravity="center"
+                android:paddingBottom="30dp"
+                android:text="데이터 없음"
+                android:textSize="30dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="학부모 이름:"
+                android:textSize="30dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/parent_name"
+                android:gravity="center"
+                android:text="데이터 없음"
+                android:textSize="30dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="학부모 전화번호:"
+                android:layout_gravity="center"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/parent_phone"
+                android:gravity="center"
+                android:text="데이터 없음"
+                android:textSize="30dp"/>
+        </LinearLayout>
+
 
     </LinearLayout>
 

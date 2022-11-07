@@ -30,7 +30,6 @@ public class Sub2 extends AppCompatActivity {
     ListViewAdapter adapter;
     List<StudentParent> items = new LinkedList<>();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +57,10 @@ public class Sub2 extends AppCompatActivity {
         updateStudent();
     }
 
+    @Override
+    public void onBackPressed(){
+        startActivity(new Intent(this,homepage.class));
+    }
     private void updateStudent() {
         StudentService.student(new NetworkLogic<List<StudentParent>>(
                 result -> {
