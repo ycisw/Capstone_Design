@@ -6,8 +6,6 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
@@ -23,15 +21,13 @@ public interface StudentApi {
     @POST("/student/add")
     Call<Void> save(@Body StudentParent studentParent);
 
-    @FormUrlEncoded
     @Headers({"Accept: application/json;"})
     @POST("/student/profile")
-    Call<StudentParent> profile(@Field("studentId") Long studentId);
+    Call<StudentParent> profile(@Body Long studentId);
 
-    @FormUrlEncoded
     @Headers({"Accept: application/json;"})
     @POST("/student/withdraw")
-    Call<Void> withdraw(@Field("studentId") Long studentId);
+    Call<Void> withdraw(@Body Long studentId);
 
     @Headers({"Accept: application/json;"})
     @PUT("/student/profile")
