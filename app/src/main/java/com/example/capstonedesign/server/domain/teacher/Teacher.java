@@ -2,10 +2,12 @@ package com.example.capstonedesign.server.domain.teacher;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * 강사 데이터입니다.
  */
-public class Teacher {
+public class Teacher implements Serializable {
     @SerializedName("id")
     private String id;
 

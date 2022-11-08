@@ -1,9 +1,11 @@
 package com.example.capstonedesign.server.domain.parent;
 
+import java.io.Serializable;
+
 /**
  * 학부모 로그인 화면에서 로그인 할 때 사용되는 데이터 클래스입니다.
  */
-public class ParentLoginForm {
+public class ParentLoginForm implements Serializable {
 
     private String phone;
 

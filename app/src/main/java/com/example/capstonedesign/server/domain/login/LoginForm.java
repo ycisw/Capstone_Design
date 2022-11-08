@@ -1,9 +1,11 @@
 package com.example.capstonedesign.server.domain.login;
 
+import java.io.Serializable;
+
 /**
  * 로그인 화면에서 로그인 할 때 사용되는 데이터 클래스입니다.
  */
-public class LoginForm {
+public class LoginForm implements Serializable {
 
     private String loginId;
     private String password;

@@ -2,7 +2,9 @@ package com.example.capstonedesign.server.domain.parent;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Parent {
+import java.io.Serializable;
+
+public class Parent implements Serializable {
     @SerializedName("id")
     private Long id;
 

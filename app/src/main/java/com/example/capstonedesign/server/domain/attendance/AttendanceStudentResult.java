@@ -3,9 +3,10 @@ package com.example.capstonedesign.server.domain.attendance;
 import com.example.capstonedesign.server.domain.student.Student;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class AttendanceStudentResult {
+public class AttendanceStudentResult implements Serializable {
     @SerializedName("student")
     private Student student;
     @SerializedName("attendances")

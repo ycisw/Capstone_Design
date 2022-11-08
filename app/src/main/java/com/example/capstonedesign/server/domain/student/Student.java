@@ -2,9 +2,10 @@ package com.example.capstonedesign.server.domain.student;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Student {
+public class Student implements Serializable {
     @SerializedName("id")
     private Long id;
 

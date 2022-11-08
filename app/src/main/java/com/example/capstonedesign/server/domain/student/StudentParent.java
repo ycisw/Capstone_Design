@@ -4,7 +4,9 @@ import com.example.capstonedesign.server.domain.parent.Parent;
 import com.example.capstonedesign.server.domain.student.Student;
 import com.google.gson.annotations.SerializedName;
 
-public class StudentParent {
+import java.io.Serializable;
+
+public class StudentParent implements Serializable {
 
     @SerializedName("student")
     private Student student;
