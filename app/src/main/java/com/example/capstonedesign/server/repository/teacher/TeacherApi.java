@@ -6,6 +6,7 @@ import com.example.capstonedesign.server.domain.teacher.TeacherAddResult;
 import java.util.HashMap;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.Headers;
@@ -19,13 +20,11 @@ import retrofit2.http.POST;
 public interface TeacherApi {
     /**
      * 회원가입에 사용되는 API입니다.
-     * @param teacherMap Teacher를 맵으로 변환한 형태입니다.
      * @return 위와 동일합니다.
      */
-    @FormUrlEncoded
     @Headers({"Accept: application/json;"})
     @POST("/teachers/add")
-    Call<TeacherAddResult> register(@FieldMap HashMap<String, String> teacherMap);
+    Call<TeacherAddResult> register(@Body Teacher teacher);
 
     @Headers({"Accept: application/json;"})
     @POST("/teachers/profile")
