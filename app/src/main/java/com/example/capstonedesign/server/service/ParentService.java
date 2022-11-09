@@ -23,11 +23,7 @@ public class ParentService {
      * @param logic 로그인 성공시와 실패시의 로직을 넣어주시면 됩니다.
      */
     public static void login(ParentLoginForm parentLoginForm, NetworkLogic<ParentLoginResult> logic) {
-        //ParentLoginForm을 Map으로 전환하는 과정입니다.
-        HashMap<String, String> keyValueMap = new HashMap<>();
-        keyValueMap.put("phone", parentLoginForm.getPhone());
-
-        SingletonContainer.getParentApi().login(keyValueMap).enqueue(new Callback<ParentLoginResult>() {
+        SingletonContainer.getParentApi().login(parentLoginForm).enqueue(new Callback<ParentLoginResult>() {
             //네트워크 통신 성공시
             @Override
             public void onResponse(Call<ParentLoginResult> call, Response<ParentLoginResult> response) {
@@ -56,7 +52,7 @@ public class ParentService {
      * @param logic 성공 실패 관련 로직이에요.
      */
     public static void sendValidation(String phone, NetworkLogic<Void> logic) {
-        SingletonContainer.getParentApi().sendValidation(phone).enqueue(new Callback<Void>() {
+        SingletonContainer.getParentApi().sendValidation(new ParentLoginForm(phone)).enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if (response.isSuccessful()) {
