@@ -22,12 +22,7 @@ public class LoginService {
      * @param logic 로그인 성공시와 실패시의 로직을 넣어주시면 됩니다.
      */
     public static void login(LoginForm loginForm, NetworkLogic<LoginResult> logic) {
-        //LoginForm을 Map으로 전환하는 과정입니다.
-        HashMap<String, String> keyValueMap = new HashMap<>();
-        keyValueMap.put("loginId", loginForm.getLoginId());
-        keyValueMap.put("password", loginForm.getPassword());
-
-        SingletonContainer.getLoginApi().login(keyValueMap).enqueue(new Callback<LoginResult>() {
+        SingletonContainer.getLoginApi().login(loginForm).enqueue(new Callback<LoginResult>() {
             //네트워크 통신 성공시의 로직
             @Override
             public void onResponse(Call<LoginResult> call, Response<LoginResult> response) {
