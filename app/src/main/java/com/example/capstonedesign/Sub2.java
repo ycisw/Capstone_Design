@@ -15,6 +15,8 @@ import android.widget.ImageButton;
 
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import com.google.android.material.textfield.TextInputEditText;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.domain.parent.Parent;
@@ -95,12 +97,13 @@ public class Sub2 extends AppCompatActivity {
         back.setOnClickListener(v->{
             startActivity(new Intent(this,Sub2.class));
         });
-
+        // null 처리 필요
         createStudent.setOnClickListener(v->{
             StudentService.save(new StudentParent(new Student(0L,addSname.getText().toString(),addSphone.getText().toString(),Long.parseLong(addTuition.getText().toString()), LocalDate.now(),0L,0L),new Parent(0L,addPname.getText().toString(),addPphone.getText().toString())),new NetworkLogic<>(
                     none -> {},
                     none -> {}
             ));
+            Toast.makeText(this,addSname.getText() + "학생 추가 완료",Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this,Sub2.class));
 
             new Timer().schedule(new TimerTask() {
@@ -111,7 +114,7 @@ public class Sub2 extends AppCompatActivity {
             }, 500);
         });
     }
-    // 키보드 내리는 메소드
+    // 키보드 내리는 메소드 아직 미구현ㅅ
     void hideKeyboard(){
         InputMethodManager inputManager = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);
         inputManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
