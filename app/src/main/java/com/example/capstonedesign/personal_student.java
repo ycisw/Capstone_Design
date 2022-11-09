@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,7 +34,7 @@ public class personal_student extends AppCompatActivity {
         ListView check_date = findViewById(R.id.check_date);
         TextView attendace_date = findViewById(R.id.attendace_date); // 출석 날짜
         TextView attendace_record = findViewById(R.id.attendace_record); // 출석 기록
-
+        ImageButton back_btn = findViewById(R.id.back_btn);
 
         List<String> data1 = new ArrayList<>();
         List<String> data2 = new ArrayList<>();
@@ -62,7 +63,7 @@ public class personal_student extends AppCompatActivity {
 
             }
         });
-
+        back_btn.setOnClickListener(view -> finish());
         AttendanceService.studentForm(studentId, new NetworkLogic<AttendanceStudentResult>(
                 result -> {
                     student_name.setText(result.getStudent().getName()); // 학생 이름 추출

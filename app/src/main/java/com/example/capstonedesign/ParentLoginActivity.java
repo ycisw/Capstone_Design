@@ -63,7 +63,7 @@ public class ParentLoginActivity extends AppCompatActivity {
         ParentService.validation(validationCode.getText().toString(), new NetworkLogic<>(
                 //성공
                 result -> {
-                    Toast.makeText(this, "인증성공", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "인증 성공", Toast.LENGTH_SHORT).show();
                 },
                 //실패
                 result -> {
@@ -101,7 +101,7 @@ public class ParentLoginActivity extends AppCompatActivity {
                 },
                 //로그인 실패시
                 result -> {
-                    Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "회원정보가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
                 }
         ));
     }

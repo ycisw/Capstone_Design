@@ -3,12 +3,17 @@ package com.example.capstonedesign;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
 import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
@@ -80,13 +85,13 @@ public class Sub2 extends AppCompatActivity {
    public void showSub2Dialog(){
         sub2dialog.show();
         ImageButton back = sub2dialog.findViewById(R.id.back3);
+       LinearLayout parent_layout = sub2dialog.findViewById(R.id.parent_layout);
        TextInputEditText addSname = sub2dialog.findViewById(R.id.add_sname);
        TextInputEditText addSphone = sub2dialog.findViewById(R.id.add_sphone);
        TextInputEditText addTuition = sub2dialog.findViewById(R.id.add_tuition);
        TextInputEditText addPname = sub2dialog.findViewById(R.id.add_pname);
        TextInputEditText addPphone = sub2dialog.findViewById(R.id.add_pphone);
         Button createStudent = sub2dialog.findViewById(R.id.create_student);
-
         back.setOnClickListener(v->{
             startActivity(new Intent(this,Sub2.class));
         });
@@ -97,6 +102,7 @@ public class Sub2 extends AppCompatActivity {
                     none -> {}
             ));
             startActivity(new Intent(this,Sub2.class));
+
             new Timer().schedule(new TimerTask() {
                 @Override
                 public void run() {
@@ -104,5 +110,10 @@ public class Sub2 extends AppCompatActivity {
                 }
             }, 500);
         });
+    }
+    // 키보드 내리는 메소드
+    void hideKeyboard(){
+        InputMethodManager inputManager = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
     }
 }

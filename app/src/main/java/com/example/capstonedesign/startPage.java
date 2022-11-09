@@ -22,4 +22,6 @@ public class startPage extends AppCompatActivity {
         teacher.setOnClickListener(v ->
             startActivity(new Intent(this, MainActivity.class)));
     }
+
+
 }

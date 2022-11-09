@@ -30,6 +30,7 @@ public class attendancecheck extends AppCompatActivity{
     List<StudentParent> listItem3;
     HashSet<StudentParent> checkSet;
     String textV;
+    String studentName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,24 +90,31 @@ public class attendancecheck extends AppCompatActivity{
                     none -> {}
             ));
         });
-
+        // 하원 버튼 눌렀을때
         goButton.setOnClickListener(v->{
             List<Long> studentIdList = new LinkedList<>();
             for (StudentParent checked : checkSet) {
                 studentIdList.add(checked.getStudent().getId());
+                studentName += checked.getStudent().getName() + ",";
             }
+            Toast.makeText(this,studentName + "학생들이 하원했습니다.",Toast.LENGTH_SHORT).show();
+            studentName = null;
+
             AttendanceService.leaveAcademyToday(studentIdList, new NetworkLogic<>(
                     none -> {},
                     none -> {}
             ));
         });
-
+        // 등원버튼 눌렀을때
         AttendanceService.studentParentForAttendances(new NetworkLogic<List<StudentParent>>(
                 result -> {
                     //성공
                     for (StudentParent studentParent : result) {
+                        studentName += studentParent.getStudent().getName() + ",";
                         add(studentParent);
                     }
+                    Toast.makeText(this,studentName + "학생들이 등원했습니다.",Toast.LENGTH_SHORT).show();
+                    studentName = null;
                     refresh();
                 },
                 result -> {}
