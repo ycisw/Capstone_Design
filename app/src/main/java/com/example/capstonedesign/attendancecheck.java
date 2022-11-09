@@ -10,7 +10,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
@@ -29,7 +28,6 @@ public class attendancecheck extends AppCompatActivity{
     ArrayList<String> listItem2;
     List<StudentParent> listItem3;
     HashSet<StudentParent> checkSet;
-    String textV;
     String studentName;
 
     @Override
@@ -39,6 +37,7 @@ public class attendancecheck extends AppCompatActivity{
         Button goButton = findViewById(R.id.goToTheHome);
         Button checkButton = findViewById(R.id.checkBT);
         ImageButton back_btn = findViewById(R.id.back_btn);
+
         listItem = new ArrayList<String>();
         listItem2 = new ArrayList<String>();
         listItem3 = new ArrayList<>();
@@ -47,8 +46,8 @@ public class attendancecheck extends AppCompatActivity{
 
         adapter1 = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,listItem);
         adapter2 = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_multiple_choice,listItem2);
-        ListView listView1 = findViewById(R.id.listView1);
-        listView1.setAdapter(adapter1);
+        ListView listView = findViewById(R.id.listView1);
+        listView.setAdapter(adapter1);
         ListView listView2 = findViewById(R.id.listView2);
         listView2.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         listView2.setAdapter(adapter2);
@@ -71,7 +70,7 @@ public class attendancecheck extends AppCompatActivity{
                 finish();
             }
         });
-        listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(attendancecheck.this, personal_student.class);
@@ -84,7 +83,10 @@ public class attendancecheck extends AppCompatActivity{
             List<Long> studentIdList = new LinkedList<>();
             for (StudentParent checked : checkSet) {
                 studentIdList.add(checked.getStudent().getId());
+                studentName += checked.getStudent().getName() + ",";
             }
+            Toast.makeText(this,studentName + "학생들이 등원했습니다.",Toast.LENGTH_SHORT).show();
+            studentName = null;
             AttendanceService.attendanceToday(studentIdList, new NetworkLogic<>(
                     none -> {},
                     none -> {}
@@ -110,11 +112,8 @@ public class attendancecheck extends AppCompatActivity{
                 result -> {
                     //성공
                     for (StudentParent studentParent : result) {
-                        studentName += studentParent.getStudent().getName() + ",";
                         add(studentParent);
                     }
-                    Toast.makeText(this,studentName + "학생들이 등원했습니다.",Toast.LENGTH_SHORT).show();
-                    studentName = null;
                     refresh();
                 },
                 result -> {}
