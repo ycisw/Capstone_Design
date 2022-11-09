@@ -6,8 +6,6 @@ import com.example.capstonedesign.server.domain.teacher.TeacherAddForm;
 import com.example.capstonedesign.server.domain.teacher.TeacherAddResult;
 import com.example.capstonedesign.server.repository.SingletonContainer;
 
-import java.util.HashMap;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
