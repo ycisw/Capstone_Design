@@ -7,7 +7,7 @@ import java.io.Serializable;
  */
 public class LoginForm implements Serializable {
 
-    private String loginId;
+    private String id;
     private String password;
 
     /**
@@ -16,16 +16,16 @@ public class LoginForm implements Serializable {
      * @param password 로그인시 비밀번호
      */
     public LoginForm(String loginId, String password) {
-        this.loginId = loginId;
+        this.id = loginId;
         this.password = password;
     }
 
-    public String getLoginId() {
-        return loginId;
+    public String getId() {
+        return id;
     }
 
-    public void setLoginId(String loginId) {
-        this.loginId = loginId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getPassword() {

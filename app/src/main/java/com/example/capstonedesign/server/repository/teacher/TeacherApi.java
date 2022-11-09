@@ -1,6 +1,7 @@
 package com.example.capstonedesign.server.repository.teacher;
 
 import com.example.capstonedesign.server.domain.teacher.Teacher;
+import com.example.capstonedesign.server.domain.teacher.TeacherAddForm;
 import com.example.capstonedesign.server.domain.teacher.TeacherAddResult;
 
 import java.util.HashMap;
@@ -24,7 +25,7 @@ public interface TeacherApi {
      */
     @Headers({"Accept: application/json;"})
     @POST("/teachers/add")
-    Call<TeacherAddResult> register(@Body Teacher teacher);
+    Call<TeacherAddResult> register(@Body TeacherAddForm teacherAddForm);
 
     @Headers({"Accept: application/json;"})
     @POST("/teachers/profile")

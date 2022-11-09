@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.domain.teacher.Teacher;
+import com.example.capstonedesign.server.domain.teacher.TeacherAddForm;
 import com.example.capstonedesign.server.domain.teacher.TeacherAddResult;
 import com.example.capstonedesign.server.domain.teacher.TeacherAddResultConst;
 import com.example.capstonedesign.server.service.TeacherService;
@@ -39,9 +40,9 @@ public class RegisterActivity extends AppCompatActivity {
         //회원 가입 버튼 클릭시
         registerButton.setOnClickListener(v -> {
             if (password.getText().toString().equals(confirm.getText().toString())) {
-                Teacher teacher = new Teacher(id.getText().toString(),
+                TeacherAddForm teacherAddForm = new TeacherAddForm(id.getText().toString(),
                         password.getText().toString(), name.getText().toString());
-                register(teacher); //회원가입
+                register(teacherAddForm); //회원가입
             } else {
                 Toast.makeText(this, "비밀번호가 일치하지 않습니다", Toast.LENGTH_SHORT).show();
                 finish();
@@ -59,10 +60,10 @@ public class RegisterActivity extends AppCompatActivity {
 
     /**
      * 회원가입
-     * @param teacher 강사 데이터를 통해 회원 가입합니다.
+     * @param teacherAddForm 강사 데이터를 통해 회원 가입합니다.
      */
-    private void register(Teacher teacher) {
-        TeacherService.register(teacher, new NetworkLogic<TeacherAddResult>(
+    private void register(TeacherAddForm teacherAddForm) {
+        TeacherService.register(teacherAddForm, new NetworkLogic<TeacherAddResult>(
                 //성공시 로직
                 teacherAddResult -> {
                     Toast.makeText(this, "회원가입 성공", Toast.LENGTH_SHORT).show();
