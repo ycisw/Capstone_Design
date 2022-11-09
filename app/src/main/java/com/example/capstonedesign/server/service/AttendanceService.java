@@ -118,14 +118,7 @@ public class AttendanceService {
      * @param logic 성공 실패 로직
      */
     public static void studentUpdate(Attendance attendance, NetworkLogic<Void> logic) {
-        HashMap<String, Object> keyValueMap = new HashMap<>();
-        keyValueMap.put("id", attendance.getId());
-        keyValueMap.put("dateAttendance", attendance.getDateAttendance());
-        keyValueMap.put("inTime", attendance.getInTime());
-        keyValueMap.put("outTime", attendance.getOutTime());
-        keyValueMap.put("studentId", attendance.getStudentId());
-
-        SingletonContainer.getAttendanceApi().studentUpdate(keyValueMap).enqueue(new Callback<Void>() {
+        SingletonContainer.getAttendanceApi().studentUpdate(attendance).enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if (response.isSuccessful()) {
