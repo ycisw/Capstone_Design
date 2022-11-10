@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -35,10 +36,10 @@ public class homepage extends AppCompatActivity {
         setContentView(R.layout.activity_homepage);
         Button studentLink = findViewById(R.id.main_page_student_management_link);
         Button attendanceLink = findViewById(R.id.main_page_attendance_link);
-        ImageButton back = findViewById(R.id.back);
+        ImageButton back_btn = findViewById(R.id.back_btn);
 
-        back.setOnClickListener(v->{
-            finishAffinity();
+
+        back_btn.setOnClickListener(view -> {
             startActivity(new Intent(this, MainActivity.class));
         });
 
@@ -135,10 +136,5 @@ public class homepage extends AppCompatActivity {
 //                none -> {},
 //                none -> {}
 //        ));
-    }
-    @Override
-    public void onBackPressed(){
-        finishAffinity();
-        startActivity(new Intent(this, MainActivity.class));
     }
 }
