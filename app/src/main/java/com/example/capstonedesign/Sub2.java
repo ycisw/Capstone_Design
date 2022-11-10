@@ -94,7 +94,6 @@ public class Sub2 extends AppCompatActivity {
        LinearLayout parent_layout = sub2dialog.findViewById(R.id.parent_layout);
        TextInputEditText addSname = sub2dialog.findViewById(R.id.add_sname);
        TextInputEditText addSphone = sub2dialog.findViewById(R.id.add_sphone);
-       TextInputEditText addTuition = sub2dialog.findViewById(R.id.add_tuition);
        TextInputEditText addPname = sub2dialog.findViewById(R.id.add_pname);
        TextInputEditText addPphone = sub2dialog.findViewById(R.id.add_pphone);
         Button createStudent = sub2dialog.findViewById(R.id.create_student);
@@ -102,25 +101,25 @@ public class Sub2 extends AppCompatActivity {
             finishAffinity();
             startActivity(new Intent(this,Sub2.class));
         });
-        try{
-            createStudent.setOnClickListener(v->{
-                StudentService.save(new StudentParent(new Student(0L,addSname.getText().toString(),addSphone.getText().toString(),Long.parseLong(addTuition.getText().toString()), LocalDate.now(),0L,0L),new Parent(0L,addPname.getText().toString(),addPphone.getText().toString())),new NetworkLogic<>(
-                        none -> {},
-                        none -> {}
-                ));
-                Toast.makeText(this,addSname.getText() + "학생 추가 완료",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this,Sub2.class));
+       createStudent.setOnClickListener(v->{
+           if(addSname.getText()!=null&&addSphone.getText()!=null&&addPname.getText()!=null&&addPphone.getText()!=null) {
+               StudentService.save(new StudentParent(new Student(0L, addSname.getText().toString(), addSphone.getText().toString(), 0L, LocalDate.now(), 0L, 0L), new Parent(0L, addPname.getText().toString(), addPphone.getText().toString())), new NetworkLogic<>(
+                       none -> {
+                       },
+                       none -> {
+                       }
+               ));
+               Toast.makeText(this, addSname.getText() + "학생 추가 완료", Toast.LENGTH_SHORT).show();
+               startActivity(new Intent(this, Sub2.class));
 
-                new Timer().schedule(new TimerTask() {
-                    @Override
-                    public void run() {
-                        updateStudent();
-                    }
-                }, 500);
-            });
-        }catch(NullPointerException e){
-            Toast.makeText(this,"다시 입력해주세요",Toast.LENGTH_SHORT);
-        }
+               new Timer().schedule(new TimerTask() {
+                   @Override
+                   public void run() {
+                       updateStudent();
+                   }
+               }, 500);
+           }
+       });
 
     }
     // 키보드 내리는 메소드 아직 미구현ㅅ

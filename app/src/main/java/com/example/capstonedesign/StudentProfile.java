@@ -133,21 +133,19 @@ public class StudentProfile extends AppCompatActivity {
         Button update_student = dialog.findViewById(R.id.update_student);
         TextInputEditText update_sname = dialog.findViewById(R.id.update_sname);
         TextInputEditText update_sphone = dialog.findViewById(R.id.update_sphone);
-        TextInputEditText update_tuition = dialog.findViewById(R.id.update_tuition);
 
         TextInputEditText update_pname = dialog.findViewById(R.id.update_pname);
         TextInputEditText update_pphone = dialog.findViewById(R.id.update_pphone);
 
         update_sname.setText(student1.getStudent().getName());
         update_sphone.setText(student1.getStudent().getPhone());
-        update_tuition.setText(student1.getStudent().getTuition().toString());
 
         update_pname.setText(student1.getParent().getName());
         update_pphone.setText(student1.getParent().getPhone());
 
         try{
             update_student.setOnClickListener(v->{
-                StudentService.update(new StudentParent(new Student(student1.getStudent().getId(), update_sname.getText().toString(), update_sphone.getText().toString(), Long.parseLong(update_tuition.getText().toString()), LocalDate.now(), -1L, -1L),
+                StudentService.update(new StudentParent(new Student(student1.getStudent().getId(), update_sname.getText().toString(), update_sphone.getText().toString(),0L, LocalDate.now(), -1L, -1L),
                         new Parent(-1L, update_pname.getText().toString(), update_pphone.getText().toString())), new NetworkLogic<>(
                         none -> {},
                         none -> {}
