@@ -84,7 +84,6 @@ public class attendancecheck extends AppCompatActivity{
                 studentName += checked.getStudent().getName() + ",";
             }
             Toast.makeText(this,studentName + "학생들이 등원했습니다.",Toast.LENGTH_SHORT).show();
-            studentName = null;
             AttendanceService.attendanceToday(studentIdList, new NetworkLogic<>(
                     none -> {},
                     none -> {}
@@ -98,7 +97,7 @@ public class attendancecheck extends AppCompatActivity{
                 studentName += checked.getStudent().getName() + ",";
             }
             Toast.makeText(this,studentName + "학생들이 하원했습니다.",Toast.LENGTH_SHORT).show();
-            studentName = null;
+
 
             AttendanceService.leaveAcademyToday(studentIdList, new NetworkLogic<>(
                     none -> {},
