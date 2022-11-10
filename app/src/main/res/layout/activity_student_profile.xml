@@ -88,14 +88,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="학생 번호:"
-                android:textSize="30dp"/>
+                android:textSize="25dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/student_id"
                 android:gravity="center"
                 android:text="데이터 없음"
-                android:textSize="30dp"/>
+                android:textSize="25dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -106,14 +106,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="학생 이름:"
-                android:textSize="30dp"/>
+                android:textSize="25dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/student_name"
                 android:gravity="center"
                 android:text="데이터 없음"
-                android:textSize="30dp"/>
+                android:textSize="25dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -123,15 +123,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="학생 전화번호:"
-                android:textSize="30dp"/>
+                android:text="학생 휴대폰:"
+                android:textSize="25dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/student_phone"
                 android:gravity="center"
                 android:text="데이터 없음"
-                android:textSize="30dp"/>
+                android:textSize="25dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -142,14 +142,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="학생 등록금:"
-                android:textSize="30dp"/>
+                android:textSize="25dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/student_tuition"
                 android:gravity="center"
                 android:text="데이터 없음"
-                android:textSize="30dp"/>
+                android:textSize="25dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -160,7 +160,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="학생 등록일자:"
-                android:textSize="30dp"/>
+                android:textSize="25dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -168,7 +168,7 @@
                 android:gravity="center"
                 android:paddingBottom="30dp"
                 android:text="데이터 없음"
-                android:textSize="30dp"/>
+                android:textSize="25dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -179,14 +179,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="학부모 이름:"
-                android:textSize="30dp"/>
+                android:textSize="25dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/parent_name"
                 android:gravity="center"
                 android:text="데이터 없음"
-                android:textSize="30dp"/>
+                android:textSize="25dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -196,16 +196,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="학부모 전화번호:"
+                android:text="학부모 휴대폰:"
                 android:layout_gravity="center"
-                android:textSize="20dp"/>
+                android:textSize="25dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/parent_phone"
                 android:gravity="center"
                 android:text="데이터 없음"
-                android:textSize="30dp"/>
+                android:textSize="25dp"/>
         </LinearLayout>
 
 
