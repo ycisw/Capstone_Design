@@ -117,6 +117,8 @@ public class Sub2 extends AppCompatActivity {
                        updateStudent();
                    }
                }, 500);
+           }else{
+               Toast.makeText(this,"모든 정보가 다 입력되어야 합니다.",Toast.LENGTH_SHORT);
            }
        });
 

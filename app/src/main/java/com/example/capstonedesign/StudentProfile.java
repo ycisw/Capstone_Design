@@ -145,14 +145,20 @@ public class StudentProfile extends AppCompatActivity {
 
         try{
             update_student.setOnClickListener(v->{
-                StudentService.update(new StudentParent(new Student(student1.getStudent().getId(), update_sname.getText().toString(), update_sphone.getText().toString(),0L, LocalDate.now(), -1L, -1L),
-                        new Parent(-1L, update_pname.getText().toString(), update_pphone.getText().toString())), new NetworkLogic<>(
-                        none -> {},
-                        none -> {}
-                ));
-                Intent intent = new Intent(this,StudentProfile.class);
-                intent.putExtra("sid",student1.getStudent().getId());
-                startActivity(intent);
+                if(!update_sname.getText().toString().equals("")&&!update_sphone.getText().toString().equals("")&&!update_pname.getText().toString().equals("")&&!update_pphone.getText().toString().equals("")) {
+                    StudentService.update(new StudentParent(new Student(student1.getStudent().getId(), update_sname.getText().toString(), update_sphone.getText().toString(), 0L, LocalDate.now(), -1L, -1L),
+                            new Parent(-1L, update_pname.getText().toString(), update_pphone.getText().toString())), new NetworkLogic<>(
+                            none -> {
+                            },
+                            none -> {
+                            }
+                    ));
+                    Intent intent = new Intent(this, StudentProfile.class);
+                    intent.putExtra("sid", student1.getStudent().getId());
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(this,"모든 정보가 다 입력되어야 합니다.",Toast.LENGTH_SHORT);
+                }
             });
         }catch(NullPointerException e){
             Toast.makeText(this,"다시 입력해주세요",Toast.LENGTH_SHORT);
