@@ -49,14 +49,13 @@
         <activity
             android:name=".attendancecheck"
             android:exported="false">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".personal_student"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".startPage"
             android:exported="true">

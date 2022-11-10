@@ -84,9 +84,9 @@ public class StudentProfile extends AppCompatActivity {
         Button student_delete = findViewById(R.id.student_delete);
 
         back.setOnClickListener(v->{
+            finishAffinity();
             startActivity(new Intent(this,Sub2.class));
         });
-
 
         student_update.setOnClickListener(v->{
             showProfileDialog();
@@ -121,8 +121,10 @@ public class StudentProfile extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
+        finishAffinity();
         startActivity(new Intent(this,Sub2.class));
     }
+
 
     public void showProfileDialog(){
         dialog.show();
@@ -143,20 +145,26 @@ public class StudentProfile extends AppCompatActivity {
         update_pname.setText(student1.getParent().getName());
         update_pphone.setText(student1.getParent().getPhone());
 
-        update_student.setOnClickListener(v->{
-            StudentService.update(new StudentParent(new Student(student1.getStudent().getId(), update_sname.getText().toString(), update_sphone.getText().toString(), Long.parseLong(update_tuition.getText().toString()), LocalDate.now(), -1L, -1L),
-                new Parent(-1L, update_pname.getText().toString(), update_pphone.getText().toString())), new NetworkLogic<>(
-                none -> {},
-                none -> {}
-        ));
-            Intent intent = new Intent(this,StudentProfile.class);
-            intent.putExtra("sid",student1.getStudent().getId());
-            startActivity(intent);
-        });
+        try{
+            update_student.setOnClickListener(v->{
+                StudentService.update(new StudentParent(new Student(student1.getStudent().getId(), update_sname.getText().toString(), update_sphone.getText().toString(), Long.parseLong(update_tuition.getText().toString()), LocalDate.now(), -1L, -1L),
+                        new Parent(-1L, update_pname.getText().toString(), update_pphone.getText().toString())), new NetworkLogic<>(
+                        none -> {},
+                        none -> {}
+                ));
+                Intent intent = new Intent(this,StudentProfile.class);
+                intent.putExtra("sid",student1.getStudent().getId());
+                startActivity(intent);
+            });
+        }catch(NullPointerException e){
+            Toast.makeText(this,"다시 입력해주세요",Toast.LENGTH_SHORT);
+        }
+
 
         back.setOnClickListener(v->{
             Intent intent = new Intent(this,StudentProfile.class);
             intent.putExtra("sid",student1.getStudent().getId());
+            finishAffinity();
             startActivity(intent);
         });
     }
