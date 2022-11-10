@@ -137,4 +137,9 @@ public class homepage extends AppCompatActivity {
 //                none -> {}
 //        ));
     }
+    @Override
+    public void onBackPressed(){
+        finishAffinity();
+        startActivity(new Intent(this,MainActivity.class));
+    }
 }
