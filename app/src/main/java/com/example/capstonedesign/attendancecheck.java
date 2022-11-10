@@ -65,11 +65,9 @@ public class attendancecheck extends AppCompatActivity{
                 checkSet.add(listItem3.get(i));
             }
         });
-        back_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
+        back_btn.setOnClickListener(v->{
+            finishAffinity();
+            startActivity(new Intent(this, homepage.class));
         });
         listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -119,6 +117,12 @@ public class attendancecheck extends AppCompatActivity{
                 },
                 result -> {}
         ));
+    }
+
+    @Override
+    public void onBackPressed(){
+        finishAffinity();
+        startActivity(new Intent(this, homepage.class));
     }
 
     private void refresh() {

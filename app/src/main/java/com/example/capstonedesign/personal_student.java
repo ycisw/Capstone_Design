@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.capstonedesign.server.domain.attendance.Attendance;
 import com.example.capstonedesign.server.domain.attendance.AttendanceStudentResult;
+import com.example.capstonedesign.server.domain.login.LoginForm;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.service.AttendanceService;
 
@@ -63,7 +64,12 @@ public class personal_student extends AppCompatActivity {
 
             }
         });
-        back_btn.setOnClickListener(view -> finish());
+
+        back_btn.setOnClickListener(v->{
+            finishAffinity();
+            startActivity(new Intent(this, attendancecheck.class));
+        });
+
         AttendanceService.studentForm(studentId, new NetworkLogic<AttendanceStudentResult>(
                 result -> {
                     student_name.setText(result.getStudent().getName()); // 학생 이름 추출
@@ -85,6 +91,12 @@ public class personal_student extends AppCompatActivity {
                 },
                 result -> {}
         ));
+    }
+
+    @Override
+    public void onBackPressed(){
+        finishAffinity();
+        startActivity(new Intent(this, attendancecheck.class));
     }
 
     private void refresh(ArrayAdapter<String> adapter, ArrayAdapter<String> adapter2) {

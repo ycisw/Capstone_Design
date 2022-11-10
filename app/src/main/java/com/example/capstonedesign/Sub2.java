@@ -54,8 +54,11 @@ public class Sub2 extends AppCompatActivity {
         listView.setAdapter(adapter);
         adapter.setActivity(this);
 
+
+
         back.setOnClickListener(v->{
             startActivity(new Intent(this,homepage.class));
+            finishAffinity();
         });
 
         student_add.setOnClickListener(v->{
@@ -66,6 +69,7 @@ public class Sub2 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
+        finishAffinity();
         startActivity(new Intent(this,homepage.class));
     }
     private void updateStudent() {

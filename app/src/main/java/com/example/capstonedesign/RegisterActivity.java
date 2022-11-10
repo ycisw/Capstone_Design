@@ -2,6 +2,7 @@ package com.example.capstonedesign;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -50,12 +51,16 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
         //뒤로가기 버튼 클릭시
-        btn_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
+        btn_back.setOnClickListener(v->{
+            finishAffinity();
+            startActivity(new Intent(this, MainActivity.class));
         });
+    }
+
+    @Override
+    public void onBackPressed(){
+        finishAffinity();
+        startActivity(new Intent(this, MainActivity.class));
     }
 
     /**

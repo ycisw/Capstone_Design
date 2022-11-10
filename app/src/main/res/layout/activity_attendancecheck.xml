@@ -57,31 +57,37 @@
             android:id="@+id/goToTheHome"
             android:text="하원"/>
     </LinearLayout>
+    <ScrollView
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:scrollbars="vertical"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="true">
 
-  <ScrollView
-      android:layout_gravity="center"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content">
-      <LinearLayout
-          android:background="@drawable/personal_student"
-          android:layout_margin="20dp"
-          android:layout_gravity="center"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:orientation="horizontal">
-          <ListView
-              android:id="@+id/listView1"
-              android:layout_width="150dp"
-              android:layout_height="350dp" />
-          <ListView
-              android:id="@+id/listView2"
-              android:layout_width="150dp"
-              android:layout_height="350dp"
-              android:choiceMode="multipleChoice" />
-      </LinearLayout>
+            <ListView
+                android:id="@+id/listView1"
+                android:layout_width="150dp"
+                android:layout_height="350dp"
+                android:nestedScrollingEnabled="false"
+                android:scrollbars="none" />
+
+            <ListView
+                android:id="@+id/listView2"
+                android:layout_width="150dp"
+                android:layout_height="350dp"
+                android:nestedScrollingEnabled="false"
+                android:choiceMode="multipleChoice"
+                android:scrollbars="none"/>
+        </LinearLayout>
+
+    </ScrollView>
 
 
-  </ScrollView>
 
     <ImageView
         android:layout_marginBottom="5dp"

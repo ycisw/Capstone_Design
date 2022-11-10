@@ -49,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
         //뒤로가기 버튼
         back.setOnClickListener(v->{
-            finish();
+            finishAffinity();
+            startActivity(new Intent(this, startPage.class));
         });
         // 화면 클릭시 키보드 내려가기
         parent_layout.setOnTouchListener(new View.OnTouchListener() {
@@ -62,6 +63,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public void onBackPressed(){
+        finishAffinity();
+        startActivity(new Intent(this, startPage.class));
+    }
+
     // 키보드 숨기는 메소드
     void hideKeyboard(){
         InputMethodManager inputManager = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);

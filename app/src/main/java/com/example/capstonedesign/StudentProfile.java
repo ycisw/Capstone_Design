@@ -84,9 +84,9 @@ public class StudentProfile extends AppCompatActivity {
         Button student_delete = findViewById(R.id.student_delete);
 
         back.setOnClickListener(v->{
+            finishAffinity();
             startActivity(new Intent(this,Sub2.class));
         });
-
 
         student_update.setOnClickListener(v->{
             showProfileDialog();
@@ -121,8 +121,10 @@ public class StudentProfile extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
+        finishAffinity();
         startActivity(new Intent(this,Sub2.class));
     }
+
 
     public void showProfileDialog(){
         dialog.show();

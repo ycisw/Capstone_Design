@@ -2,6 +2,7 @@ package com.example.capstonedesign;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -51,8 +52,15 @@ public class ParentLoginActivity extends AppCompatActivity {
 
         //뒤로가기 버튼
         back.setOnClickListener(v ->{
-            finish();
+            finishAffinity();
+            startActivity(new Intent(this, startPage.class));
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
+        startActivity(new Intent(this, startPage.class));
     }
 
     /**
