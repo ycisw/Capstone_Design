@@ -101,7 +101,7 @@ public class Sub2 extends AppCompatActivity {
             startActivity(new Intent(this,Sub2.class));
         });
        createStudent.setOnClickListener(v->{
-           if(addSname.getText()!=null&&addSphone.getText()!=null&&addPname.getText()!=null&&addPphone.getText()!=null) {
+           if(addSname.getText().toString().equals("")&&addSphone.getText().toString().equals("")&&addPname.getText().toString().equals("")&&addPphone.getText().toString().equals("")) {
                StudentService.save(new StudentParent(new Student(0L, addSname.getText().toString(), addSphone.getText().toString(), 0L, LocalDate.now(), 0L, 0L), new Parent(0L, addPname.getText().toString(), addPphone.getText().toString())), new NetworkLogic<>(
                        none -> {
                        },
