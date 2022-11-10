@@ -91,7 +91,6 @@ public class Sub2 extends AppCompatActivity {
    public void showSub2Dialog(){
         sub2dialog.show();
         ImageButton back = sub2dialog.findViewById(R.id.back3);
-       LinearLayout parent_layout = sub2dialog.findViewById(R.id.parent_layout);
        TextInputEditText addSname = sub2dialog.findViewById(R.id.add_sname);
        TextInputEditText addSphone = sub2dialog.findViewById(R.id.add_sphone);
        TextInputEditText addTuition = sub2dialog.findViewById(R.id.add_tuition);
@@ -123,9 +122,5 @@ public class Sub2 extends AppCompatActivity {
         }
 
     }
-    // 키보드 내리는 메소드 아직 미구현ㅅ
-    void hideKeyboard(){
-        InputMethodManager inputManager = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);
-        inputManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
-    }
+
 }

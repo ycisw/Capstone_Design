@@ -32,7 +32,6 @@ int count = 0;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-      //  LinearLayout parent_layout = findViewById(R.id.parent_layout);
         ImageButton btn_back = findViewById(R.id.btn_back);
         EditText id = findViewById(R.id.register_id);
         EditText password = findViewById(R.id.register_password);
@@ -52,13 +51,6 @@ int count = 0;
             }
         });
 
-      /*  parent_layout.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                hideKeyboard();
-                return false;
-            }
-        });*/
 
         //뒤로가기 버튼 클릭시
         btn_back.setOnClickListener(new View.OnClickListener() {
@@ -68,12 +60,7 @@ int count = 0;
             }
         });
     }
-    void hideKeyboard(){
 
-        InputMethodManager inputManager = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);
-            inputManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
-
-    }
     /**
      * 회원가입
      * @param teacherAddForm 강사 데이터를 통해 회원 가입합니다.

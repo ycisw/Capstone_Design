@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-      //  LinearLayout parent_layout = (LinearLayout)findViewById(R.id.parent_layout);
         TextInputEditText id = findViewById(R.id.name);
         TextInputEditText pw = findViewById(R.id.password);
         Button loginButton = findViewById(R.id.login);
@@ -51,22 +50,9 @@ public class MainActivity extends AppCompatActivity {
         back.setOnClickListener(v->{
             startActivity(new Intent(this, startPage.class));
         });
-        // 화면 클릭시 키보드 내려가기
-        /*
-        parent_layout.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                hideKeyboard();
-                return false;
-            }
-        });*/
 
 
-    }
-    // 키보드 숨기는 메소드
-    void hideKeyboard(){
-        InputMethodManager inputManager = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);
-        inputManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
+
     }
 
     /**
