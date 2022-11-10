@@ -106,7 +106,7 @@ public class ParentLoginActivity extends AppCompatActivity {
                 //로그인 성공시
                 result -> {
                     Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(this,parent_personalStudent.class));
+                    startActivity(new Intent(this,personal_student.class));
                 },
                 //로그인 실패시
                 result -> {
