@@ -15,6 +15,7 @@ public class homepage extends AppCompatActivity {
         setContentView(R.layout.activity_homepage);
         Button studentLink = findViewById(R.id.main_page_student_management_link);
         Button attendanceLink = findViewById(R.id.main_page_attendance_link);
+        Button searchLink = findViewById(R.id.main_page_search_parent_link);
         ImageButton back_btn = findViewById(R.id.back_btn);
 
 
@@ -29,6 +30,10 @@ public class homepage extends AppCompatActivity {
         //출결관리 링크
         attendanceLink.setOnClickListener(v ->
                 startActivity(new Intent(this, attendancecheck.class)));
+
+        //학부모검색 링크
+        searchLink.setOnClickListener(v->
+                startActivity(new Intent(this,SearchParent.class)));
     }
     @Override
     public void onBackPressed(){

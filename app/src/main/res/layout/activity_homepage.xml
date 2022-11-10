@@ -80,6 +80,7 @@
             android:textStyle="bold" />
 
         <Button
+            android:id="@+id/main_page_search_parent_link"
             android:layout_width="300dp"
             android:layout_height="125dp"
             android:layout_gravity="center"
@@ -88,7 +89,7 @@
             android:drawableRight="@drawable/main_btn_3"
             android:drawablePadding="30dp"
             android:padding="10dp"
-            android:text="과제 관리"
+            android:text="학부모 검색"
             android:textColor="@color/theme1"
             android:textSize="25sp"
             android:textStyle="bold" />

@@ -14,6 +14,13 @@
         android:theme="@style/Theme.CapstoneDesign"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".SearchParent"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".StudentProfile"
             android:exported="false">
             <meta-data
