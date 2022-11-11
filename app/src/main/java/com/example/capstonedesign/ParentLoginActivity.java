@@ -12,7 +12,10 @@ import android.widget.Toast;
 
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.domain.parent.ParentLoginForm;
+import com.example.capstonedesign.server.domain.student.Student;
 import com.example.capstonedesign.server.service.ParentService;
+
+import java.util.List;
 
 /**
  * 학부모 로그인 화면입니다.
@@ -105,8 +108,16 @@ public class ParentLoginActivity extends AppCompatActivity {
         ParentService.login(loginForm, new NetworkLogic<>(
                 //로그인 성공시
                 result -> {
-                    Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(this,personal_student.class));
+//                    Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show();
+                    ParentService.children(new NetworkLogic<List<Student>>(students -> {
+                        StringBuilder sb = new StringBuilder();
+                        for (Student student : students) {
+                            sb.append(student.getName() + " ");
+                        }
+                        Toast.makeText(this, sb.toString(), Toast.LENGTH_SHORT).show();
+                    }, students -> {}));
+//                    startActivity(new Intent(this,personal_student.class));
+                    //학부모 권한으로 접근 불가능한 페이지임 에러 발생
                 },
                 //로그인 실패시
                 result -> {
