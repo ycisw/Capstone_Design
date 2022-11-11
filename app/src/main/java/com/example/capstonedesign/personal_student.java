@@ -18,6 +18,7 @@ import com.example.capstonedesign.server.domain.login.LoginForm;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.service.AttendanceService;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -76,15 +77,9 @@ public class personal_student extends AppCompatActivity {
                     List<Attendance> attendances = result.getAttendances();
 
                     for (Attendance attendance : attendances) {
-                        LocalDateTime inTime = attendance.getInTime(); // 학생 개인별 출석 기록 추출
-                        if (inTime == null) { // 출석 기록이 null이면 결석 처리
-                            data1.add("등원하지 않았음");
-                            data2.add("결석");
-                            continue;
-                        }
-                        data1.add(inTime.getYear() + "년 " + inTime.getMonthValue() + "월 " + inTime.getDayOfMonth() + "일 "
-                                + inTime.getHour() + "시 " + inTime.getMinute() + "분"); // 학생 개인별 출석 날짜 추출
-                        data2.add("출석"); // 출석처리
+                        LocalDate date = attendance.getDateAttendance();
+                        data1.add(date.getYear() + "년 " + date.getMonthValue() + "월 " + date.getDayOfMonth() + "일"); // 학생 개인별 출석 날짜 추출
+                        data2.add(attendance.getConfirm());
                     }
 
                     refresh(adapter, adapter2);
