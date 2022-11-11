@@ -4,9 +4,11 @@ import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.domain.parent.ParentLoginForm;
 import com.example.capstonedesign.server.domain.parent.ParentLoginResult;
 import com.example.capstonedesign.server.domain.parent.ValidationResult;
+import com.example.capstonedesign.server.domain.student.Student;
 import com.example.capstonedesign.server.repository.SingletonContainer;
 
 import java.util.HashMap;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -89,6 +91,28 @@ public class ParentService {
             @Override
             public void onFailure(Call<ValidationResult> call, Throwable t) {
                 logic.getFailedLogic().failedLogic(new ValidationResult(false));
+            }
+        });
+    }
+
+    /**
+     * 로그인한 부모님의 자녀목록을 가져옵니다.
+     * @param logic 성공 실패 로직입니다.
+     */
+    public static void children(NetworkLogic<List<Student>> logic) {
+        SingletonContainer.getParentApi().children().enqueue(new Callback<List<Student>>() {
+            @Override
+            public void onResponse(Call<List<Student>> call, Response<List<Student>> response) {
+                if (response.isSuccessful()) {
+                    logic.getSuccessLogic().successLogic(response.body());
+                    return;
+                }
+                logic.getFailedLogic().failedLogic(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<List<Student>> call, Throwable t) {
+                logic.getFailedLogic().failedLogic(null);
             }
         });
     }

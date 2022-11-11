@@ -3,16 +3,20 @@ package com.example.capstonedesign.server.repository.parent;
 import com.example.capstonedesign.server.domain.parent.ParentLoginForm;
 import com.example.capstonedesign.server.domain.parent.ParentLoginResult;
 import com.example.capstonedesign.server.domain.parent.ValidationResult;
+import com.example.capstonedesign.server.domain.student.Student;
 
 import java.util.HashMap;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 /**
  * 학부모님과 관련된 API 들입니다.
@@ -45,4 +49,12 @@ public interface ParentApi {
     @Headers({"Accept: application/json;"})
     @POST("/parents/validation")
     Call<ValidationResult> validation(@Body String validationCode);
+
+    /**
+     * 현재 학부모의 자녀들을 조회합니다.
+     * @return 자녀 학생 리스트를 반환합니다.
+     */
+    @Headers({"Accept: application/json;"})
+    @GET("/parents/students")
+    Call<List<Student>> children();
 }
