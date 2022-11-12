@@ -45,7 +45,7 @@ public class SearchParent extends AppCompatActivity {
                     result -> {
                         adapter.getListViewItemList().clear();
                         for(StudentParent studentParent : result){
-                            if(studentParent.getStudent().getName().equals(search_parent.getText().toString())) {
+                            if(studentParent.getStudent().getName().contains(search_parent.getText().toString())) {
                                 adapter.addItem(studentParent.getParent().getName(), studentParent.getParent().getPhone());
                             }
                         }
