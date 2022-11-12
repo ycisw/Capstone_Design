@@ -48,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
         //뒤로가기 버튼
         back.setOnClickListener(v->{
-            startActivity(new Intent(this, startPage.class));
+            finishAffinity();
+            startActivity(new Intent(this,startPage.class));
         });
 
 
@@ -74,5 +75,11 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(this, "회원정보가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
                 }
         ));
+    }
+
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
+        startActivity(new Intent(this,startPage.class));
     }
 }

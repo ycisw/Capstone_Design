@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="20dp"
-        android:orientation="vertical"
-        tools:context=".StudentProfile">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:orientation="vertical"
+    tools:context=".parent_student_info">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,68 +18,46 @@
             android:background="#00000000"
             android:scaleType="fitXY"
             android:src="@drawable/back_btn" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="학생 정보"
-            android:textAlignment="center"
-            android:textSize="40dp"
-            />
     </LinearLayout>
+
 
 
     <LinearLayout
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/student_update"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/start_page_btn"
-            android:text="학생 수정" />
-
-        <Button
-            android:id="@+id/student_delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FF6464"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/start_page_btn"
-            android:text="학생 삭제" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="400dp"
         android:padding="20dp"
-        android:background="@drawable/sub2_background"
-        android:backgroundTint="#A8FF98"
+        android:background="@drawable/student_profile_backround"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="강사 이름:"
-                android:textSize="30dp"/>
+            <ImageView
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="center"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/student_profile_img1"
+                android:scaleType="fitXY"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:paddingBottom="30dp"
-                android:id="@+id/teacher_name"
+                android:id="@+id/student_name"
                 android:gravity="center"
                 android:text="데이터 없음"
                 android:textSize="30dp"/>
         </LinearLayout>
-
+        <View
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:layout_width="390dp"
+            android:layout_height="1pt"
+            android:background="#A779CA" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -93,24 +71,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/student_id"
-                android:gravity="center"
-                android:text="데이터 없음"
-                android:textSize="25dp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="학생 이름:"
-                android:textSize="25dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/student_name"
                 android:gravity="center"
                 android:text="데이터 없음"
                 android:textSize="25dp"/>
@@ -152,43 +112,38 @@
                 android:textSize="25dp"/>
         </LinearLayout>
 
+
+        <View
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:layout_width="390dp"
+            android:layout_height="1pt"
+            android:background="#A779CA" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="학생 등록일자:"
-                android:textSize="25dp"/>
+            <ImageView
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="center"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/aa_teacher_profile"
+                android:scaleType="fitXY"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/student_regDate"
-                android:gravity="center"
+                android:layout_marginTop="5dp"
                 android:paddingBottom="30dp"
-                android:text="데이터 없음"
-                android:textSize="25dp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="학부모 이름:"
-                android:textSize="25dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/parent_name"
+                android:id="@+id/teacher_name"
                 android:gravity="center"
                 android:text="데이터 없음"
                 android:textSize="25dp"/>
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -196,13 +151,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="학부모 휴대폰:"
+                android:text="강사 번호:"
                 android:layout_gravity="center"
                 android:textSize="25dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/parent_phone"
+                android:id="@+id/tea"
                 android:gravity="center"
                 android:text="데이터 없음"
                 android:textSize="25dp"/>
@@ -210,7 +165,38 @@
 
 
     </LinearLayout>
+    <Button
+        android:layout_marginTop="5dp"
+        android:layout_width="370dp"
+        android:layout_height="30dp"
+        android:text="출석 조회"
+        android:textColor="@color/white"
+        android:background="@drawable/sub2_background">
 
-
-
+    </Button>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <ImageView
+        android:layout_marginBottom="5dp"
+        android:layout_gravity="center"
+        android:layout_width="185dp"
+        android:layout_height="140dp"
+        android:src="@drawable/student_profile_img2"
+        android:scaleType="fitXY"/>
+    <ImageView
+        android:layout_marginBottom="5dp"
+        android:layout_gravity="center"
+        android:layout_width="185dp"
+        android:layout_height="140dp"
+        android:src="@drawable/student_profile_img3"
+        android:scaleType="fitXY"/>
+    </LinearLayout>
+    <View
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        android:layout_width="360dp"
+        android:layout_height="2pt"
+        android:background="#A779CA" />
 </LinearLayout>
