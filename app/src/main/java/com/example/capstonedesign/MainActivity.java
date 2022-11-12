@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         TextInputEditText pw = findViewById(R.id.password);
         Button loginButton = findViewById(R.id.login);
         Button registerButton = findViewById(R.id.register);
-        ImageButton back = findViewById(R.id.back);
+        ImageButton btn_back = findViewById(R.id.btn_back);
 
         //로그인 버튼 클릭시
         loginButton.setOnClickListener(v -> {
@@ -47,12 +47,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, RegisterActivity.class)));
 
         //뒤로가기 버튼
-        back.setOnClickListener(v->{
+        btn_back.setOnClickListener(v->{
             startActivity(new Intent(this, startPage.class));
         });
 
 
-
+//010 9066 3150
     }
 
     /**
