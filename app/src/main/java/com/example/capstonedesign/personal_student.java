@@ -43,16 +43,6 @@ public class personal_student extends AppCompatActivity {
         attendance_data.setAdapter(adapter);
 
 
-
-
-        attendance_data.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-                Toast.makeText(getApplicationContext(),"수정 기능 구현 중", Toast.LENGTH_SHORT).show();
-
-            }
-        });
         // 뒤로 가기 버튼
         back_btn.setOnClickListener(v->{
             finishAffinity();
