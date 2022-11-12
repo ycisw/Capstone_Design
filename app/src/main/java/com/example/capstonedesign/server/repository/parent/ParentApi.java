@@ -5,6 +5,7 @@ import com.example.capstonedesign.server.domain.parent.ParentLoginForm;
 import com.example.capstonedesign.server.domain.parent.ParentLoginResult;
 import com.example.capstonedesign.server.domain.parent.ValidationResult;
 import com.example.capstonedesign.server.domain.student.Student;
+import com.example.capstonedesign.server.domain.student.StudentTeacher;
 
 import java.util.HashMap;
 import java.util.List;
@@ -58,4 +59,12 @@ public interface ParentApi {
     @Headers({"Accept: application/json;"})
     @GET("/parents/students")
     Call<List<Student>> children();
+
+    /**
+     * 자녀와 담당강사의 정보를 조회합니다.
+     * @param studentId 자녀의 학생아이디
+     */
+    @Headers({"Accept: application/json;"})
+    @GET("/parents/student")
+    Call<StudentTeacher> student(@Query("studentId") Long studentId);
 }
