@@ -8,11 +8,8 @@ import java.io.Serializable;
  * 강사 데이터입니다.
  */
 public class Teacher implements Serializable {
-    @SerializedName("id")
-    private String id;
-
-    @SerializedName("password")
-    private String password;
+    @SerializedName("lesson")
+    private Long lesson;
 
     @SerializedName("name")
     private String name;
@@ -24,32 +21,14 @@ public class Teacher implements Serializable {
     }
 
     /**
-     * @param id 로그인 할 때 사용하는 아이디입니다.
-     * @param password 로그인 할 때 사용하는 비밀번호입니다.
+     * @param lesson 강사번호입니다.
      * @param name 닉네임입니다.
      * @param phone 휴대폰 번호입니다.
      */
-    public Teacher(String id, String password, String name, String phone) {
-        this.id = id;
-        this.password = password;
+    public Teacher(Long lesson, String name, String phone) {
+        this.lesson = lesson;
         this.name = name;
         this.phone = phone;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getName() {
@@ -66,5 +45,13 @@ public class Teacher implements Serializable {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public Long getLesson() {
+        return lesson;
+    }
+
+    public void setLesson(Long lesson) {
+        this.lesson = lesson;
     }
 }

@@ -6,6 +6,7 @@ import com.example.capstonedesign.server.domain.parent.ParentLoginForm;
 import com.example.capstonedesign.server.domain.parent.ParentLoginResult;
 import com.example.capstonedesign.server.domain.parent.ValidationResult;
 import com.example.capstonedesign.server.domain.student.Student;
+import com.example.capstonedesign.server.domain.student.StudentTeacher;
 import com.example.capstonedesign.server.repository.SingletonContainer;
 
 import java.util.HashMap;
@@ -113,6 +114,28 @@ public class ParentService {
 
             @Override
             public void onFailure(Call<List<Student>> call, Throwable t) {
+                logic.getFailedLogic().failedLogic(null);
+            }
+        });
+    }
+
+    /**
+     * 자녀의 학생 아이디를 통해 학생과 강사 데이터 조회
+     * @param studentId 자녀 학생 아이디
+     */
+    public static void student(Long studentId, NetworkLogic<StudentTeacher> logic) {
+        SingletonContainer.getParentApi().student(studentId).enqueue(new Callback<StudentTeacher>() {
+            @Override
+            public void onResponse(Call<StudentTeacher> call, Response<StudentTeacher> response) {
+                if (response.isSuccessful()) {
+                    logic.getSuccessLogic().successLogic(response.body());
+                    return;
+                }
+                logic.getFailedLogic().failedLogic(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<StudentTeacher> call, Throwable t) {
                 logic.getFailedLogic().failedLogic(null);
             }
         });
