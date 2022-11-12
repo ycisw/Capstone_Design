@@ -1,5 +1,6 @@
 package com.example.capstonedesign.server.service;
 
+import com.example.capstonedesign.server.domain.PhoneValidationForm;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.domain.teacher.Teacher;
 import com.example.capstonedesign.server.domain.teacher.TeacherAddForm;
@@ -46,7 +47,6 @@ public class TeacherService {
 
     /**
      * 현재 로그인한 강사 데이터
-     * @param logic
      */
     public static void profile(NetworkLogic<Teacher> logic) {
         SingletonContainer.getTeacherApi().profile().enqueue(new Callback<Teacher>() {
@@ -62,6 +62,50 @@ public class TeacherService {
 
             @Override
             public void onFailure(Call<Teacher> call, Throwable t) {
+                logic.getFailedLogic().failedLogic(null);
+            }
+        });
+    }
+
+    /**
+     * 회원가입할 강사의 휴대폰 번호를 인증합니다.
+     * @param phone 휴대폰 번호
+     */
+    public static void sendValidation(String phone, NetworkLogic<Void> logic) {
+        SingletonContainer.getTeacherApi().sendValidation(new PhoneValidationForm(phone)).enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                if (response.isSuccessful()) {
+                    logic.getSuccessLogic().successLogic(response.body());
+                    return;
+                }
+                logic.getFailedLogic().failedLogic(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                logic.getFailedLogic().failedLogic(null);
+            }
+        });
+    }
+
+    /**
+     * 수신한 인증번호를 입력합니다.
+     * @param validationCode 인증번호
+     */
+    public static void validation(String validationCode, NetworkLogic<Void> logic) {
+        SingletonContainer.getTeacherApi().validation(validationCode).enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                if (response.isSuccessful()) {
+                    logic.getSuccessLogic().successLogic(response.body());
+                    return;
+                }
+                logic.getFailedLogic().failedLogic(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
                 logic.getFailedLogic().failedLogic(null);
             }
         });

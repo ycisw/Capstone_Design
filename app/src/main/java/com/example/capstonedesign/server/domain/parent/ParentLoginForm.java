@@ -1,5 +1,7 @@
 package com.example.capstonedesign.server.domain.parent;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 /**
@@ -7,6 +9,7 @@ import java.io.Serializable;
  */
 public class ParentLoginForm implements Serializable {
 
+    @SerializedName("phone")
     private String phone;
 
     /**

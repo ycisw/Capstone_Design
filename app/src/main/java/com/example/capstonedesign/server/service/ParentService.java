@@ -1,5 +1,6 @@
 package com.example.capstonedesign.server.service;
 
+import com.example.capstonedesign.server.domain.PhoneValidationForm;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.domain.parent.ParentLoginForm;
 import com.example.capstonedesign.server.domain.parent.ParentLoginResult;
@@ -54,7 +55,7 @@ public class ParentService {
      * @param logic 성공 실패 관련 로직이에요.
      */
     public static void sendValidation(String phone, NetworkLogic<Void> logic) {
-        SingletonContainer.getParentApi().sendValidation(new ParentLoginForm(phone)).enqueue(new Callback<Void>() {
+        SingletonContainer.getParentApi().sendValidation(new PhoneValidationForm(phone)).enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if (response.isSuccessful()) {
