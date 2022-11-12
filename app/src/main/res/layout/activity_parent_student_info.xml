@@ -169,6 +169,7 @@
         android:layout_marginTop="5dp"
         android:layout_width="370dp"
         android:layout_height="30dp"
+        android:id="@+id/student_attendance"
         android:text="출석 조회"
         android:textColor="@color/white"
         android:background="@drawable/sub2_background">

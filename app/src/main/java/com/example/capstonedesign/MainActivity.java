@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         TextInputEditText pw = findViewById(R.id.password);
         Button loginButton = findViewById(R.id.login);
         Button registerButton = findViewById(R.id.register);
-        ImageButton back = findViewById(R.id.back);
+        ImageButton back = findViewById(R.id.btn_back);
 
         //로그인 버튼 클릭시
         loginButton.setOnClickListener(v -> {

@@ -28,7 +28,7 @@ public class parent_student_info extends AppCompatActivity {
         TextView student_phone = findViewById(R.id.student_phone);
         TextView student_tuition = findViewById(R.id.student_tuition);
         TextView student_id = findViewById(R.id.student_id);
-
+        Button studenButton = findViewById(R.id.student_attendance);
 
         TeacherService.profile(new NetworkLogic<>(
                 teacher -> {
