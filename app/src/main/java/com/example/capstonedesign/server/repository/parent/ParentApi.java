@@ -1,6 +1,7 @@
 package com.example.capstonedesign.server.repository.parent;
 
 import com.example.capstonedesign.server.domain.PhoneValidationForm;
+import com.example.capstonedesign.server.domain.attendance.Attendance;
 import com.example.capstonedesign.server.domain.parent.ParentLoginForm;
 import com.example.capstonedesign.server.domain.parent.ParentLoginResult;
 import com.example.capstonedesign.server.domain.parent.ValidationResult;
@@ -67,4 +68,12 @@ public interface ParentApi {
     @Headers({"Accept: application/json;"})
     @GET("/parents/student")
     Call<StudentTeacher> student(@Query("studentId") Long studentId);
+
+    /**
+     * 자녀의 출결기록을 조회합니다.
+     * @param studentId 자녀의 학생아이디
+     */
+    @Headers({"Accept: application/json;"})
+    @GET("/parents/student/attendances")
+    Call<List<Attendance>> studentAttendances(@Query("studentId") Long studentId);
 }

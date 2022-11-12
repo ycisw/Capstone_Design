@@ -1,6 +1,7 @@
 package com.example.capstonedesign.server.service;
 
 import com.example.capstonedesign.server.domain.PhoneValidationForm;
+import com.example.capstonedesign.server.domain.attendance.Attendance;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.domain.parent.ParentLoginForm;
 import com.example.capstonedesign.server.domain.parent.ParentLoginResult;
@@ -136,6 +137,28 @@ public class ParentService {
 
             @Override
             public void onFailure(Call<StudentTeacher> call, Throwable t) {
+                logic.getFailedLogic().failedLogic(null);
+            }
+        });
+    }
+
+    /**
+     * 자녀의 출결 기록 조회
+     * @param studentId 자녀의 학생 아이디
+     */
+    public static void studentAttendances(Long studentId, NetworkLogic<List<Attendance>> logic) {
+        SingletonContainer.getParentApi().studentAttendances(studentId).enqueue(new Callback<List<Attendance>>() {
+            @Override
+            public void onResponse(Call<List<Attendance>> call, Response<List<Attendance>> response) {
+                if (response.isSuccessful()) {
+                    logic.getSuccessLogic().successLogic(response.body());
+                    return;
+                }
+                logic.getFailedLogic().failedLogic(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<List<Attendance>> call, Throwable t) {
                 logic.getFailedLogic().failedLogic(null);
             }
         });
