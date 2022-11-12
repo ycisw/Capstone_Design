@@ -3,6 +3,7 @@ package com.example.capstonedesign.student;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,15 +11,14 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.capstonedesign.R;
-import com.example.capstonedesign.StudentProfile;
 
 import java.util.ArrayList;
 
-public class ListViewAdapter extends BaseAdapter {
+public class ListViewAdapter2  extends BaseAdapter {
     private ArrayList<ListViewItem> listViewItemList = new ArrayList<>();
     private Activity activity;
 
-    public ListViewAdapter(){};
+    public ListViewAdapter2(){};
 
     public ArrayList<ListViewItem> getListViewItemList() {
         return listViewItemList;
@@ -46,23 +46,17 @@ public class ListViewAdapter extends BaseAdapter {
 
         if(convertView==null){
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.list_view_item,parent,false);
+            convertView = inflater.inflate(R.layout.list_view_item_2,parent,false);
         }
 
-        TextView nameView = (TextView) convertView.findViewById(R.id.name);
-        TextView pnameView = (TextView) convertView.findViewById(R.id.pname);
-        TextView pphoneView = (TextView) convertView.findViewById(R.id.pphone);
+        TextView searchView = (TextView) convertView.findViewById(R.id.search_parent_name);
 
         ListViewItem listViewItem = listViewItemList.get(position);
-        nameView.setText(listViewItem.getName());
-        pnameView.setText(listViewItem.getPname());
-        pphoneView.setText(listViewItem.getPphone());
-        long sid = listViewItem.getSid();
+        searchView.setText(listViewItem.getPname());
+        String pphone = listViewItem.getPphone();
 
         convertView.setOnClickListener(v->{
-            Intent intent = new Intent(activity, StudentProfile.class);
-            intent.putExtra("sid",sid);
-            activity.startActivity(intent);
+            activity.startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+pphone)));
         });
         return convertView;
     }
@@ -71,10 +65,8 @@ public class ListViewAdapter extends BaseAdapter {
         this.activity =activity;
     }
 
-    public void addItem(Long sid,String name, String pname, String pphone){
+    public void addItem(String pname, String pphone){
         ListViewItem item = new ListViewItem();
-        item.setSid(sid);
-        item.setName(name);
         item.setPname(pname);
         item.setPphone(pphone);
         listViewItemList.add(item);
@@ -83,4 +75,5 @@ public class ListViewAdapter extends BaseAdapter {
     public void delItem(String pos){
         listViewItemList.remove(pos);
     }
+
 }
