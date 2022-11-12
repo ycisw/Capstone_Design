@@ -157,7 +157,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/tea"
+                android:id="@+id/teacher_phone"
                 android:gravity="center"
                 android:text="데이터 없음"
                 android:textSize="25dp"/>
