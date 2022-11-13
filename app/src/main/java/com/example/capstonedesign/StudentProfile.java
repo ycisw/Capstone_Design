@@ -67,7 +67,7 @@ public class StudentProfile extends AppCompatActivity {
                     student1.setStudent(studentParent.getStudent());
                     student_name.setText(student1.getStudent().getName());
                     student_phone.setText(student1.getStudent().getPhone());
-                    student_tuition.setText(student1.getStudent().getTuition().toString());
+                    student_tuition.setText(student1.getStudent().getTuition().toString() + "원");
                     student_regDate.setText(student1.getStudent().getRegDate().toString());
                     student_id.setText(student1.getStudent().getId().toString());
                     student1.setParent(studentParent.getParent());
