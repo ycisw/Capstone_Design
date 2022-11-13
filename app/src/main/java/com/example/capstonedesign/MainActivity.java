@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         TextInputEditText pw = findViewById(R.id.password);
         Button loginButton = findViewById(R.id.login);
         Button registerButton = findViewById(R.id.register);
-        ImageButton back = findViewById(R.id.back);
+        ImageButton back = findViewById(R.id.btn_back);
 
         //로그인 버튼 클릭시
         loginButton.setOnClickListener(v -> {
@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         //뒤로가기 버튼
         back.setOnClickListener(v->{
+            finishAffinity();
             startActivity(new Intent(this, startPage.class));
         });
 
@@ -74,5 +75,11 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(this, "회원정보가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
                 }
         ));
+    }
+
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
+        startActivity(new Intent(this, startPage.class));
     }
 }

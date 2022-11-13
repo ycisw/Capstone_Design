@@ -1,9 +1,12 @@
 package com.example.capstonedesign.server.repository.parent;
 
+import com.example.capstonedesign.server.domain.PhoneValidationForm;
+import com.example.capstonedesign.server.domain.attendance.Attendance;
 import com.example.capstonedesign.server.domain.parent.ParentLoginForm;
 import com.example.capstonedesign.server.domain.parent.ParentLoginResult;
 import com.example.capstonedesign.server.domain.parent.ValidationResult;
 import com.example.capstonedesign.server.domain.student.Student;
+import com.example.capstonedesign.server.domain.student.StudentTeacher;
 
 import java.util.HashMap;
 import java.util.List;
@@ -34,12 +37,12 @@ public interface ParentApi {
     /**
      * 학부모 로그인에 사용되는 번호를 인증하기위해 인증번호를 메시지로 보냅니다.
      * 60초 이내로 인증해야됩니다.
-     * @param parentLoginForm 해당 휴대폰 번호로 보내줍니다.
+     * @param phoneValidationForm 해당 휴대폰 번호로 보내줍니다.
      * @return 결과는 없습니다.
      */
     @Headers({"Accept: application/json;"})
     @POST("/parents/sendvalidation")
-    Call<Void> sendValidation(@Body ParentLoginForm parentLoginForm);
+    Call<Void> sendValidation(@Body PhoneValidationForm phoneValidationForm);
 
     /**
      * 휴대폰에 받은 인증 번호를 넣어서 전달합니다.
@@ -57,4 +60,20 @@ public interface ParentApi {
     @Headers({"Accept: application/json;"})
     @GET("/parents/students")
     Call<List<Student>> children();
+
+    /**
+     * 자녀와 담당강사의 정보를 조회합니다.
+     * @param studentId 자녀의 학생아이디
+     */
+    @Headers({"Accept: application/json;"})
+    @GET("/parents/student")
+    Call<StudentTeacher> student(@Query("studentId") Long studentId);
+
+    /**
+     * 자녀의 출결기록을 조회합니다.
+     * @param studentId 자녀의 학생아이디
+     */
+    @Headers({"Accept: application/json;"})
+    @GET("/parents/student/attendances")
+    Call<List<Attendance>> studentAttendances(@Query("studentId") Long studentId);
 }

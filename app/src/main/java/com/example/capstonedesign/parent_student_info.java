@@ -24,11 +24,12 @@ public class parent_student_info extends AppCompatActivity {
         //학생정보 출력
         long sid = getIntent().getLongExtra("sid",0);
         TextView teacher_name = findViewById(R.id.teacher_name);
+//        TextView teacher_phone = findViewById(R.id.teacher_phone);
         TextView student_name = findViewById(R.id.student_name);
         TextView student_phone = findViewById(R.id.student_phone);
         TextView student_tuition = findViewById(R.id.student_tuition);
         TextView student_id = findViewById(R.id.student_id);
-
+        Button studentButton = findViewById(R.id.student_attendance);
 
         TeacherService.profile(new NetworkLogic<>(
                 teacher -> {

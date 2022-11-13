@@ -1,5 +1,6 @@
 package com.example.capstonedesign.server.repository.teacher;
 
+import com.example.capstonedesign.server.domain.PhoneValidationForm;
 import com.example.capstonedesign.server.domain.teacher.Teacher;
 import com.example.capstonedesign.server.domain.teacher.TeacherAddForm;
 import com.example.capstonedesign.server.domain.teacher.TeacherAddResult;
@@ -27,7 +28,27 @@ public interface TeacherApi {
     @POST("/teachers/add")
     Call<TeacherAddResult> register(@Body TeacherAddForm teacherAddForm);
 
+    /**
+     * 현재 로그인한 강사의 데이터를 조회합니다.
+     * @return 로그인 강사 프로필
+     */
     @Headers({"Accept: application/json;"})
     @POST("/teachers/profile")
     Call<Teacher> profile();
+
+    /**
+     * 휴대폰 번호를 입력하여 인증번호를 받습니다.
+     * @param phoneValidationForm 휴대폰 번호
+     */
+    @Headers({"Accept: application/json;"})
+    @POST("/teachers/sendvalidation")
+    Call<Void> sendValidation(@Body PhoneValidationForm phoneValidationForm);
+
+    /**
+     * 수신한 인증번호를 입력합니다.
+     * @param validationCode 인증번호
+     */
+    @Headers({"Accept: application/json;"})
+    @POST("/teachers/validation")
+    Call<Void> validation(@Body String validationCode);
 }
