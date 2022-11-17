@@ -66,9 +66,9 @@ public class ListViewAdapter extends BaseAdapter {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if(motionEvent.getAction()==MotionEvent.ACTION_DOWN){
-                    finalConvertView.setBackgroundColor(Color.TRANSPARENT);
-                }else if(motionEvent.getAction()==MotionEvent.ACTION_UP){
                     finalConvertView.setBackgroundColor(Color.LTGRAY);
+                }else if(motionEvent.getAction()==MotionEvent.ACTION_UP){
+                    finalConvertView.setBackgroundColor(Color.TRANSPARENT);
                 }
             return false;
             }
