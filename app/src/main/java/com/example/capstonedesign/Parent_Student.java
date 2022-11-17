@@ -22,11 +22,8 @@ public class Parent_Student extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parent_student);
         Intent intent = getIntent();
-        Long studentId = intent.getLongExtra("studentId",0L);
         ImageButton btn_back = findViewById(R.id.btn_back);
         ListView student_info_list = findViewById(R.id.student_info);
-
-
 
         List<String> student_info = new ArrayList<>();
         List<Student> subList = new ArrayList<>();
