@@ -3,7 +3,9 @@ package com.example.capstonedesign.student;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -59,6 +61,18 @@ public class ListViewAdapter extends BaseAdapter {
         pphoneView.setText(listViewItem.getPphone());
         long sid = listViewItem.getSid();
 
+        View finalConvertView = convertView;
+        convertView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction()==MotionEvent.ACTION_DOWN){
+                    finalConvertView.setBackgroundColor(Color.TRANSPARENT);
+                }else if(motionEvent.getAction()==MotionEvent.ACTION_UP){
+                    finalConvertView.setBackgroundColor(Color.LTGRAY);
+                }
+            return false;
+            }
+        });
         convertView.setOnClickListener(v->{
             Intent intent = new Intent(activity, StudentProfile.class);
             intent.putExtra("sid",sid);
