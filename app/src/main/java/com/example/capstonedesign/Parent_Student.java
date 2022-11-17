@@ -30,7 +30,7 @@ public class Parent_Student extends AppCompatActivity {
 
 
         btn_back.setOnClickListener(view -> {
-            finish(); // 일단 finish
+            finish();
         });
 
 
