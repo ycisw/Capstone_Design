@@ -70,6 +70,9 @@ public class ListViewAdapter extends BaseAdapter {
                 }else if(motionEvent.getAction()==MotionEvent.ACTION_UP){
                     finalConvertView.setBackgroundColor(Color.TRANSPARENT);
                 }
+                if(motionEvent.getAction()==MotionEvent.ACTION_CANCEL){
+                    finalConvertView.setBackgroundColor(Color.TRANSPARENT);
+                }
             return false;
             }
         });
