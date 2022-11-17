@@ -20,6 +20,7 @@ public class homepage extends AppCompatActivity {
 
 
         back_btn.setOnClickListener(view -> {
+            finishAffinity();
             startActivity(new Intent(this, MainActivity.class));
         });
 
