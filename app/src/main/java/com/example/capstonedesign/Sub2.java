@@ -49,6 +49,7 @@ public class Sub2 extends AppCompatActivity {
         Button student_add = findViewById(R.id.student_add);
         ImageButton back = findViewById(R.id.back1);
         ListView listView = findViewById(R.id.listView1);
+
         adapter = new ListViewAdapter();
         listView.setAdapter(adapter);
         adapter.setActivity(this);
@@ -77,7 +78,6 @@ public class Sub2 extends AppCompatActivity {
                     adapter.getListViewItemList().clear();
                     for(StudentParent studentParent : result){
                         adapter.addItem(studentParent.getStudent().getId(),studentParent.getStudent().getName(),studentParent.getParent().getName(),studentParent.getParent().getPhone());
-
                     }
                     adapter.notifyDataSetChanged();
                 },
