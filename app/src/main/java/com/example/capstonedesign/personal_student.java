@@ -56,7 +56,7 @@ public class personal_student extends AppCompatActivity {
 
                     for (Attendance attendance : attendances) {
                         LocalDate date = attendance.getDateAttendance();
-                        data1.add(date.getYear() + "년 " + date.getMonthValue() + "월 " + date.getDayOfMonth() + "일" + " " + attendance.getConfirm()); // 학생 개인별 출석 날짜 추출
+                        data1.add(date.getYear() + "년 " + date.getMonthValue() + "월 " + date.getDayOfMonth() + "일 출석"); // 학생 개인별 출석 날짜 추출
                     }
 
                     refresh(adapter);
