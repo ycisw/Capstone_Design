@@ -6,25 +6,27 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="40dp"
         android:orientation="horizontal"
         android:layout_weight="5">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/name"
+            android:layout_gravity="center_vertical"
             android:text="Name"
-            android:textSize="24dp"
-            android:textColor="#FFFFFFFF"
+            android:textSize="18dp"
+            android:textColor="#000000"
             android:gravity="center_vertical"
             android:layout_weight="2.5"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/pname"
+            android:layout_gravity="center_vertical"
             android:text="Parents"
-            android:textSize="24dp"
-            android:textColor="#FFFFFFFF"
+            android:textSize="18dp"
+            android:textColor="#000000"
             android:gravity="center_vertical"
             android:layout_weight="2.5"/>
 
@@ -32,11 +34,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/pphone"
+            android:layout_gravity="center_vertical"
             android:text="Parents phone"
-            android:textSize="24dp"
-            android:textColor="#FFFFFFFF"
+            android:textSize="18dp"
+            android:textColor="#000000"
             android:gravity="center_vertical"
             android:layout_weight="2"/>
     </LinearLayout>
+
+
 
 </LinearLayout>
