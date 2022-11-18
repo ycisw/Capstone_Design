@@ -96,12 +96,10 @@ int count = 0;
                 //실패시 로직
                 teacherAddResult -> {
                     TeacherAddResult result = (TeacherAddResult) teacherAddResult;
-
-                    String message = result.getMessage().equals(TeacherAddResultConst.DUPLICATE_ID) ? //중복된 아이디
-                            "이미 등록된 아이디입니다." : //출력할 메시지
-                            result.getMessage(); //예상치 못한 에러로 인한 메시지
+                    String message=result.getMessage().equals(TeacherAddResultConst.DUPLICATE_ID)?
+                        "이미 등록된 아이디입니다.":
+                        "모든 항목을 입력해 주세요";
                     Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-                    finish();
                 }
         ));
     }

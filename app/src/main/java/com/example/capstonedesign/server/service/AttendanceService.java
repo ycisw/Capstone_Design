@@ -6,7 +6,6 @@ import com.example.capstonedesign.server.domain.student.StudentParent;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.repository.SingletonContainer;
 
-import java.util.HashMap;
 import java.util.List;
 
 import retrofit2.Call;
@@ -118,7 +117,7 @@ public class AttendanceService {
      * @param logic 성공 실패 로직
      */
     public static void studentUpdate(Attendance attendance, NetworkLogic<Void> logic) {
-        SingletonContainer.getAttendanceApi().studentUpdate(attendance).enqueue(new Callback<Void>() {
+        SingletonContainer.getAttendanceApi().attendanceUpdate(attendance).enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if (response.isSuccessful()) {

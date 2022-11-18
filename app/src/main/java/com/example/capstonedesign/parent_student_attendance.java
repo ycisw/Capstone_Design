@@ -10,64 +10,60 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.capstonedesign.server.domain.attendance.Attendance;
-import com.example.capstonedesign.server.domain.attendance.AttendanceStudentResult;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
-import com.example.capstonedesign.server.service.AttendanceService;
+import com.example.capstonedesign.server.service.ParentService;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class parent_student_attendance extends AppCompatActivity {
+    private Long studentId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parent_student_attendance);
-        String name = null;
-        Intent intent = getIntent();
-        Long studentId = intent.getLongExtra("studentId", 0L); //만약 값이 없으면 0L 값이 들어감
+        studentId = getIntent().getLongExtra("studentId", 0L); //만약 값이 없으면 0L 값이 들어감
         TextView student_name = findViewById(R.id.student_name);
         ListView attendance_data = findViewById(R.id.attendacne_data);
 
         ImageButton back_btn = findViewById(R.id.back_btn);
 
-        List<String> data1 = new ArrayList<>();
+        student_name.setText(getIntent().getStringExtra("name"));
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,data1); //현재 액티비티
+        List<String> dates = new ArrayList<>();
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,dates); //현재 액티비티
         // 데이터를 담은 어댑터 생성
         attendance_data.setAdapter(adapter);
 
+        ParentService.studentAttendances(studentId, new NetworkLogic<List<Attendance>>(
+                attendances -> {
+                    for (Attendance attendance : attendances) {
+                        LocalDate dateAttendance = attendance.getDateAttendance();
+                        String date = dateAttendance.getYear() + "년 " + dateAttendance.getMonthValue() + "월 " +
+                                dateAttendance.getDayOfMonth() + "일";
+                        dates.add(date);
+                    }
+                    adapter.notifyDataSetChanged();
+                }, none -> {}
+        ));
 
         // 뒤로 가기 버튼
         back_btn.setOnClickListener(v->{
             finishAffinity();
-            startActivity(new Intent(this, attendancecheck.class));
+            Intent intent = new Intent(this, parent_student_info.class);
+            intent.putExtra("sid", studentId);
+            startActivity(intent);
         });
-
-        AttendanceService.studentForm(studentId, new NetworkLogic<AttendanceStudentResult>(
-                result -> {
-                    student_name.setText(result.getStudent().getName() + " 학생 출석 기록"); // 학생 이름 추출
-                    List<Attendance> attendances = result.getAttendances();
-
-                    for (Attendance attendance : attendances) {
-                        LocalDate date = attendance.getDateAttendance();
-                        data1.add(date.getYear() + "년 " + date.getMonthValue() + "월 " + date.getDayOfMonth() + "일" + " " + attendance.getConfirm()); // 학생 개인별 출석 날짜 추출
-                    }
-
-                    refresh(adapter);
-                },
-                result -> {}
-        ));
     }
 
     @Override
     public void onBackPressed(){
         finishAffinity();
-        startActivity(new Intent(this, parent_student_info.class));
-    }
-
-    private void refresh(ArrayAdapter<String> adapter) {
-        adapter.notifyDataSetChanged();
+        Intent intent = new Intent(this, parent_student_info.class);
+        intent.putExtra("sid", studentId);
+        startActivity(intent);
     }
 }
