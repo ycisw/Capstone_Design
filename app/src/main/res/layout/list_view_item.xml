@@ -2,46 +2,61 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
     <LinearLayout
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_weight="5">
+        >
+
         <TextView
+            android:fontFamily="@font/good"
+            android:layout_marginVertical="5dp"
+            android:layout_marginHorizontal="7dp"
+            android:padding="7dp"
+            android:backgroundTint="#434C7E"
+            android:background="@drawable/student_checking_page_layout_studentname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/name"
-            android:layout_gravity="center_vertical"
             android:text="Name"
-            android:textSize="18dp"
-            android:textColor="#000000"
-            android:gravity="center_vertical"
-            android:layout_weight="2.5"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/pname"
-            android:layout_gravity="center_vertical"
-            android:text="Parents"
-            android:textSize="18dp"
-            android:textColor="#000000"
-            android:gravity="center_vertical"
-            android:layout_weight="2.5"/>
+            android:textSize="23dp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            />
 
         <TextView
+            android:fontFamily="@font/good"
+            android:layout_marginVertical="5dp"
+            android:padding="7dp"
+            android:backgroundTint="#C84866"
+            android:id="@+id/pname"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="7dp"
+            android:background="@drawable/student_checking_page_layout_parentname"
+            android:text="Parents"
+            android:textColor="@color/white"
+            android:textSize="23dp" />
+
+        <TextView
+            android:fontFamily="@font/good"
+            android:layout_marginVertical="5dp"
+            android:padding="7dp"
+            android:backgroundTint="#6FA671"
+            android:background="@drawable/student_checking_page_layout_student_phone"
+            android:layout_marginLeft="8dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/pphone"
-            android:layout_gravity="center_vertical"
             android:text="Parents phone"
-            android:textSize="18dp"
-            android:textColor="#000000"
-            android:gravity="center_vertical"
-            android:layout_weight="2"/>
+            android:textSize="21dp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            />
     </LinearLayout>
-
-
 
 </LinearLayout>
