@@ -2,31 +2,31 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:background="#FFFFFFFF"
-    android:layout_height="match_parent"
     android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFFFF"
+    android:orientation="vertical"
     tools:context=".MainActivity">
+
     <ImageButton
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:id="@+id/btn_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="5dp"
         android:background="#00000000"
         android:scaleType="fitXY"
-        android:src="@drawable/back_btn"
-        android:id="@+id/btn_back"/>
+        android:src="@drawable/back_btn" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:background="#FFFFFFFF"
+        android:layout_height="310dp"
         android:gravity="bottom"
         android:orientation="vertical">
 
-
         <ImageView
-
-            android:layout_width="350dp"
-            android:layout_height="300dp"
+            android:layout_width="400dp"
+            android:layout_height="200dp"
             android:layout_gravity="center"
             android:src="@drawable/main_img1" />
 
@@ -35,78 +35,71 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="130dp"
-            android:layout_height="40dp"
-            android:layout_gravity="left"
-            android:layout_marginLeft="50dp"
-            android:src="@drawable/main_header" />
-    </LinearLayout>
 
-    <LinearLayout
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-      >
+            <ImageView
+                android:layout_width="180dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="-40dp"
+                android:src="@drawable/main_header" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_gravity="center"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:hint="ID"
-            android:textColorHint="#3F51B5">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/name"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:hint="ID"
+                android:textColorHint="#3F51B5">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_gravity="center"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:textColorHint="#3F51B5"
-            android:hint="비밀번호">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/password"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="300dp"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:hint="비밀번호"
+                android:textColorHint="#3F51B5">
 
-        <Button
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            android:layout_gravity="center"
+            <Button
 
-            android:layout_marginTop="5dp"
-            android:textSize="17dp"
-            android:textAlignment="center"
-            android:backgroundTint="#002060"
-            android:id="@+id/login"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
+                android:id="@+id/login"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#002060"
+                android:text="Login"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
 
-            android:text="Login"
-            android:textColor="@color/white"
-            />
-
-        <Button
-            android:layout_gravity="center"
-            android:layout_marginTop="0dp"
-            android:textSize="17dp"
-            android:textAlignment="center"
-            android:background="@drawable/main_register_btn"
-            android:id="@+id/register"
-            android:layout_width="110dp"
-            android:layout_height="30dp"
-            android:text="회원가입"
-            android:textColor="#3F51B5"
-            />
-
+            <Button
+                android:id="@+id/register"
+                android:layout_width="130dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@drawable/main_register_btn"
+                android:text="회원가입"
+                android:textAlignment="center"
+                android:textColor="#3F51B5"
+                android:textSize="15dp" />
+        </LinearLayout>
 
 
     </LinearLayout>
