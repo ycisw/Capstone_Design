@@ -154,51 +154,7 @@
                 android:textSize="20dp"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_margin="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:fontFamily="@font/imcresoojin"
-                android:textColor="@color/black"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:text="학생 등록금:"
-                android:textSize="20dp" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/student_tuition"
-                android:gravity="center"
-                android:text="데이터 없음"
-                android:fontFamily="@font/imcresoojin"
-                android:textSize="20dp"/>
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_margin="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:fontFamily="@font/imcresoojin"
-                android:textColor="@color/black"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:text="학생 등록일자:"
-                android:textSize="20dp" />
-
-            <TextView
-                android:fontFamily="@font/imcresoojin"
-                android:textAlignment="center"
-                android:id="@+id/student_regDate"
-                android:layout_width="178dp"
-                android:layout_height="wrap_content"
-                android:text="데이터 없음"
-                android:textSize="20dp"
-                />
-        </LinearLayout>
         <View
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
