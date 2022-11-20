@@ -7,16 +7,17 @@
     android:orientation="vertical"
     android:background="@color/white"
     tools:context=".Sub2">
+
     <ImageButton
         android:id="@+id/back1"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="5dp"
         android:background="#00000000"
         android:scaleType="fitXY"
         android:src="@drawable/back_btn" />
 
     <LinearLayout
-        android:layout_margin="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -24,18 +25,25 @@
 
         <ImageView
             android:scaleType="fitXY"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:layout_width="180dp"
+            android:layout_height="65dp"
             android:layout_gravity="center"
             android:src="@drawable/sub2_header" />
 
     </LinearLayout>
 
+    <View
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center"
+        android:layout_width="330dp"
+        android:layout_height="2pt"
+        android:background="#A779CA" />
+
     <LinearLayout
         android:background="@drawable/personal_student"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
-        android:layout_height="500dp"
+        android:layout_height="520dp"
         android:orientation="vertical">
 
         <TableLayout
@@ -47,7 +55,7 @@
                 android:layout_gravity="center"
                 android:background="#00000000"
                 android:padding="5dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
                     android:textColor="@color/white"
@@ -60,7 +68,7 @@
                     android:fontFamily="@font/good"
                     android:layout_gravity="center"
                     android:text="학생이름"
-                    android:textSize="20dp"/>
+                    android:textSize="18dp"/>
                 <TextView
                     android:backgroundTint="#C84866"
                     android:textColor="@color/white"
@@ -72,7 +80,7 @@
                     android:layout_gravity="center"
                     android:fontFamily="@font/good"
                     android:text="보호자 성함"
-                    android:textSize="20dp"/>
+                    android:textSize="18dp"/>
                 <TextView
                     android:fontFamily="@font/good"
                     android:backgroundTint="#6FA671"
@@ -83,13 +91,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="학생 전화번호"
-                    android:textSize="20dp"/>
+                    android:text="보호자 전화번호"
+                    android:textSize="18dp"/>
 
             </TableRow>
 
 
+
         </TableLayout>
+        <View
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_gravity="center"
+            android:layout_width="320dp"
+            android:layout_height="1pt"
+            android:background="#A779CA" />
+
         <ListView
             android:divider="@color/white"
             android:layout_gravity="center"
@@ -101,16 +118,17 @@
 
     </LinearLayout>
 
+
     <Button
-        android:layout_margin="10dp"
+        android:layout_margin="5dp"
         android:backgroundTint="#9148C8"
         android:layout_gravity="center"
         android:id="@+id/student_add"
-        android:layout_width="330dp"
-        android:layout_height="45dp"
+        android:layout_width="340dp"
+        android:layout_height="40dp"
         android:background="@drawable/start_page_btn"
         android:textAlignment="center"
-        android:text="학생추가"
+        android:text="학생 등록"
         android:fontFamily="@font/good"
         android:textColor="@color/white"
         android:textSize="20dp" />

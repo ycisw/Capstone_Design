@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp"
     android:background="#FFFFFF"
     android:orientation="vertical"
     tools:context=".parent_student_info">
@@ -14,17 +13,24 @@
             android:id="@+id/back2"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:layout_margin="5dp"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
             android:src="@drawable/back_btn" />
 
 
+    <View
+        android:layout_marginTop="60dp"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="2pt"
+        android:background="#A779CA" />
 
     <LinearLayout
 
         android:padding="10dp"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:background="@drawable/student_profile_backround"
@@ -32,15 +38,15 @@
 
         <LinearLayout
             android:layout_gravity="center"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <ImageView
                 android:layout_marginRight="10dp"
                 android:layout_gravity="center"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:src="@drawable/student_profile_img1"
                 android:scaleType="fitXY"
                 />
@@ -118,15 +124,15 @@
 
         <LinearLayout
             android:layout_gravity="center"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <ImageView
                 android:layout_marginRight="10dp"
                 android:layout_gravity="center"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
                 android:src="@drawable/parent_student_info_teacher"
                 android:scaleType="fitXY"
                 />
@@ -142,6 +148,13 @@
                 android:text="데이터 없음"
                 android:textSize="30dp" />
         </LinearLayout>
+
+        <View
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center"
+            android:layout_width="400dp"
+            android:layout_height="1dp"
+            android:background="#9148C8" />
 
 
         <LinearLayout
@@ -170,8 +183,15 @@
         </LinearLayout>
     </LinearLayout>
 
-    <Button
+    <View
         android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="2pt"
+        android:background="#A779CA" />
+
+    <Button
+        android:layout_marginTop="20dp"
         android:layout_width="330dp"
         android:layout_height="40dp"
         android:layout_gravity="center"

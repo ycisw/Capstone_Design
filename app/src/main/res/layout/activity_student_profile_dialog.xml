@@ -2,103 +2,121 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
+    android:padding="10dp"
     android:background="@color/white"
     android:layout_gravity="center"
     android:orientation="vertical">
+
     <ImageButton
         android:id="@+id/back4"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_gravity="left"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:background="#00000000"
         android:scaleType="fitXY"
         android:src="@drawable/back_btn" />
+
+
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+    >
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:scaleType="fitXY"
+
+            android:src="@drawable/student_profile_dialog_header"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="8dp"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="60dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/student_info_admit"
-            />
-    </LinearLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_gravity="center"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:hint="학생 이름을 입력해주세요"
-        android:textColorHint="#3F51B5">
+        android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_gravity="center"
-            android:fontFamily="@font/imcresoojin"
-            android:id="@+id/update_sname"
-            android:layout_width="300dp"
+            android:layout_width="240dp"
             android:layout_height="wrap_content"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:hint="학생 이름을 입력해주세요"
+            android:textColorHint="#3F51B5">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_gravity="center"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:hint="학생 전화번호를 입력해주세요"
-        android:textColorHint="#3F51B5">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_gravity="center"
+                android:fontFamily="@font/imcresoojin"
+                android:id="@+id/update_sname"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/update_sphone"
-            android:layout_width="300dp"
-            android:fontFamily="@font/imcresoojin"
-            android:layout_height="wrap_content"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_gravity="center"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:hint="부모님 이름을 입력해주세요"
-        android:textColorHint="#3F51B5">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/update_pname"
-            android:layout_width="300dp"
-            android:fontFamily="@font/imcresoojin"
-            android:layout_height="wrap_content"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_gravity="center"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:hint="부모님 전화번호를 입력해주세요"
-        android:textColorHint="#3F51B5">
-
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_gravity="center"
-            android:fontFamily="@font/imcresoojin"
-            android:id="@+id/update_pphone"
-            android:layout_width="300dp"
+            android:layout_width="240dp"
             android:layout_height="wrap_content"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:hint="학생 전화번호를 입력해주세요"
+            android:textColorHint="#3F51B5">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/update_sphone"
+                android:layout_width="240dp"
+                android:fontFamily="@font/imcresoojin"
+                android:layout_height="wrap_content"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_gravity="center"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:hint="부모님 이름을 입력해주세요"
+            android:textColorHint="#3F51B5">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/update_pname"
+                android:layout_width="240dp"
+                android:fontFamily="@font/imcresoojin"
+                android:layout_height="wrap_content"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_gravity="center"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:hint="부모님 전화번호를 입력해주세요"
+            android:textColorHint="#3F51B5">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_gravity="center"
+                android:fontFamily="@font/imcresoojin"
+                android:id="@+id/update_pphone"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:fontFamily="@font/good"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="15dp"
+            android:layout_marginTop="10dp"
             android:id="@+id/update_student"
-            android:layout_width="230dp"
-            android:layout_height="50dp"
+            android:layout_width="240dp"
+            android:layout_height="40dp"
+            android:textStyle="bold"
             android:background="@drawable/start_page_btn"
-            android:backgroundTint="#002060"
+            android:backgroundTint="#9148C8"
             android:layout_gravity="center"
             android:text="수정하기"/>
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

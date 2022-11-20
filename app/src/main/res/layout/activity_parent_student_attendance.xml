@@ -4,19 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:orientation="vertical"
     tools:context=".parent_student_attendance">
+
     <ImageButton
         android:layout_margin="5dp"
         android:id="@+id/back_btn"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:background="#00000000"
         android:scaleType="fitXY"
         android:src="@drawable/back_btn" />
 
     <LinearLayout
-        android:layout_marginTop="-15dp"
+        android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,7 +30,7 @@
             android:fontFamily="@font/good"
             android:text="학생 이름"
             android:textAlignment="center"
-            android:textColor="#002060"
+            android:textColor="#A779CA"
             android:textStyle="bold"
             android:id="@+id/student_name"
             android:layout_width="300dp"
@@ -38,61 +40,69 @@
 
 
     </LinearLayout>
+
     <View
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center"
-        android:layout_width="300dp"
+        android:layout_width="320dp"
         android:layout_height="2pt"
         android:background="#A779CA" />
 
-
-
-
-    <ScrollView
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_gravity="center"
-        android:layout_width="300dp"
-        android:layout_height="380dp">
-
-        <LinearLayout
-            android:layout_width="300dp"
-            android:layout_height="380dp"
-            android:orientation="horizontal">
-
-            <ListView
-                android:id="@+id/attendacne_data"
-                android:layout_width="300dp"
-                android:layout_height="380dp" />
-
-        </LinearLayout>
-    </ScrollView>
     <LinearLayout
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/personal_student"
+
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        >
+
+
+        <ScrollView
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="380dp">
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="380dp"
+                android:orientation="horizontal">
+
+                <ListView
+                    android:id="@+id/attendacne_data"
+                    android:layout_width="300dp"
+                    android:layout_height="380dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_width="320dp"
+        android:layout_height="2pt"
+        android:background="#A779CA" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
         android:orientation="horizontal">
         <ImageView
-            android:layout_marginLeft="60dp"
-            android:layout_marginBottom="5dp"
-            android:layout_gravity="center"
-            android:layout_width="150dp"
+            android:layout_width="185dp"
             android:layout_height="140dp"
             android:src="@drawable/student_profile_img2"
             android:scaleType="fitXY"/>
         <ImageView
-            android:layout_marginBottom="5dp"
-            android:layout_gravity="center"
-            android:layout_width="150dp"
+            android:layout_width="185dp"
             android:layout_height="140dp"
             android:src="@drawable/student_profile_img3"
             android:scaleType="fitXY"/>
     </LinearLayout>
-    <View
-        android:layout_marginTop="5dp"
-        android:layout_gravity="center"
-        android:layout_width="300dp"
-        android:layout_height="2pt"
-        android:background="#A779CA" />
 </LinearLayout>
