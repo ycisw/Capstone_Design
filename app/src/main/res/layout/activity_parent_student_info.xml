@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="20dp"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".parent_student_info">
 
@@ -113,8 +114,9 @@
                 android:layout_marginBottom="5dp"
                 android:layout_gravity="center"
                 android:layout_width="80dp"
+                android:background="@color/white"
                 android:layout_height="80dp"
-                android:src="@drawable/aa_teacher_profile"
+                android:src="@drawable/parent_student_info_teacher"
                 android:scaleType="fitXY"/>
             <TextView
                 android:layout_width="match_parent"
