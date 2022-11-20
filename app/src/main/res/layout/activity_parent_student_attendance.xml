@@ -29,7 +29,6 @@
             android:text="학생 이름"
             android:textAlignment="center"
             android:textColor="#002060"
-            android:textStyle="bold"
             android:id="@+id/student_name"
             android:layout_width="300dp"
             android:layout_height="wrap_content"

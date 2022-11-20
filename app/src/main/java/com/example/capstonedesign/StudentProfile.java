@@ -142,7 +142,7 @@ public class StudentProfile extends AppCompatActivity {
         try{
             update_student.setOnClickListener(v->{
                 if(!update_sname.getText().toString().equals("")&&!update_sphone.getText().toString().equals("")&&!update_pname.getText().toString().equals("")&&!update_pphone.getText().toString().equals("")) {
-                    StudentService.update(new StudentParent(new Student(student1.getStudent().getId(), update_sname.getText().toString(), update_sphone.getText().toString(), 0L, LocalDate.now(), -1L, -1L),
+                    StudentService.update(new StudentParent(new Student(student1.getStudent().getId(), update_sname.getText().toString(), update_sphone.getText().toString()),
                             new Parent(-1L, update_pname.getText().toString(), update_pphone.getText().toString())), new NetworkLogic<>(
                             none -> {
                             },

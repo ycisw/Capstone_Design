@@ -15,12 +15,6 @@ public class Student implements Serializable {
     @SerializedName("phone")
     private String phone;
 
-    @SerializedName("tuition")
-    private Long tuition;
-
-    @SerializedName("regDate")
-    private LocalDate regDate;
-
     @SerializedName("parentId")
     private Long parentId;
 
@@ -30,14 +24,23 @@ public class Student implements Serializable {
     public Student() {
     }
 
-    public Student(Long id, String name, String phone, Long tuition, LocalDate regDate, Long parentId, Long teacherLesson) {
+    public Student(Long id, String name, String phone, Long parentId, Long teacherLesson) {
         this.id = id;
         this.name = name;
         this.phone = phone;
-        this.tuition = tuition;
-        this.regDate = regDate;
         this.parentId = parentId;
         this.teacherLesson = teacherLesson;
+    }
+
+    public Student(Long id, String name, String phone) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+    }
+
+    public Student(String name, String phone) {
+        this.name = name;
+        this.phone = phone;
     }
 
     public Long getId() {
@@ -62,22 +65,6 @@ public class Student implements Serializable {
 
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    public Long getTuition() {
-        return tuition;
-    }
-
-    public void setTuition(Long tuition) {
-        this.tuition = tuition;
-    }
-
-    public LocalDate getRegDate() {
-        return regDate;
-    }
-
-    public void setRegDate(LocalDate regDate) {
-        this.regDate = regDate;
     }
 
     public Long getParentId() {

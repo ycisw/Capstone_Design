@@ -32,7 +32,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:background="@drawable/personal_student"
+        android:background="@drawable/sub2_background"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="500dp"
@@ -103,7 +103,7 @@
 
     <Button
         android:layout_margin="10dp"
-        android:backgroundTint="#9148C8"
+        android:backgroundTint="#002060"
         android:layout_gravity="center"
         android:id="@+id/student_add"
         android:layout_width="330dp"

@@ -59,6 +59,7 @@
         android:orientation="horizontal">
         <Button
             android:textSize="20dp"
+            android:fontFamily="@font/good"
             android:layout_margin="5dp"
             android:background="@drawable/attendance_check_btn"
             android:textColor="@color/white"
@@ -68,6 +69,7 @@
             android:text="등원"/>
         <Button
             android:textSize="20dp"
+            android:fontFamily="@font/good"
             android:layout_margin="5dp"
             android:background="@drawable/attendance_out_btn"
             android:textColor="@color/white"

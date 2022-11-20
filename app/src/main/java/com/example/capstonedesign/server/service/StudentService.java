@@ -4,7 +4,6 @@ import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.domain.student.StudentParent;
 import com.example.capstonedesign.server.repository.SingletonContainer;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import retrofit2.Call;
@@ -44,9 +43,7 @@ public class StudentService {
     public static void save(StudentParent studentParent, NetworkLogic<Void> logic) {
         studentParent.getStudent().setId(-1L);
         studentParent.getStudent().setParentId(-1L);
-        studentParent.getStudent().setRegDate(LocalDate.now());
         studentParent.getStudent().setTeacherLesson(-1L);
-        studentParent.getParent().setId(-1L);
 
         SingletonContainer.getStudentApi().save(studentParent).enqueue(new Callback<Void>() {
             @Override
@@ -121,7 +118,6 @@ public class StudentService {
      */
     public static void update(StudentParent studentParent, NetworkLogic<Void> logic) {
         studentParent.getStudent().setParentId(-1L);
-        studentParent.getStudent().setRegDate(LocalDate.now());
         studentParent.getStudent().setTeacherLesson(-1L);
         studentParent.getParent().setId(-1L);
 

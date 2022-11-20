@@ -23,6 +23,11 @@ public class Parent implements Serializable {
         this.phone = phone;
     }
 
+    public Parent(String name, String phone) {
+        this.name = name;
+        this.phone = phone;
+    }
+
     public Long getId() {
         return id;
     }
