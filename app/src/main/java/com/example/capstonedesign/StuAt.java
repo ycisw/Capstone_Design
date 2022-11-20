@@ -4,30 +4,25 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.capstonedesign.server.domain.attendance.Attendance;
 import com.example.capstonedesign.server.domain.attendance.AttendanceStudentResult;
-import com.example.capstonedesign.server.domain.login.LoginForm;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.service.AttendanceService;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class personal_student extends AppCompatActivity {
+public class StuAt extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_personal_student);
+        setContentView(R.layout.stu_at);
         String name = null;
         Intent intent = getIntent();
         Long studentId = intent.getLongExtra("studentId", 0L); //만약 값이 없으면 0L 값이 들어감
@@ -46,7 +41,7 @@ public class personal_student extends AppCompatActivity {
         // 뒤로 가기 버튼
         back_btn.setOnClickListener(v->{
             finishAffinity();
-            startActivity(new Intent(this, attendancecheck.class));
+            startActivity(new Intent(this, AtCheckStu.class));
         });
 
         AttendanceService.studentForm(studentId, new NetworkLogic<AttendanceStudentResult>(
@@ -68,7 +63,7 @@ public class personal_student extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         finishAffinity();
-        startActivity(new Intent(this, attendancecheck.class));
+        startActivity(new Intent(this, AtCheckStu.class));
     }
 
     private void refresh(ArrayAdapter<String> adapter) {

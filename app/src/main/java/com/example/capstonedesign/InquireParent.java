@@ -17,14 +17,14 @@ import com.google.android.material.textfield.TextInputEditText;
 import java.util.LinkedList;
 import java.util.List;
 
-public class SearchParent extends AppCompatActivity {
+public class InquireParent extends AppCompatActivity {
     ListViewAdapter2 adapter;
     List<StudentParent> items = new LinkedList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_parent);
+        setContentView(R.layout.inquire_parent);
 
         ListView listView = findViewById(R.id.listView2);
         ImageButton back = findViewById(R.id.back5);
@@ -37,7 +37,7 @@ public class SearchParent extends AppCompatActivity {
 
         back.setOnClickListener(v-> {
             finishAffinity();
-            startActivity(new Intent(this, homepage.class));
+            startActivity(new Intent(this, Main.class));
         });
 
         searchBtn.setOnClickListener(v->{
@@ -60,6 +60,6 @@ public class SearchParent extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         finishAffinity();
-        startActivity(new Intent(this,homepage.class));
+        startActivity(new Intent(this, Main.class));
     }
 }

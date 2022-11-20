@@ -8,13 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
@@ -22,25 +17,23 @@ import com.example.capstonedesign.server.domain.student.StudentParent;
 import com.example.capstonedesign.server.service.AttendanceService;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 
-public class attendancecheck extends AppCompatActivity{
+public class AtCheckStu extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_attendancecheck);
+        setContentView(R.layout.at_check_stu);
         Button goButton = findViewById(R.id.goToTheHome); //하원 버튼
         Button checkButton = findViewById(R.id.checkBT); //등원 버튼
         ImageButton back_btn = findViewById(R.id.back_btn); //뒤로가기 버튼
 
-        ArrayList<AttendanceCheckModel> arrayList = new ArrayList<>(); //adapter에 들어가는 리스트
+        ArrayList<AtCheckModel> arrayList = new ArrayList<>(); //adapter에 들어가는 리스트
 
         //recycler view 설정
         RecyclerView recyclerView = findViewById(R.id.attendance_check_recyclerview); //recyclerview
-        AttendanceCheckAdapter adapter = new AttendanceCheckAdapter(this, arrayList); //adapter
+        AtCheckAdapter adapter = new AtCheckAdapter(this, arrayList); //adapter
         recyclerView.setLayoutManager(new LinearLayoutManager(this)); //이것들은 그냥 디자인 매니저들
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
@@ -49,7 +42,7 @@ public class attendancecheck extends AppCompatActivity{
         //뒤로가기 이미지버튼
         back_btn.setOnClickListener(v->{
             finishAffinity();
-            startActivity(new Intent(this, homepage.class));
+            startActivity(new Intent(this, Main.class));
         });
 
         //학생 데이터 불러오기
@@ -58,7 +51,7 @@ public class attendancecheck extends AppCompatActivity{
                     //성공
                     //학생과 부모 정보를 가져와서 어뎁터에 추가
                     for (StudentParent studentParent : result) {
-                        arrayList.add(new AttendanceCheckModel(studentParent));
+                        arrayList.add(new AtCheckModel(studentParent));
                     }
                     adapter.notifyDataSetChanged();
                 },
@@ -100,6 +93,6 @@ public class attendancecheck extends AppCompatActivity{
     @Override
     public void onBackPressed(){
         finishAffinity();
-        startActivity(new Intent(this, homepage.class));
+        startActivity(new Intent(this, Main.class));
     }
 }

@@ -10,24 +10,19 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.capstonedesign.server.domain.attendance.Attendance;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.domain.parent.ParentLoginForm;
-import com.example.capstonedesign.server.domain.student.Student;
-import com.example.capstonedesign.server.domain.student.StudentTeacher;
 import com.example.capstonedesign.server.service.ParentService;
-
-import java.util.List;
 
 /**
  * 학부모 로그인 화면입니다.
  */
-public class ParentLoginActivity extends AppCompatActivity {
+public class ParentLogin extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_parent_login);
+        setContentView(R.layout.parent_login);
 
 
         EditText phone = findViewById(R.id.parent_login_phone);
@@ -58,14 +53,14 @@ public class ParentLoginActivity extends AppCompatActivity {
         //뒤로가기 버튼
         back.setOnClickListener(v ->{
             finishAffinity();
-            startActivity(new Intent(this, startPage.class));
+            startActivity(new Intent(this, Start.class));
         });
     }
 
     @Override
     public void onBackPressed() {
         finishAffinity();
-        startActivity(new Intent(this, startPage.class));
+        startActivity(new Intent(this, Start.class));
     }
 
     /**
@@ -111,7 +106,7 @@ public class ParentLoginActivity extends AppCompatActivity {
                 //로그인 성공시
                 result -> {
                     Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(this, Parent_Student.class));
+                    startActivity(new Intent(this, InquireChild.class));
                 },
                 //로그인 실패시
                 result -> {

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFFFF"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".TeacherLogin">
 
     <ImageButton
         android:id="@+id/btn_back"

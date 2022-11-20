@@ -4,12 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,30 +16,24 @@ import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.domain.parent.Parent;
 import com.example.capstonedesign.server.domain.student.Student;
 import com.example.capstonedesign.server.domain.student.StudentParent;
-import com.example.capstonedesign.server.domain.teacher.Teacher;
 import com.example.capstonedesign.server.service.StudentService;
 import com.example.capstonedesign.server.service.TeacherService;
-import com.example.capstonedesign.student.ListViewAdapter;
-import com.example.capstonedesign.student.ListViewItem;
 import com.google.android.material.textfield.TextInputEditText;
 
-import org.w3c.dom.Text;
-
 import java.time.LocalDate;
-import java.util.List;
 
-public class StudentProfile extends AppCompatActivity {
+public class StuInfo extends AppCompatActivity {
     Dialog dialog;
     StudentParent student1 = new StudentParent();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_profile);
+        setContentView(R.layout.stu_info);
         //다이얼로그
-        dialog = new Dialog(StudentProfile.this);
+        dialog = new Dialog(StuInfo.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.activity_student_profile_dialog);
+        dialog.setContentView(R.layout.upd_stu_dialog);
 
         //학생정보 출력
         long sid = getIntent().getLongExtra("sid",0);
@@ -81,7 +73,7 @@ public class StudentProfile extends AppCompatActivity {
 
         back.setOnClickListener(v->{
             finishAffinity();
-            startActivity(new Intent(this,Sub2.class));
+            startActivity(new Intent(this, InquireStu.class));
         });
 
         student_update.setOnClickListener(v->{
@@ -101,11 +93,11 @@ public class StudentProfile extends AppCompatActivity {
                 ));
 
 
-                startActivity(new Intent(StudentProfile.this, Sub2.class));
+                startActivity(new Intent(StuInfo.this, InquireStu.class));
             });
 
             dlg.setNegativeButton("아니요", (dialogInterface, i) -> {
-                Intent intent = new Intent(this,StudentProfile.class);
+                Intent intent = new Intent(this, StuInfo.class);
                 intent.putExtra("sid",student1.getStudent().getId());
                 startActivity(intent);
             });
@@ -118,7 +110,7 @@ public class StudentProfile extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         finishAffinity();
-        startActivity(new Intent(this,Sub2.class));
+        startActivity(new Intent(this, InquireStu.class));
     }
 
 
@@ -149,7 +141,7 @@ public class StudentProfile extends AppCompatActivity {
                             none -> {
                             }
                     ));
-                    Intent intent = new Intent(this, StudentProfile.class);
+                    Intent intent = new Intent(this, StuInfo.class);
                     intent.putExtra("sid", student1.getStudent().getId());
                     startActivity(intent);
                 }else{
@@ -162,7 +154,7 @@ public class StudentProfile extends AppCompatActivity {
 
 
         back.setOnClickListener(v->{
-            Intent intent = new Intent(this,StudentProfile.class);
+            Intent intent = new Intent(this, StuInfo.class);
             intent.putExtra("sid",student1.getStudent().getId());
             finishAffinity();
             startActivity(intent);

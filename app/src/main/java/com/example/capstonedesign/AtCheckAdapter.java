@@ -22,12 +22,12 @@ import java.util.List;
  * context는 클릭이벤트에서 화면 넘김을 위해 사용
  * checkSet은 체크된 요소를 빠르게 반환받기 위해 사용
  */
-public class AttendanceCheckAdapter extends RecyclerView.Adapter<AttendanceCheckAdapter.ViewHolder> {
+public class AtCheckAdapter extends RecyclerView.Adapter<AtCheckAdapter.ViewHolder> {
     private AppCompatActivity context; //현재 화면
-    private List<AttendanceCheckModel> list; //요소들
+    private List<AtCheckModel> list; //요소들
     private HashSet<StudentParent> checkSet; //체크된 요소들
 
-    public AttendanceCheckAdapter(AppCompatActivity context, List<AttendanceCheckModel> list) {
+    public AtCheckAdapter(AppCompatActivity context, List<AtCheckModel> list) {
         this.context = context;
         this.list = list;
         checkSet = new HashSet<>();
@@ -51,13 +51,13 @@ public class AttendanceCheckAdapter extends RecyclerView.Adapter<AttendanceCheck
         private void onClicked() {
             rowItem.setOnClickListener(v -> { //현재 요소 클릭하면 해당 학생번호를 넘기면서 화면 넘김
                 context.finish();
-                Intent intent = new Intent(context, personal_student.class);
+                Intent intent = new Intent(context, StuAt.class);
                 intent.putExtra("studentId", list.get(getAdapterPosition()).getStudentParent().getStudent().getId());
                 context.startActivity(intent);
             });
 
             checkBox.setOnClickListener(v -> { //체크박스 체크하면 HashSet으로 관리 및 model에 현재 상태 저장 및 반영
-                AttendanceCheckModel model = list.get(getAdapterPosition());
+                AtCheckModel model = list.get(getAdapterPosition());
                 if (checkBox.isChecked()) {
                     checkSet.add(model.getStudentParent());
                     model.setSelect(true);
@@ -81,14 +81,14 @@ public class AttendanceCheckAdapter extends RecyclerView.Adapter<AttendanceCheck
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) { //뷰홀더 만들어줌
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         //해당 뷰가 RecyclerView의 요소에 해당함
-        View view = layoutInflater.inflate(R.layout.attendancecheck_recycler_view_item, parent, false);
-        AttendanceCheckAdapter.ViewHolder viewHolder = new AttendanceCheckAdapter.ViewHolder(view);
+        View view = layoutInflater.inflate(R.layout.atcheck_recycler_view_item, parent, false);
+        AtCheckAdapter.ViewHolder viewHolder = new AtCheckAdapter.ViewHolder(view);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) { //현재 상태가 업데이트 되면 모델과 뷰의 상태를 바인딩해줌
-        AttendanceCheckModel model = list.get(position);
+        AtCheckModel model = list.get(position);
         holder.studentName.setText(model.getStudentParent().getStudent().getName()); //학생 이름 지정
         holder.checkBox.setChecked(model.isSelect()); //체크박스 상태 동기화
     }

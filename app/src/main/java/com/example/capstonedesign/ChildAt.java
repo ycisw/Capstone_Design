@@ -17,13 +17,13 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class parent_student_attendance extends AppCompatActivity {
+public class ChildAt extends AppCompatActivity {
     private Long studentId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_parent_student_attendance);
+        setContentView(R.layout.child_at);
         studentId = getIntent().getLongExtra("studentId", 0L); //만약 값이 없으면 0L 값이 들어감
         TextView student_name = findViewById(R.id.student_name);
         ListView attendance_data = findViewById(R.id.attendacne_data);
@@ -53,7 +53,7 @@ public class parent_student_attendance extends AppCompatActivity {
         // 뒤로 가기 버튼
         back_btn.setOnClickListener(v->{
             finishAffinity();
-            Intent intent = new Intent(this, parent_student_info.class);
+            Intent intent = new Intent(this, ChildInfo.class);
             intent.putExtra("sid", studentId);
             startActivity(intent);
         });
@@ -62,7 +62,7 @@ public class parent_student_attendance extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         finishAffinity();
-        Intent intent = new Intent(this, parent_student_info.class);
+        Intent intent = new Intent(this, ChildInfo.class);
         intent.putExtra("sid", studentId);
         startActivity(intent);
     }

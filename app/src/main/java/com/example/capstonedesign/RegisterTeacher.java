@@ -2,37 +2,30 @@ package com.example.capstonedesign;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
-import com.example.capstonedesign.server.domain.teacher.Teacher;
 import com.example.capstonedesign.server.domain.teacher.TeacherAddForm;
 import com.example.capstonedesign.server.domain.teacher.TeacherAddResult;
 import com.example.capstonedesign.server.domain.teacher.TeacherAddResultConst;
-import com.example.capstonedesign.server.service.ParentService;
 import com.example.capstonedesign.server.service.TeacherService;
 
 /**
  * 회원 가입 화면입니다.
  * 아이디, 비밀번호, 이름을 입력받아 회원가입을 처리합니다.
  */
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterTeacher extends AppCompatActivity {
 int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.register_teacher);
         ImageButton btn_back = findViewById(R.id.btn_back); //뒤로가기 이미지버튼
         EditText id = findViewById(R.id.register_id); //로그인 아이디
         EditText password = findViewById(R.id.register_password); //비밀번호

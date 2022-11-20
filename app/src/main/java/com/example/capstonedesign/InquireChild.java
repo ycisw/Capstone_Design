@@ -15,12 +15,12 @@ import com.example.capstonedesign.server.service.ParentService;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Parent_Student extends AppCompatActivity {
+public class InquireChild extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_parent_student);
+        setContentView(R.layout.inquire_child);
         Intent intent = getIntent();
         ImageButton btn_back = findViewById(R.id.btn_back);
         ListView student_info_list = findViewById(R.id.student_info);
@@ -33,7 +33,7 @@ public class Parent_Student extends AppCompatActivity {
 
         student_info_list.setOnItemClickListener((adapterView, view, i, l) -> {
             Student student = subList.get(i);
-            Intent nextIntent = new Intent(this, parent_student_info.class);
+            Intent nextIntent = new Intent(this, ChildInfo.class);
             nextIntent.putExtra("sid", student.getId());
             startActivity(nextIntent);
         });
@@ -42,7 +42,7 @@ public class Parent_Student extends AppCompatActivity {
 
         btn_back.setOnClickListener(view -> {
             finishAffinity();
-            startActivity(new Intent(this, ParentLoginActivity.class));
+            startActivity(new Intent(this, ParentLogin.class));
         });
     }
 
@@ -63,6 +63,6 @@ public class Parent_Student extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         finishAffinity();
-        startActivity(new Intent(this, ParentLoginActivity.class));
+        startActivity(new Intent(this, ParentLogin.class));
     }
 }

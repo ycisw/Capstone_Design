@@ -9,15 +9,14 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
-import com.example.capstonedesign.server.domain.student.StudentParent;
 import com.example.capstonedesign.server.domain.student.StudentTeacher;
 import com.example.capstonedesign.server.service.ParentService;
 
-public class parent_student_info extends AppCompatActivity {
+public class ChildInfo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_parent_student_info);
+        setContentView(R.layout.child_info);
         //학생정보 출력
         long sid = getIntent().getLongExtra("sid", 0);
         TextView teacher_name = findViewById(R.id.teacher_name);
@@ -31,7 +30,7 @@ public class parent_student_info extends AppCompatActivity {
         setStudentInfo(sid, teacher_name, teacher_phone, student_name, student_phone, student_id);
 
         studentButton.setOnClickListener(v -> {
-            Intent intent = new Intent(this, parent_student_attendance.class);
+            Intent intent = new Intent(this, ChildAt.class);
             intent.putExtra("studentId", sid);
             intent.putExtra("name", student_name.getText().toString());
             startActivity(intent);
@@ -39,7 +38,7 @@ public class parent_student_info extends AppCompatActivity {
 
         back.setOnClickListener(v -> {
             finishAffinity();
-            startActivity(new Intent(this, Parent_Student.class));
+            startActivity(new Intent(this, InquireChild.class));
         });
     }
 
@@ -59,6 +58,6 @@ public class parent_student_info extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         finishAffinity();
-        startActivity(new Intent(this, Parent_Student.class));
+        startActivity(new Intent(this, InquireChild.class));
     }
 }

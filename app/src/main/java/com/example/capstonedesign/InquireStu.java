@@ -3,17 +3,12 @@ package com.example.capstonedesign;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
 import android.view.Window;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -24,7 +19,6 @@ import com.example.capstonedesign.server.domain.student.Student;
 import com.example.capstonedesign.server.domain.student.StudentParent;
 import com.example.capstonedesign.server.service.StudentService;
 import com.example.capstonedesign.student.ListViewAdapter;
-import com.google.android.material.textfield.TextInputEditText;
 
 import java.time.LocalDate;
 import java.util.LinkedList;
@@ -32,7 +26,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Sub2 extends AppCompatActivity {
+public class InquireStu extends AppCompatActivity {
     Dialog sub2dialog;
     ListViewAdapter adapter;
     List<StudentParent> items = new LinkedList<>();
@@ -40,11 +34,11 @@ public class Sub2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sub2);
+        setContentView(R.layout.inquire_stu);
 
-        sub2dialog = new Dialog(Sub2.this);
+        sub2dialog = new Dialog(InquireStu.this);
         sub2dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        sub2dialog.setContentView(R.layout.activity_sub2_dialog);
+        sub2dialog.setContentView(R.layout.reg_stu_dialog);
 
         Button student_add = findViewById(R.id.student_add);
         ImageButton back = findViewById(R.id.back1);
@@ -58,7 +52,7 @@ public class Sub2 extends AppCompatActivity {
 
         back.setOnClickListener(v->{
             finishAffinity();
-            startActivity(new Intent(this,homepage.class));
+            startActivity(new Intent(this, Main.class));
         });
 
         student_add.setOnClickListener(v->{
@@ -70,7 +64,7 @@ public class Sub2 extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         finishAffinity();
-        startActivity(new Intent(this,homepage.class));
+        startActivity(new Intent(this, Main.class));
     }
     private void updateStudent() {
         StudentService.student(new NetworkLogic<List<StudentParent>>(
@@ -98,7 +92,7 @@ public class Sub2 extends AppCompatActivity {
         Button createStudent = sub2dialog.findViewById(R.id.create_student);
         back.setOnClickListener(v->{
             finishAffinity();
-            startActivity(new Intent(this,Sub2.class));
+            startActivity(new Intent(this, InquireStu.class));
         });
        createStudent.setOnClickListener(v->{
            if(!addSname.getText().toString().equals("")&&!addSphone.getText().toString().equals("")&&!addPname.getText().toString().equals("")&&!addPphone.getText().toString().equals("")) {
@@ -109,7 +103,7 @@ public class Sub2 extends AppCompatActivity {
                        }
                ));
                Toast.makeText(this, addSname.getText() + "학생 추가 완료", Toast.LENGTH_SHORT).show();
-               startActivity(new Intent(this, Sub2.class));
+               startActivity(new Intent(this, InquireStu.class));
 
                new Timer().schedule(new TimerTask() {
                    @Override
