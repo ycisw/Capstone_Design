@@ -48,8 +48,6 @@ public class StudentProfile extends AppCompatActivity {
         TextView teacher_name = findViewById(R.id.teacher_name);
         TextView student_name = findViewById(R.id.student_name);
         TextView student_phone = findViewById(R.id.student_phone);
-        TextView student_tuition = findViewById(R.id.student_tuition);
-        TextView student_regDate = findViewById(R.id.student_regDate);
         TextView student_id = findViewById(R.id.student_id);
 
         TextView parent_name = findViewById(R.id.parent_name);
