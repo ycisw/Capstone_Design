@@ -9,7 +9,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
-import com.example.capstonedesign.server.domain.student.StudentParent;
 import com.example.capstonedesign.server.domain.student.StudentTeacher;
 import com.example.capstonedesign.server.service.ParentService;
 
@@ -51,7 +50,6 @@ public class parent_student_info extends AppCompatActivity {
                     teacher_phone.setText(studentTeacher.getTeacher().getPhone());
                     student_name.setText(studentTeacher.getStudent().getName());
                     student_phone.setText(studentTeacher.getStudent().getPhone());
-                    student_tuition.setText(studentTeacher.getStudent().getTuition().toString());
                     student_id.setText(studentTeacher.getStudent().getId().toString());
                 }, none -> {}
         ));

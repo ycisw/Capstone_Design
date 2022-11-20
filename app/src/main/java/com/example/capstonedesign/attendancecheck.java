@@ -86,6 +86,7 @@ public class attendancecheck extends AppCompatActivity{
             List<Long> studentIdList = new ArrayList<>();
             StringBuilder sb = new StringBuilder();
             for (StudentParent checked : adapter.getCheckSet()) {
+                studentIdList.add(checked.getStudent().getId());
                 sb.append(checked.getStudent().getName());
                 sb.append(",");
             }

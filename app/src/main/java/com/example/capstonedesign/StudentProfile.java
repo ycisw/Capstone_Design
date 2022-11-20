@@ -67,8 +67,6 @@ public class StudentProfile extends AppCompatActivity {
                     student1.setStudent(studentParent.getStudent());
                     student_name.setText(student1.getStudent().getName());
                     student_phone.setText(student1.getStudent().getPhone());
-                    student_tuition.setText(student1.getStudent().getTuition().toString() + "원");
-                    student_regDate.setText(student1.getStudent().getRegDate().toString());
                     student_id.setText(student1.getStudent().getId().toString());
                     student1.setParent(studentParent.getParent());
                     parent_name.setText(student1.getParent().getName());
@@ -146,7 +144,7 @@ public class StudentProfile extends AppCompatActivity {
         try{
             update_student.setOnClickListener(v->{
                 if(!update_sname.getText().toString().equals("")&&!update_sphone.getText().toString().equals("")&&!update_pname.getText().toString().equals("")&&!update_pphone.getText().toString().equals("")) {
-                    StudentService.update(new StudentParent(new Student(student1.getStudent().getId(), update_sname.getText().toString(), update_sphone.getText().toString(), 0L, LocalDate.now(), -1L, -1L),
+                    StudentService.update(new StudentParent(new Student(student1.getStudent().getId(), update_sname.getText().toString(), update_sphone.getText().toString()),
                             new Parent(-1L, update_pname.getText().toString(), update_pphone.getText().toString())), new NetworkLogic<>(
                             none -> {
                             },
