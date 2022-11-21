@@ -11,24 +11,24 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="450dp"
+        android:layout_height="360dp"
         android:layout_gravity="center"
         android:gravity="bottom"
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="400dp"
-            android:layout_height="200dp"
+            android:layout_width="340dp"
+            android:layout_height="160dp"
             android:layout_gravity="center"
-            android:src="@drawable/start_img"
-
-           />
+            android:scaleType="fitXY"
+            android:src="@drawable/start_img" />
 
 
         <ImageView
-            android:layout_width="280dp"
-            android:layout_height="100dp"
+            android:layout_width="260dp"
+            android:layout_height="80dp"
             android:layout_gravity="center"
+            android:scaleType="fitXY"
             android:src="@drawable/start_header" />
     </LinearLayout>
 
@@ -40,7 +40,7 @@
 
         <Button
             android:id="@+id/teacher"
-            android:layout_width="300dp"
+            android:layout_width="260dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
@@ -49,18 +49,19 @@
             android:text="@string/start_login"
             android:textAlignment="center"
             android:textColor="#FFFFFFFF"
+            android:fontFamily="@font/good"
             android:textSize="16sp" />
 
 
         <Button
             android:id="@+id/parents"
-            android:layout_width="300dp"
+            android:layout_width="260dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:background="@drawable/btn_navy"
             android:backgroundTint="#9148C8"
-
+            android:fontFamily="@font/good"
             android:text="@string/select_parent"
             android:textAlignment="center"
             android:textColor="#FFFFFFFF"
