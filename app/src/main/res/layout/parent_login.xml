@@ -16,7 +16,7 @@
         android:layout_margin="5dp"
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
-        android:src="@drawable/back_btn" />
+        android:src="@drawable/btn_back" />
 
 
     <LinearLayout
