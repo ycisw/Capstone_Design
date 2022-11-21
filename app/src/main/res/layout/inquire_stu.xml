@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".Sub2">
+    tools:context=".InquireStu">
     <ImageButton
         android:id="@+id/back1"
         android:layout_width="45dp"
@@ -32,24 +32,28 @@
     </LinearLayout>
 
     <LinearLayout
-        android:background="@drawable/personal_student"
+        android:background="@drawable/inquire_stu_layout"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="500dp"
         android:orientation="vertical">
 
         <TableLayout
+            android:layout_gravity="center"
             android:layout_margin="3dp"
+            android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#00000000">
             <TableRow
+                android:gravity="center"
                 android:layout_gravity="center"
                 android:background="#00000000"
-                android:padding="5dp"
+                android:padding="3dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:gravity="center"
                     android:textColor="@color/white"
                     android:padding="5dp"
                     android:backgroundTint="#434C7E"
@@ -59,37 +63,47 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/good"
                     android:layout_gravity="center"
-                    android:text="학생이름"
+                    android:text="학생"
                     android:textSize="20dp"/>
                 <TextView
+                    android:gravity="center"
                     android:backgroundTint="#C84866"
                     android:textColor="@color/white"
                     android:padding="5dp"
                     android:background="@drawable/student_checking_page_layout_parentname"
-                    android:layout_margin="3dp"
+                    android:layout_marginHorizontal="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:fontFamily="@font/good"
-                    android:text="보호자 성함"
+                    android:text="보호자"
                     android:textSize="20dp"/>
                 <TextView
+                    android:gravity="center"
                     android:fontFamily="@font/good"
                     android:backgroundTint="#6FA671"
                     android:textColor="@color/white"
                     android:padding="5dp"
                     android:background="@drawable/student_checking_page_layout_student_phone"
-                    android:layout_margin="3dp"
+                    android:layout_marginHorizontal="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="학생 전화번호"
+                    android:text="보호자 전화번호"
                     android:textSize="20dp"/>
 
             </TableRow>
 
 
         </TableLayout>
+
+        <View
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="1dp"
+            android:layout_gravity="center"
+            android:layout_width="350dp"
+            android:layout_height="1pt"
+            android:background="#9148C8" />
         <ListView
             android:divider="@color/white"
             android:layout_gravity="center"

@@ -70,6 +70,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/search_parent"
                     android:layout_width="240dp"
+                    android:fontFamily="@font/imcresoojin"
                     android:layout_height="45dp"
                     android:inputType="textWebEditText"
                     android:layout_gravity="center" />
@@ -77,6 +78,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
+                android:fontFamily="@font/good"
                 android:id="@+id/search_btn"
                 android:layout_width="60dp"
                 android:layout_height="40dp"
@@ -106,7 +108,6 @@
                     android:id="@+id/listView2"
                     android:layout_width="350dp"
                     android:layout_height="380dp" />
-
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
