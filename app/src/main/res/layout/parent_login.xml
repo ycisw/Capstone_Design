@@ -16,7 +16,7 @@
         android:layout_margin="5dp"
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
-        android:src="@drawable/back_btn" />
+        android:src="@drawable/btn_back" />
 
 
     <LinearLayout
@@ -32,7 +32,7 @@
             android:layout_width="320dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            android:src="@drawable/parent_login_img1" />
+            android:src="@drawable/parent_login_img" />
 
     </LinearLayout>
 
