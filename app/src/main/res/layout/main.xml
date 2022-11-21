@@ -19,7 +19,7 @@
     <LinearLayout
         android:layout_gravity="center"
         android:orientation="vertical"
-        android:layout_width="310dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content">
 
         <TextView

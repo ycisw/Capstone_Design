@@ -18,6 +18,13 @@
             android:scaleType="fitXY"
             android:src="@drawable/btn_back" />
 
+    <View
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="3dp"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="2pt"
+        android:background="#A779CA" />
 
 
     <LinearLayout
@@ -169,6 +176,14 @@
 
         </LinearLayout>
     </LinearLayout>
+    <View
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="3dp"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="2pt"
+        android:background="#A779CA" />
+
 
     <Button
         android:layout_marginTop="10dp"

@@ -36,6 +36,8 @@
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/btn_border_purple"
+        android:padding="10dp"
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
