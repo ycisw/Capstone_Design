@@ -198,7 +198,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:background="@drawable/start_page_btn"
+                android:background="@drawable/btn_navy"
                 android:text="등 록"
                 android:textColor="@color/white"
                 android:textSize="20sp" />

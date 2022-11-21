@@ -7,7 +7,7 @@
     android:layout_margin="20dp"
     android:background="#FFFFFF"
     android:orientation="vertical"
-    tools:context=".parent_student_info">
+    tools:context=".ChildInfo">
 
 
         <ImageButton
@@ -27,7 +27,7 @@
         android:layout_marginTop="20dp"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/student_profile_backround"
+        android:background="@drawable/btn_border_purple"
         android:orientation="vertical">
 
         <LinearLayout
@@ -41,7 +41,7 @@
                 android:layout_gravity="center"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/student_profile_img1"
+                android:src="@drawable/info_profile"
                 android:scaleType="fitXY"
                 />
             <TextView
@@ -127,7 +127,7 @@
                 android:layout_gravity="center"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/parent_student_info_teacher"
+                android:src="@drawable/info_teacher"
                 android:scaleType="fitXY"
                 />
             <TextView
@@ -179,7 +179,7 @@
         android:text="출석 조회"
         android:backgroundTint="#9148C8"
         android:textColor="@color/white"
-        android:background="@drawable/sub2_background">
+        android:background="@drawable/btn_border_purple">
     </Button>
 
     <LinearLayout
@@ -190,12 +190,12 @@
     <ImageView
         android:layout_width="185dp"
         android:layout_height="140dp"
-        android:src="@drawable/student_profile_img2"
+        android:src="@drawable/student_img_down1"
         android:scaleType="fitXY"/>
     <ImageView
         android:layout_width="185dp"
         android:layout_height="140dp"
-        android:src="@drawable/student_profile_img3"
+        android:src="@drawable/student_img_down2"
         android:scaleType="fitXY"/>
     </LinearLayout>
 

@@ -79,14 +79,14 @@
             android:layout_gravity="center"
             android:layout_width="150dp"
             android:layout_height="140dp"
-            android:src="@drawable/student_profile_img2"
+            android:src="@drawable/student_img_down1"
             android:scaleType="fitXY"/>
         <ImageView
             android:layout_marginBottom="5dp"
             android:layout_gravity="center"
             android:layout_width="150dp"
             android:layout_height="140dp"
-            android:src="@drawable/student_profile_img3"
+            android:src="@drawable/student_img_down2"
             android:scaleType="fitXY"/>
     </LinearLayout>
     <View

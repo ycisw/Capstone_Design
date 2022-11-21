@@ -43,7 +43,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:background="@drawable/btn_round"
+            android:background="@drawable/btn_navy"
             android:backgroundTint="#002060"
             android:text="@string/start_login"
             android:textAlignment="center"
@@ -57,7 +57,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:background="@drawable/btn_round"
+            android:background="@drawable/btn_navy"
             android:backgroundTint="#9148C8"
 
             android:text="@string/select_parent"
