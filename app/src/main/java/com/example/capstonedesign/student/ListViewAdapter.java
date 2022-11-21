@@ -12,7 +12,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.capstonedesign.R;
-import com.example.capstonedesign.StudentProfile;
+import com.example.capstonedesign.StuInfo;
 
 import java.util.ArrayList;
 
@@ -77,7 +77,7 @@ public class ListViewAdapter extends BaseAdapter {
             }
         });
         convertView.setOnClickListener(v->{
-            Intent intent = new Intent(activity, StudentProfile.class);
+            Intent intent = new Intent(activity, StuInfo.class);
             intent.putExtra("sid",sid);
             activity.startActivity(intent);
         });

@@ -14,21 +14,21 @@
         android:theme="@style/Theme.CapstoneDesign"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".Parent_Student"
+            android:name=".InquireChild"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".parent_student_attendance"
+            android:name=".ChildAt"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".parent_student_info"
+            android:name=".ChildInfo"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -42,21 +42,21 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".SearchParent"
+            android:name=".InquireParent"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".StudentProfile"
+            android:name=".StuInfo"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ParentLoginActivity"
+            android:name=".ParentLogin"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -70,29 +70,29 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".TeacherLogin"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".RegisterTeacher"
             android:exported="false" />
         <activity
-            android:name=".homepage"
+            android:name=".Main"
             android:exported="false" />
         <activity
-            android:name=".Sub2"
+            android:name=".InquireStu"
             android:exported="false" />
         <activity
-            android:name=".attendancecheck"
+            android:name=".AtCheckStu"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".personal_student"
+            android:name=".StuAt"
             android:exported="false" />
         <activity
-            android:name=".startPage"
+            android:name=".Start"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
