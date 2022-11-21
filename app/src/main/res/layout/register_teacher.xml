@@ -15,22 +15,24 @@
         android:layout_margin="5dp"
         android:background="#00000000"
         android:scaleType="fitXY"
-        android:src="@drawable/back_btn" />
+        android:src="@drawable/btn_back" />
 
     <ImageView
         android:layout_width="180dp"
         android:layout_height="65dp"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        android:background="@drawable/register_header" />
+        android:background="@drawable/register_teacher_header" />
 
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="430dp"
-        android:layout_gravity="bottom"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:background="@drawable/btn_border_navy"
+
         android:gravity="center"
         android:orientation="vertical">
 
@@ -150,7 +152,6 @@
             android:layout_width="330dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:theme="@style/EditText"
 
             >
 
@@ -190,7 +191,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:background="@drawable/start_page_btn"
+                android:background="@drawable/btn_navy"
                 android:text="등 록"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
@@ -213,14 +214,14 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
-            android:background="@drawable/register_img2" />
+            android:background="@drawable/register_teacher_img_l" />
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
-            android:background="@drawable/register_img1" />
+            android:background="@drawable/register_teacher_img_r" />
 
     </LinearLayout>
 

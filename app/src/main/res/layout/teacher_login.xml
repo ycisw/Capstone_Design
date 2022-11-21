@@ -16,7 +16,7 @@
         android:layout_margin="5dp"
         android:background="#00000000"
         android:scaleType="fitXY"
-        android:src="@drawable/back_btn" />
+        android:src="@drawable/btn_back" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             android:layout_width="400dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            android:src="@drawable/main_img1" />
+            android:src="@drawable/teacher_login_img" />
 
     </LinearLayout>
 
@@ -48,7 +48,7 @@
                 android:layout_width="180dp"
                 android:layout_height="55dp"
                 android:layout_marginLeft="-40dp"
-                android:src="@drawable/main_header" />
+                android:src="@drawable/teacher_login_header" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="300dp"
@@ -96,7 +96,7 @@
                 android:layout_width="130dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:background="@drawable/main_register_btn"
+                android:background="@drawable/teacher_register_btn"
                 android:text="회원가입"
                 android:fontFamily="@font/good"
                 android:textAlignment="center"

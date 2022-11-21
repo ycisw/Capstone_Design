@@ -6,14 +6,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".Sub2">
+    tools:context=".InquireStu">
     <ImageButton
         android:id="@+id/back1"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="#00000000"
         android:scaleType="fitXY"
-        android:src="@drawable/back_btn" />
+        android:src="@drawable/btn_back" />
 
     <LinearLayout
         android:layout_margin="10dp"
@@ -27,12 +27,12 @@
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:src="@drawable/sub2_header" />
+            android:src="@drawable/require_stu_header" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:background="@drawable/personal_student"
+        android:background="@drawable/btn_border_purple"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="500dp"
@@ -53,7 +53,7 @@
                     android:textColor="@color/white"
                     android:padding="5dp"
                     android:backgroundTint="#434C7E"
-                    android:background="@drawable/student_checking_page_layout_studentname"
+                    android:background="@drawable/inquire_stu_btn_student_name"
                     android:layout_margin="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -65,7 +65,7 @@
                     android:backgroundTint="#C84866"
                     android:textColor="@color/white"
                     android:padding="5dp"
-                    android:background="@drawable/student_checking_page_layout_parentname"
+                    android:background="@drawable/inquire_stu_btn_parent_name"
                     android:layout_margin="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
                     android:backgroundTint="#6FA671"
                     android:textColor="@color/white"
                     android:padding="5dp"
-                    android:background="@drawable/student_checking_page_layout_student_phone"
+                    android:background="@drawable/inquire_stu_btn_parent_phone"
                     android:layout_margin="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -103,12 +103,11 @@
 
     <Button
         android:layout_margin="10dp"
-        android:backgroundTint="#9148C8"
         android:layout_gravity="center"
         android:id="@+id/student_add"
         android:layout_width="330dp"
         android:layout_height="45dp"
-        android:background="@drawable/start_page_btn"
+        android:background="@drawable/btn_navy"
         android:textAlignment="center"
         android:text="학생추가"
         android:fontFamily="@font/good"

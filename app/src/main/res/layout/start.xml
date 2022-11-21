@@ -20,7 +20,7 @@
             android:layout_width="400dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            android:src="@drawable/start_page_img1"
+            android:src="@drawable/start_img"
 
            />
 
@@ -28,7 +28,7 @@
             android:layout_width="280dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:src="@drawable/start_page_image" />
+            android:src="@drawable/start_header" />
     </LinearLayout>
 
     <LinearLayout
@@ -43,7 +43,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:background="@drawable/start_page_btn"
+            android:background="@drawable/btn_navy"
             android:backgroundTint="#002060"
             android:text="@string/start_login"
             android:textAlignment="center"
@@ -57,7 +57,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:background="@drawable/start_page_btn"
+            android:background="@drawable/btn_navy"
             android:backgroundTint="#9148C8"
 
             android:text="@string/select_parent"
@@ -78,8 +78,7 @@
             android:layout_height="30dp"
             android:layout_gravity="bottom"
             android:layout_margin="5dp"
-            android:src="@drawable/start_page_img3" />
+            android:src="@drawable/start_credit" />
     </LinearLayout>
-
 
 </LinearLayout>

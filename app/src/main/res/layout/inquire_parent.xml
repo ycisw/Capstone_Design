@@ -17,7 +17,7 @@
         android:layout_margin="5dp"
         android:background="#00000000"
         android:scaleType="fitXY"
-        android:src="@drawable/back_btn" />
+        android:src="@drawable/btn_back" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -27,7 +27,7 @@
         <ImageView
             android:layout_width="180dp"
             android:layout_height="65dp"
-            android:src="@drawable/search_parent_header" />
+            android:src="@drawable/inquire_parent_header" />
 
     </LinearLayout>
 
@@ -51,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@drawable/main_btn"
+        android:background="@drawable/btn_border_navy"
         android:orientation="vertical"
         >
 
@@ -81,7 +81,7 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="5dp"
-                android:background="@drawable/start_page_btn"
+                android:background="@drawable/btn_navy"
                 android:text="조회"
                 android:textColor="@color/white" />
         </LinearLayout>
