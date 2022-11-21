@@ -61,6 +61,7 @@
                     android:id="@+id/name"
                     android:fontFamily="@font/imcresoojin"
                     android:layout_width="300dp"
+                    android:inputType="textWebEditText"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -69,12 +70,15 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:hint="비밀번호"
+                app:passwordToggleEnabled="true"
+                app:counterEnabled="true"
                 android:textColorHint="#3F51B5">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password"
                     android:layout_width="300dp"
                     android:fontFamily="@font/imcresoojin"
+                    android:inputType="textWebPassword"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 

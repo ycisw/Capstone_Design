@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#FFFFFFFF"
     android:orientation="vertical"
     tools:context=".RegisterTeacher">
@@ -50,7 +51,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_id"
                     android:layout_width="300dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="textWebEditText"/>
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
@@ -65,12 +67,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:hint="비밀번호"
+                app:passwordToggleEnabled="true"
                 android:textColorHint="#3F51B5">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_password"
                     android:layout_width="300dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="textWebPassword"/>
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
@@ -86,12 +90,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:hint="비밀번호 확인"
+                app:passwordToggleEnabled="true"
                 android:textColorHint="#3F51B5">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_confirm"
                     android:layout_width="300dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="textWebPassword"/>
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
@@ -112,7 +118,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_name"
                     android:layout_width="300dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="textWebEditText"/>
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
@@ -133,6 +140,7 @@
                     android:id="@+id/register_phone"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
+                    android:inputType="phone"
                     android:backgroundTint="#9148C8" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -151,7 +159,6 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:theme="@style/EditText"
-
             >
 
             <com.google.android.material.textfield.TextInputLayout
@@ -165,7 +172,8 @@
                     android:id="@+id/register_validation_code"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="#9148C8" />
+                    android:backgroundTint="#9148C8"
+                    android:inputType="number"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button

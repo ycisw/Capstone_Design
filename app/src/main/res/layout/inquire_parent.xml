@@ -71,6 +71,7 @@
                     android:id="@+id/search_parent"
                     android:layout_width="240dp"
                     android:layout_height="45dp"
+                    android:inputType="textWebEditText"
                     android:layout_gravity="center" />
 
             </com.google.android.material.textfield.TextInputLayout>
