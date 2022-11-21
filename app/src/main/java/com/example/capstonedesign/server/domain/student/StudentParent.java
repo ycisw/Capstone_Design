@@ -36,4 +36,6 @@ public class StudentParent implements Serializable {
     public void setParent(Parent parent) {
         this.parent = parent;
     }
+
+
 }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -14,8 +15,10 @@ import com.example.capstonedesign.server.service.StudentService;
 import com.example.capstonedesign.student.ListViewAdapter2;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 public class InquireParent extends AppCompatActivity {
     ListViewAdapter2 adapter;
@@ -35,20 +38,29 @@ public class InquireParent extends AppCompatActivity {
         listView.setAdapter(adapter);
         adapter.setActivity(this);
 
-        back.setOnClickListener(v-> {
+        back.setOnClickListener(v -> {
             finishAffinity();
             startActivity(new Intent(this, Main.class));
         });
 
-        searchBtn.setOnClickListener(v->{
+        searchBtn.setOnClickListener(v -> {
             StudentService.student(new NetworkLogic<List<StudentParent>>(
                     result -> {
                         adapter.getListViewItemList().clear();
-                        for(StudentParent studentParent : result){
-                            if(studentParent.getStudent().getName().contains(search_parent.getText().toString())) {
+
+                        if (TextUtils.isEmpty(search_parent.getText().toString())) {   // 텍스트 공백 보내면 전체조회 실행
+                            for (StudentParent studentParent : result) {
                                 adapter.addItem(studentParent.getParent().getName(), studentParent.getParent().getPhone());
                             }
+                        } else {
+                            for (StudentParent studentParent : result) {
+                                if (studentParent.getStudent().getName().contains(search_parent.getText().toString())) {
+                                    adapter.addItem(studentParent.getParent().getName(), studentParent.getParent().getPhone());
+                                    break;
+                                }
+                            }
                         }
+
                         adapter.notifyDataSetChanged();
                     },
                     result -> {
@@ -57,8 +69,9 @@ public class InquireParent extends AppCompatActivity {
             ));
         });
     }
+
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
         finishAffinity();
         startActivity(new Intent(this, Main.class));
     }
