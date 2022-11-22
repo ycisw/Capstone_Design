@@ -45,18 +45,6 @@ public class StuAtItemAdapter extends BaseAdapter {
         StuAtItem listViewItem = listViewItemList.get(position);
 
         attendance.setText(listViewItem.getDate());
-        View finalConvertView = convertView;
-        convertView.setOnTouchListener((view, motionEvent) -> {
-            if(motionEvent.getAction()==MotionEvent.ACTION_DOWN){
-                finalConvertView.setBackgroundColor(Color.LTGRAY);
-            }else if(motionEvent.getAction()==MotionEvent.ACTION_UP){
-                finalConvertView.setBackgroundColor(Color.TRANSPARENT);
-            }
-            if(motionEvent.getAction()==MotionEvent.ACTION_CANCEL){
-                finalConvertView.setBackgroundColor(Color.TRANSPARENT);
-            }
-            return false;
-        });
         return convertView;
 
     }
