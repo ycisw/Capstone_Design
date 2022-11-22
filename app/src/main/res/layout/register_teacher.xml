@@ -51,6 +51,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_id"
                     android:layout_width="300dp"
+                    android:fontFamily="@font/imcresoojin"
                     android:layout_height="match_parent"
                     android:inputType="textWebEditText"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -67,12 +68,14 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:hint="비밀번호"
+
                 app:passwordToggleEnabled="true"
                 android:textColorHint="#3F51B5">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_password"
                     android:layout_width="300dp"
+                    android:fontFamily="@font/imcresoojin"
                     android:layout_height="match_parent"
                     android:inputType="textWebPassword"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -96,6 +99,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_confirm"
                     android:layout_width="300dp"
+                    android:fontFamily="@font/imcresoojin"
                     android:layout_height="match_parent"
                     android:inputType="textWebPassword"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -118,6 +122,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_name"
                     android:layout_width="300dp"
+                    android:fontFamily="@font/imcresoojin"
                     android:layout_height="match_parent"
                     android:inputType="textWebEditText"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -139,6 +144,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_phone"
                     android:layout_width="200dp"
+                    android:fontFamily="@font/imcresoojin"
                     android:layout_height="match_parent"
                     android:inputType="phone"
                     android:backgroundTint="#9148C8" />
@@ -150,6 +156,7 @@
                 android:layout_height="match_parent"
                 android:backgroundTint="#9148C8"
                 android:text="인증번호 요청"
+                android:fontFamily="@font/good"
                 android:textColor="@color/white"
                 android:textSize="13sp"
                 />
@@ -182,6 +189,7 @@
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:backgroundTint="#9148C8"
+                android:fontFamily="@font/good"
                 android:text="인증번호 확인"
                 android:textColor="@color/white"
                 android:textSize="13sp" />
@@ -201,8 +209,8 @@
                 android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:background="@drawable/btn_navy"
-                android:fontFamily="@font/imcresoojin"
-                android:text="등 록"
+                android:fontFamily="@font/good"
+                android:text="등록"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
         </LinearLayout>

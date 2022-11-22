@@ -64,7 +64,6 @@
             >
 
             <com.google.android.material.textfield.TextInputLayout
-
                 android:layout_width="220dp"
                 android:layout_height="50dp"
                 android:hint="핸드폰 번호를 입력해주세요"
@@ -75,6 +74,7 @@
                     android:layout_width="220dp"
                     android:layout_height="wrap_content"
                     android:inputType="phone"
+                    android:fontFamily="@font/imcresoojin"
                     android:backgroundTint="#9148C8" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -86,6 +86,7 @@
                 android:layout_marginTop="-10dp"
                 android:backgroundTint="#9148C8"
                 android:text="인증번호 요청"
+                android:fontFamily="@font/good"
                 android:textColor="@color/white"
                 android:textSize="15sp"></Button>
         </LinearLayout>
@@ -107,6 +108,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/parent_login_validation_code"
                     android:layout_width="220dp"
+                    android:fontFamily="@font/imcresoojin"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:backgroundTint="#9148C8" />
@@ -119,6 +121,7 @@
                 android:layout_marginTop="-3dp"
                 android:backgroundTint="#9148C8"
                 android:text="인증번호 확인"
+                android:fontFamily="@font/good"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
         </LinearLayout>
@@ -141,6 +144,7 @@
             android:layout_marginTop="5dp"
             android:backgroundTint="#9148C8"
             android:text="@string/start_select"
+            android:fontFamily="@font/good"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="17dp" />
