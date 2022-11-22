@@ -25,9 +25,10 @@
         android:orientation="horizontal">
 
         <TextView
+            android:text="학생 출석기록"
+            android:fontFamily="@font/imcresoojin"
             android:textAlignment="center"
             android:textColor="#002060"
-            android:textStyle="bold"
             android:id="@+id/student_name"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -55,11 +56,14 @@
         android:layout_height="380dp">
 
         <LinearLayout
+            android:background="@drawable/stu_at_item_layout"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <ListView
+                android:dividerHeight="0dp"
+                android:divider="#FFFFFF"
                 android:id="@+id/attendacne_data"
                 android:layout_width="310dp"
                 android:layout_height="380dp" />

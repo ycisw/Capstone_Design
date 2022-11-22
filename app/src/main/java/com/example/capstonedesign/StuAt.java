@@ -13,6 +13,8 @@ import com.example.capstonedesign.server.domain.attendance.Attendance;
 import com.example.capstonedesign.server.domain.attendance.AttendanceStudentResult;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.service.AttendanceService;
+import com.example.capstonedesign.student.StuAtItem;
+import com.example.capstonedesign.student.StuAtItemAdapter;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -33,7 +35,10 @@ public class StuAt extends AppCompatActivity {
 
         List<String> data1 = new ArrayList<>();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,data1); //현재 액티비티
+       // ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,data1); //현재 액티비티
+
+        StuAtItemAdapter adapter;
+        adapter = new StuAtItemAdapter();
         // 데이터를 담은 어댑터 생성
         attendance_data.setAdapter(adapter);
 
@@ -51,7 +56,8 @@ public class StuAt extends AppCompatActivity {
 
                     for (Attendance attendance : attendances) {
                         LocalDate date = attendance.getDateAttendance();
-                        data1.add(date.getYear() + "년 " + date.getMonthValue() + "월 " + date.getDayOfMonth() + "일 출석"); // 학생 개인별 출석 날짜 추출
+                        adapter.addItem(date.getYear() + "년 " + date.getMonthValue() + "월 " + date.getDayOfMonth() + "일 출석"); // 학생 개인별 출석 날짜 추출
+
                     }
 
                     refresh(adapter);
@@ -66,7 +72,7 @@ public class StuAt extends AppCompatActivity {
         startActivity(new Intent(this, AtCheckStu.class));
     }
 
-    private void refresh(ArrayAdapter<String> adapter) {
+    private void refresh(StuAtItemAdapter adapter) {
         adapter.notifyDataSetChanged();
     }
 }
