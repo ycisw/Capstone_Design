@@ -15,12 +15,12 @@ import com.example.capstonedesign.R;
 import java.util.ArrayList;
 
 public class ListViewAdapter2  extends BaseAdapter {
-    private ArrayList<ListViewItem> listViewItemList = new ArrayList<>();
+    private ArrayList<ListViewItem2> listViewItemList = new ArrayList<>();
     private Activity activity;
 
     public ListViewAdapter2(){};
 
-    public ArrayList<ListViewItem> getListViewItemList() {
+    public ArrayList<ListViewItem2> getListViewItemList() {
         return listViewItemList;
     }
 
@@ -50,9 +50,11 @@ public class ListViewAdapter2  extends BaseAdapter {
         }
 
         TextView searchView = (TextView) convertView.findViewById(R.id.search_parent_name);
+        TextView snameView = (TextView) convertView.findViewById(R.id.search_student_name);
 
-        ListViewItem listViewItem = listViewItemList.get(position);
+        ListViewItem2 listViewItem = listViewItemList.get(position);
         searchView.setText(listViewItem.getPname());
+        snameView.setText(listViewItem.getSname());
         String pphone = listViewItem.getPphone();
 
         convertView.setOnClickListener(v->{
@@ -65,8 +67,9 @@ public class ListViewAdapter2  extends BaseAdapter {
         this.activity =activity;
     }
 
-    public void addItem(String pname, String pphone){
-        ListViewItem item = new ListViewItem();
+    public void addItem(String sname, String pname, String pphone){
+        ListViewItem2 item = new ListViewItem2();
+        item.setSname(sname);
         item.setPname(pname);
         item.setPphone(pphone);
         listViewItemList.add(item);

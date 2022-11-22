@@ -46,7 +46,7 @@ public class InquireParent extends AppCompatActivity {
                         adapter.getListViewItemList().clear();
                         for(StudentParent studentParent : result){
                             if(studentParent.getStudent().getName().contains(search_parent.getText().toString())) {
-                                adapter.addItem(studentParent.getParent().getName(), studentParent.getParent().getPhone());
+                                adapter.addItem(studentParent.getStudent().getName(),studentParent.getParent().getName(), studentParent.getParent().getPhone());
                             }
                         }
                         adapter.notifyDataSetChanged();
