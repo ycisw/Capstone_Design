@@ -16,7 +16,7 @@
         android:layout_margin="5dp"
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
-        android:src="@drawable/back_btn" />
+        android:src="@drawable/btn_back" />
 
 
     <LinearLayout
@@ -32,7 +32,7 @@
             android:layout_width="320dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            android:src="@drawable/parent_login_img1" />
+            android:src="@drawable/parent_login_img" />
 
     </LinearLayout>
 
@@ -52,67 +52,76 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
         android:layout_gravity="center"
-       >
+        android:background="@drawable/btn_border_purple">
 
-        <com.google.android.material.textfield.TextInputLayout
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            >
 
-            android:layout_width="220dp"
-            android:layout_height="50dp"
-            android:hint="핸드폰 번호를 입력해주세요"
-            android:textColorHint="#3F51B5">
+            <com.google.android.material.textfield.TextInputLayout
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/parent_login_phone"
                 android:layout_width="220dp"
-                android:layout_height="wrap_content"
-                android:inputType="phone"
-                android:backgroundTint="#9148C8" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="50dp"
+                android:hint="핸드폰 번호를 입력해주세요"
+                android:textColorHint="#3F51B5">
 
-        <Button
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/parent_login_phone"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:backgroundTint="#9148C8" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            android:id="@+id/parent_login_send_validation"
-            android:layout_width="110dp"
-            android:layout_height="50dp"
-           android:layout_marginTop="-10dp"
-            android:backgroundTint="#9148C8"
-            android:text="인증번호 요청"
-            android:textColor="@color/white"
-            android:textSize="15sp"></Button>
-    </LinearLayout>
+            <Button
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:theme="@style/EditText"
-        >
+                android:id="@+id/parent_login_send_validation"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="-10dp"
+                android:backgroundTint="#9148C8"
+                android:text="인증번호 요청"
+                android:textColor="@color/white"
+                android:textSize="15sp"></Button>
+        </LinearLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:theme="@style/EditText"
+            >
 
-            android:layout_width="220dp"
-            android:layout_height="50dp"
-            android:hint="인증번호를 입력해주세요."
-            android:textColorHint="#3F51B5">
+            <com.google.android.material.textfield.TextInputLayout
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/parent_login_validation_code"
                 android:layout_width="220dp"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:backgroundTint="#9148C8" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="50dp"
+                android:hint="인증번호를 입력해주세요."
+                android:textColorHint="#3F51B5">
 
-        <Button
-            android:id="@+id/parent_login_validation"
-            android:layout_width="110dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="-3dp"
-            android:backgroundTint="#9148C8"
-            android:text="인증번호 확인"
-            android:textColor="@color/white"
-            android:textSize="15sp" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/parent_login_validation_code"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:backgroundTint="#9148C8" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/parent_login_validation"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="-3dp"
+                android:backgroundTint="#9148C8"
+                android:text="인증번호 확인"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout

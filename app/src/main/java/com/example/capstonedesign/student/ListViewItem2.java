@@ -1,8 +1,15 @@
 package com.example.capstonedesign.student;
 
 public class ListViewItem2 {
+    private String sname;
     private String pname;
     private String pphone;
+
+    public void setSname(String sname){this.sname =sname;}
+
+    public String getSname(){
+        return sname;
+    }
 
     public void setPname(String pname){this.pname =pname;}
 

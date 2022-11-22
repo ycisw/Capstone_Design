@@ -1,3 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--   public   -->
+
+    <!-- start -->
+    <!-- teacher_login -->
+    <!-- parent_login -->
+    <!-- register_teacher -->
+    <!-- main -->
+    <!-- at_check_stu -->
+    <!-- stu_at -->
+    <!-- inquire_parent -->
+    <!-- inquire_stu -->
+    <!-- reg_stu_dialog -->
+    <!-- stu_info -->
+    <!-- upd_stu_dialog -->
+    <!-- inquire_child -->
+    <!-- child_info -->
+    <!-- child_at -->
+
 </resources>
