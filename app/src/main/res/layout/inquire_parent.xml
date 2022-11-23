@@ -26,6 +26,7 @@
         <ImageView
             android:layout_width="160dp"
             android:layout_height="50dp"
+            android:layout_marginRight="10dp"
             android:scaleType="fitXY"
             android:src="@drawable/inquire_parent_header" />
 
@@ -38,7 +39,7 @@
     </LinearLayout>
 
     <View
-        android:layout_width="310dp"
+        android:layout_width="300dp"
         android:layout_height="5dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
@@ -49,6 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:padding="6dp"
         android:background="@drawable/btn_border_navy"
         android:orientation="vertical"
         >
@@ -60,7 +62,7 @@
             android:layout_marginTop="10dp">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="230dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:hint="학생 이름을 입력해주세요"
                 android:textColorHint="#3F51B5">
@@ -69,7 +71,7 @@
                     android:id="@+id/search_parent"
                     android:layout_width="220dp"
                     android:fontFamily="@font/imcresoojin"
-                    android:layout_height="45dp"
+                    android:layout_height="40dp"
                     android:inputType="textWebEditText"
                     android:layout_gravity="center" />
 
@@ -111,7 +113,7 @@
     </LinearLayout>
 
     <View
-        android:layout_width="310dp"
+        android:layout_width="300dp"
         android:layout_height="5dp"
         android:layout_gravity="center"
         android:layout_marginTop="5dp"

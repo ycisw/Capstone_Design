@@ -12,12 +12,11 @@
         >
 
         <TextView
-            android:padding="3dp"
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginHorizontal="7dp"
+            android:layout_marginHorizontal="9dp"
             android:layout_marginVertical="5dp"
             android:background="@drawable/inquire_stu_btn_stu_name"
             android:backgroundTint="#434C7E"
@@ -25,10 +24,11 @@
             android:ems="3"
             android:fontFamily="@font/good"
             android:maxLength="3"
+            android:padding="3dp"
             android:text="Name"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="23dp" />
+            android:textSize="20dp" />
 
         <TextView
             android:padding="3dp"
@@ -43,11 +43,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginHorizontal="7dp"
+            android:layout_marginHorizontal="8dp"
             android:background="@drawable/inquire_stu_btn_parent_name"
             android:text="Parents"
             android:textColor="@color/white"
-            android:textSize="23dp" />
+            android:textSize="20dp" />
 
         <TextView
             android:padding="3dp"
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/pphone"
             android:text="Parents phone"
-            android:textSize="23dp"
+            android:textSize="20dp"
             android:textColor="@color/white"
             android:layout_gravity="center"
             />
@@ -72,7 +72,7 @@
         android:layout_marginBottom="5dp"
         android:layout_marginTop="3dp"
         android:layout_gravity="center"
-        android:layout_width="350dp"
+        android:layout_width="320dp"
         android:layout_height="1pt"
         android:background="#9148C8" />
 

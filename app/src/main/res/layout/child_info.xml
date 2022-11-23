@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp"
     android:background="#FFFFFF"
     android:orientation="vertical"
     tools:context=".ChildInfo">
@@ -14,13 +13,14 @@
             android:id="@+id/back2"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:layout_margin="5dp"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
             android:src="@drawable/btn_back" />
 
     <View
         android:layout_marginBottom="5dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="40dp"
         android:layout_gravity="center"
         android:layout_width="300dp"
         android:layout_height="2pt"
@@ -29,25 +29,24 @@
 
     <LinearLayout
 
-        android:padding="10dp"
+        android:padding="6dp"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_width="340dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_border_purple"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_gravity="center"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <ImageView
                 android:layout_marginRight="10dp"
                 android:layout_gravity="center"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:src="@drawable/info_profile"
                 android:scaleType="fitXY"
                 />
@@ -59,26 +58,25 @@
                 android:id="@+id/student_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:text="데이터 없음"
                 android:textSize="30dp" />
         </LinearLayout>
         <View
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="10dp"
             android:layout_gravity="center"
-            android:layout_width="400dp"
+            android:layout_width="270dp"
             android:layout_height="1dp"
             android:background="#9148C8" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
             <TextView
                 android:fontFamily="@font/imcresoojin"
-                android:layout_width="130dp"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:text="학생 번호:"
                 android:textColor="@color/black"
@@ -87,7 +85,7 @@
             <TextView
                 android:fontFamily="@font/imcresoojin"
                 android:id="@+id/student_id"
-                android:layout_width="match_parent"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="데이터 없음"
@@ -95,20 +93,20 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_margin="5dp"
+            android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
                 android:fontFamily="@font/imcresoojin"
                 android:textColor="@color/black"
-                android:layout_width="130dp"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:text="학생 휴대폰:"
                 android:textSize="20dp"/>
             <TextView
                 android:fontFamily="@font/imcresoojin"
-                android:layout_width="match_parent"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/student_phone"
                 android:gravity="center"
@@ -116,39 +114,8 @@
                 android:textSize="20dp"/>
         </LinearLayout>
 
-        <View
-            android:layout_marginTop="5dp"
-            android:layout_gravity="center"
-            android:layout_width="390dp"
-            android:layout_height="1pt"
-            android:background="#A779CA" />
 
-        <LinearLayout
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
-            <ImageView
-                android:layout_marginRight="10dp"
-                android:layout_gravity="center"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/info_teacher"
-                android:scaleType="fitXY"
-                />
-            <TextView
-                android:fontFamily="@font/good"
-                android:textColor="@color/black"
-                android:textAlignment="center"
-                android:layout_gravity="center"
-                android:id="@+id/teacher_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="데이터 없음"
-                android:textSize="30dp" />
-        </LinearLayout>
 
 
         <LinearLayout
@@ -156,9 +123,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:fontFamily="@font/imcresoojin"
-                android:layout_width="130dp"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="담당 교사:"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:fontFamily="@font/imcresoojin"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:id="@+id/teacher_name"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:text="데이터 없음"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginVertical="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:fontFamily="@font/imcresoojin"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:text="교사 연락처:"
                 android:textColor="@color/black"
@@ -169,7 +161,7 @@
                 android:textAlignment="center"
                 android:layout_gravity="center"
                 android:id="@+id/teacher_phone"
-                android:layout_width="match_parent"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:text="데이터 없음"
                 android:textSize="20dp" />
@@ -187,7 +179,7 @@
 
     <Button
         android:layout_marginTop="10dp"
-        android:layout_width="330dp"
+        android:layout_width="280dp"
         android:layout_height="40dp"
         android:layout_gravity="center"
         android:id="@+id/student_attendance"
@@ -203,13 +195,13 @@
         android:gravity="bottom"
         android:orientation="horizontal">
     <ImageView
-        android:layout_width="185dp"
-        android:layout_height="140dp"
+        android:layout_width="140dp"
+        android:layout_height="100dp"
         android:src="@drawable/student_img_down1"
         android:scaleType="fitXY"/>
     <ImageView
-        android:layout_width="185dp"
-        android:layout_height="140dp"
+        android:layout_width="130dp"
+        android:layout_height="120dp"
         android:src="@drawable/student_img_down2"
         android:scaleType="fitXY"/>
     </LinearLayout>

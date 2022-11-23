@@ -90,21 +90,8 @@ public class AtCheckAdapter extends RecyclerView.Adapter<AtCheckAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) { //현재 상태가 업데이트 되면 모델과 뷰의 상태를 바인딩해줌
         AtCheckModel model = list.get(position);
-
-        String name = model.getStudentParent().getStudent().getName();
-
-        holder.studentName.setText(zipText(name)); //학생 이름 지정
+        holder.studentName.setText(model.getStudentParent().getStudent().getName()); //학생 이름 지정
         holder.checkBox.setChecked(model.isSelect()); //체크박스 상태 동기화
-    }
-
-    private String zipText(String name) {
-        if (name.length() > 14) {
-            String text = name.substring(0, 12);
-            String etc = "..";
-            text += etc;
-            return text;
-        }
-        return name;
     }
 
     @Override

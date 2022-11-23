@@ -7,10 +7,11 @@
     android:orientation="vertical"
     android:background="@color/white"
     tools:context=".InquireStu">
+
     <ImageButton
         android:id="@+id/back1"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:background="#00000000"
         android:scaleType="fitXY"
         android:src="@drawable/btn_back" />
@@ -24,25 +25,32 @@
 
         <ImageView
             android:scaleType="fitXY"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:layout_width="180dp"
+            android:layout_height="45dp"
             android:layout_gravity="center"
             android:src="@drawable/inquire_stu_header" />
 
     </LinearLayout>
-
+    <View
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        android:layout_width="340dp"
+        android:layout_height="4dp"
+        android:background="#9148C8" />
     <LinearLayout
         android:background="@drawable/btn_border_purple"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
-        android:layout_height="500dp"
+        android:padding="6dp"
+        android:layout_height="380dp"
         android:orientation="vertical">
 
         <TableLayout
             android:layout_gravity="center"
             android:layout_margin="3dp"
             android:orientation="vertical"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#00000000">
             <TableRow
@@ -56,9 +64,9 @@
                     android:gravity="center"
                     android:textColor="@color/white"
                     android:padding="5dp"
+                    android:layout_marginLeft="20dp"
                     android:backgroundTint="#434C7E"
                     android:background="@drawable/inquire_stu_btn_stu_name"
-                    android:layout_margin="3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/good"
@@ -98,22 +106,29 @@
         </TableLayout>
 
         <View
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="10dp"
             android:layout_marginTop="1dp"
             android:layout_gravity="center"
-            android:layout_width="350dp"
-            android:layout_height="1pt"
+            android:layout_width="320dp"
+            android:layout_height="4dp"
             android:background="#9148C8" />
         <ListView
             android:divider="@color/white"
             android:layout_gravity="center"
             android:id="@+id/listView1"
-            android:layout_width="330dp"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:textAlignment="center">
         </ListView>
 
     </LinearLayout>
+    <View
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="3dp"
+        android:layout_gravity="center"
+        android:layout_width="340dp"
+        android:layout_height="4dp"
+        android:background="#9148C8" />
 
     <Button
         android:layout_margin="10dp"

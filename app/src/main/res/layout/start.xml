@@ -11,22 +11,22 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="360dp"
+        android:layout_height="@dimen/st_lay_height"
         android:layout_gravity="center"
         android:gravity="bottom"
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="340dp"
-            android:layout_height="160dp"
+            android:layout_width="@dimen/st_img_width"
+            android:layout_height="@dimen/st_img_height"
             android:layout_gravity="center"
             android:scaleType="fitXY"
             android:src="@drawable/start_img" />
 
 
         <ImageView
-            android:layout_width="260dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/st_header_width"
+            android:layout_height="@dimen/st_header_height"
             android:layout_gravity="center"
             android:scaleType="fitXY"
             android:src="@drawable/start_header" />
@@ -40,32 +40,34 @@
 
         <Button
             android:id="@+id/teacher"
-            android:layout_width="260dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/st_btn_width"
+            android:layout_height="@dimen/st_btn_height"
+            android:layout_marginTop="@dimen/margin_m"
+            android:textSize="@dimen/text_size_s"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
             android:background="@drawable/btn_navy"
             android:backgroundTint="#002060"
-            android:text="@string/start_login"
+            android:fontFamily="@font/good"
+            android:text="@string/start_btn_t"
             android:textAlignment="center"
             android:textColor="#FFFFFFFF"
-            android:fontFamily="@font/good"
-            android:textSize="16sp" />
+          />
 
 
         <Button
             android:id="@+id/parents"
-            android:layout_width="260dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/st_btn_width"
+            android:layout_height="@dimen/st_btn_height"
+            android:layout_marginTop="@dimen/margin_b"
+            android:textSize="@dimen/text_size_s"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
             android:background="@drawable/btn_navy"
             android:backgroundTint="#9148C8"
             android:fontFamily="@font/good"
-            android:text="@string/select_parent"
+            android:text="@string/start_btn_p"
             android:textAlignment="center"
             android:textColor="#FFFFFFFF"
-            android:textSize="16sp" />
+          />
 
 
     </LinearLayout>
@@ -73,13 +75,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="right">
+        android:gravity="end">
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="30dp"
+            android:layout_width="@dimen/st_credit_width"
+            android:layout_height="@dimen/st_credit_height"
+            android:layout_margin="@dimen/margin_s"
             android:layout_gravity="bottom"
-            android:layout_margin="5dp"
             android:src="@drawable/start_credit" />
     </LinearLayout>
 
