@@ -9,43 +9,43 @@
     tools:context=".ChildAt">
 
     <ImageButton
-        android:layout_margin="5dp"
         android:id="@+id/back_btn"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_margin="5dp"
         android:background="#00000000"
         android:scaleType="fitXY"
         android:src="@drawable/btn_back" />
 
     <LinearLayout
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
         android:orientation="horizontal">
 
 
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
             android:fontFamily="@font/good"
             android:text="학생 이름"
             android:textAlignment="center"
-            android:textColor="#002060"
-            android:textStyle="bold"
+            android:textColor="#9148C8"
             android:id="@+id/student_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="30dp" />
+            />
 
 
 
     </LinearLayout>
     <View
+        android:layout_width="300dp"
+        android:layout_height="2pt"
         android:layout_marginBottom="5dp"
         android:layout_marginTop="3dp"
         android:layout_gravity="center"
-        android:layout_width="300dp"
-        android:layout_height="2pt"
         android:background="#A779CA" />
 
 
@@ -54,16 +54,17 @@
    <LinearLayout
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:orientation="vertical"
        android:padding="6dp"
+       android:orientation="vertical"
        android:background="@drawable/btn_border_purple"
        android:layout_gravity="center">
 
        <ScrollView
+           android:layout_width="280dp"
+           android:layout_height="320dp"
            android:layout_marginTop="5dp"
            android:layout_gravity="center"
-           android:layout_width="280dp"
-           android:layout_height="320dp">
+          >
 
            <LinearLayout
                android:layout_width="280dp"
@@ -79,11 +80,11 @@
        </ScrollView>
    </LinearLayout>
     <View
+        android:layout_width="300dp"
+        android:layout_height="2pt"
         android:layout_marginBottom="5dp"
         android:layout_marginTop="3dp"
         android:layout_gravity="center"
-        android:layout_width="300dp"
-        android:layout_height="2pt"
         android:background="#A779CA" />
 
 

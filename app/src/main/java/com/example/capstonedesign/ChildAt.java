@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -12,6 +11,7 @@ import android.widget.TextView;
 import com.example.capstonedesign.server.domain.attendance.Attendance;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.service.ParentService;
+import com.example.capstonedesign.student.ChildAtAdapter;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -34,8 +34,11 @@ public class ChildAt extends AppCompatActivity {
 
         List<String> dates = new ArrayList<>();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,dates); //현재 액티비티
+       // ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,dates); //현재 액티비티
         // 데이터를 담은 어댑터 생성
+
+        ChildAtAdapter adapter;
+        adapter = new ChildAtAdapter();
         attendance_data.setAdapter(adapter);
 
         ParentService.studentAttendances(studentId, new NetworkLogic<List<Attendance>>(
@@ -44,7 +47,7 @@ public class ChildAt extends AppCompatActivity {
                         LocalDate dateAttendance = attendance.getDateAttendance();
                         String date = dateAttendance.getYear() + "년 " + dateAttendance.getMonthValue() + "월 " +
                                 dateAttendance.getDayOfMonth() + "일";
-                        dates.add(date);
+                        adapter.addItem(date);
                     }
                     adapter.notifyDataSetChanged();
                 }, none -> {}

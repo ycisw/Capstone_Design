@@ -11,6 +11,7 @@ import android.widget.ListView;
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
 import com.example.capstonedesign.server.domain.student.Student;
 import com.example.capstonedesign.server.service.ParentService;
+import com.example.capstonedesign.student.InquireChildAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +29,8 @@ public class InquireChild extends AppCompatActivity {
         List<String> student_info = new ArrayList<>();
         List<Student> subList = new ArrayList<>();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,student_info);
+        //ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,student_info);
+        InquireChildAdapter adapter = new InquireChildAdapter();
         student_info_list.setAdapter(adapter);
 
         student_info_list.setOnItemClickListener((adapterView, view, i, l) -> {
@@ -46,10 +48,11 @@ public class InquireChild extends AppCompatActivity {
         });
     }
 
-    private void addChildren(List<String> student_info, List<Student> subList, ArrayAdapter<String> adapter) {
+    private void addChildren(List<String> student_info, List<Student> subList, InquireChildAdapter adapter) {
         ParentService.children(new NetworkLogic<List<Student>>(students -> {
             for (Student student : students) {
-                add(student_info, subList, student);
+                adapter.addItem(student.getName());
+               add(student_info, subList, student);
             }
             adapter.notifyDataSetChanged();
         }, none -> {}));

@@ -33,7 +33,6 @@ public class StuAt extends AppCompatActivity {
 
         ImageButton back_btn = findViewById(R.id.back_btn);
 
-        List<String> data1 = new ArrayList<>();
 
        // ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,data1); //현재 액티비티
 
