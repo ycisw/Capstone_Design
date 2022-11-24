@@ -33,5 +33,9 @@ public interface AttendanceApi {
 
     @Headers({"Accept: application/json;"})
     @POST("/attendance/student")
-    Call<Void> attendanceUpdate(@Body Attendance attendance);
+    Call<Void> updateAttendance(@Body Attendance attendance);
+
+    @Headers({"Accept: application/json;"})
+    @POST("/attendance/student/delete")
+    Call<Void> deleteAttendance(@Body Long attendanceId);
 }

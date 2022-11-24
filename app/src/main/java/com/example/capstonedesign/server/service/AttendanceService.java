@@ -19,7 +19,6 @@ public class AttendanceService {
 
     /**
      * 현재 강사에 해당하는 학생과 학부모의 리스트를 얻을 수 있습니다. [ {student, parent}, ...]
-     * @param logic
      */
     public static void studentParentForAttendances(NetworkLogic<List<StudentParent>> logic) {
         SingletonContainer.getAttendanceApi().studentParentListForAttendance().enqueue(new Callback<List<StudentParent>>() {
@@ -43,7 +42,6 @@ public class AttendanceService {
     /**
      * 학생들의 아이디들을 통해 등원 시간을 현재시간으로 등록합니다.
      * @param studentIdList 현재 시간으로 등원처리할 학생 아이디 리스트
-     * @param logic 성공 실패 로직
      */
     public static void attendanceToday(List<Long> studentIdList, NetworkLogic<Void> logic) {
         SingletonContainer.getAttendanceApi().attendanceToday(studentIdList).enqueue(new Callback<Void>() {
@@ -67,7 +65,6 @@ public class AttendanceService {
     /**
      * 하원 처리
      * @param studentIdList 현재 시간으로 하원 처리할 학생
-     * @param logic 성공 실패 로직
      */
     public static void leaveAcademyToday(List<Long> studentIdList, NetworkLogic<Void> logic) {
         SingletonContainer.getAttendanceApi().leaveAcademyToday(studentIdList).enqueue(new Callback<Void>() {
@@ -91,7 +88,6 @@ public class AttendanceService {
     /**
      * 학생 한명의 출석 기록을 조회
      * @param studentId 조회할 학생 아이디
-     * @param logic 성공실패 로직
      */
     public static void studentForm(Long studentId, NetworkLogic<AttendanceStudentResult> logic) {
         SingletonContainer.getAttendanceApi().studentForm(studentId).enqueue(new Callback<AttendanceStudentResult>() {
@@ -116,8 +112,8 @@ public class AttendanceService {
      * @param attendance 수정할 출석정보
      * @param logic 성공 실패 로직
      */
-    public static void studentUpdate(Attendance attendance, NetworkLogic<Void> logic) {
-        SingletonContainer.getAttendanceApi().attendanceUpdate(attendance).enqueue(new Callback<Void>() {
+    public static void updateAttendance(Attendance attendance, NetworkLogic<Void> logic) {
+        SingletonContainer.getAttendanceApi().updateAttendance(attendance).enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if (response.isSuccessful()) {
@@ -126,6 +122,29 @@ public class AttendanceService {
                 }
 
                 logic.getFailedLogic().failedLogic(null);
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                logic.getFailedLogic().failedLogic(null);
+            }
+        });
+    }
+
+    /**
+     * 학생의 출석 기록 삭제
+     * @param attendanceId 삭제할 출석 아이디
+     */
+    public static void deleteAttendance(Long attendanceId, NetworkLogic<Void> logic) {
+        SingletonContainer.getAttendanceApi().deleteAttendance(attendanceId).enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                if (response.isSuccessful()) {
+                    logic.getSuccessLogic().successLogic(response.body());
+                    return;
+                }
+
+                logic.getFailedLogic().failedLogic(response.body());
             }
 
             @Override
