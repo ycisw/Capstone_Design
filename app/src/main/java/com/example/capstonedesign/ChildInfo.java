@@ -23,11 +23,10 @@ public class ChildInfo extends AppCompatActivity {
         TextView teacher_phone = findViewById(R.id.teacher_phone);
         TextView student_name = findViewById(R.id.student_name);
         TextView student_phone = findViewById(R.id.student_phone);
-        TextView student_id = findViewById(R.id.student_id);
         Button studentButton = findViewById(R.id.student_attendance);
         ImageButton back = findViewById(R.id.back2);
 
-        setStudentInfo(sid, teacher_name, teacher_phone, student_name, student_phone, student_id);
+        setStudentInfo(sid, teacher_name, teacher_phone, student_name, student_phone);
 
         studentButton.setOnClickListener(v -> {
             Intent intent = new Intent(this, ChildAt.class);
@@ -42,14 +41,13 @@ public class ChildInfo extends AppCompatActivity {
         });
     }
 
-    private void setStudentInfo(long sid, TextView teacher_name, TextView teacher_phone, TextView student_name, TextView student_phone, TextView student_id) {
+    private void setStudentInfo(long sid, TextView teacher_name, TextView teacher_phone, TextView student_name, TextView student_phone) {
         ParentService.student(sid, new NetworkLogic<StudentTeacher>(
                 studentTeacher -> {
                     teacher_name.setText(studentTeacher.getTeacher().getName());
                     teacher_phone.setText(studentTeacher.getTeacher().getPhone());
                     student_name.setText(studentTeacher.getStudent().getName());
                     student_phone.setText(studentTeacher.getStudent().getPhone());
-                    student_id.setText(studentTeacher.getStudent().getId().toString());
                 }, none -> {}
         ));
     }

@@ -35,6 +35,19 @@ public class InquireParent extends AppCompatActivity {
         listView.setAdapter(adapter);
         adapter.setActivity(this);
 
+        StudentService.student(new NetworkLogic<List<StudentParent>>(
+                result -> {
+                    adapter.getListViewItemList().clear();
+                    for(StudentParent studentParent : result){
+                        adapter.addItem(studentParent.getStudent().getName(),studentParent.getParent().getName(), studentParent.getParent().getPhone());
+                    }
+                    adapter.notifyDataSetChanged();
+                },
+                result -> {
+
+                }
+        ));
+
         back.setOnClickListener(v-> {
             finishAffinity();
             startActivity(new Intent(this, Main.class));
