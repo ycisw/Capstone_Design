@@ -38,6 +38,7 @@
 
         <LinearLayout
             android:layout_gravity="center"
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -182,7 +183,9 @@
         android:layout_width="280dp"
         android:layout_height="40dp"
         android:layout_gravity="center"
+        android:textSize="20dp"
         android:id="@+id/student_attendance"
+        android:fontFamily="@font/good"
         android:text="출석 조회"
         android:backgroundTint="#9148C8"
         android:textColor="@color/white"
