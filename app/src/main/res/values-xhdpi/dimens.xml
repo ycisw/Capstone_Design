@@ -6,6 +6,7 @@
     <dimen name="view_width_s">300dp</dimen>
     <dimen name="view_width_l">330dp</dimen>
     <dimen name="view_height">4dp</dimen>
+    <dimen name="margin">3dp</dimen>
     <dimen name="margin_s">5dp</dimen>
     <dimen name="margin_m">10dp</dimen>
     <dimen name="m_margin_m">-10dp</dimen>
