@@ -10,9 +10,9 @@
 
     <ImageButton
         android:id="@+id/back_btn"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_margin="5dp"
+        android:layout_width="@dimen/back_btn_size"
+        android:layout_height="@dimen/back_btn_size"
+        android:layout_margin="@dimen/margin_s"
         android:background="#00000000"
         android:scaleType="fitXY"
         android:src="@drawable/btn_back" />
@@ -20,7 +20,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/margin_s"
         android:layout_gravity="center"
         android:orientation="horizontal">
 
@@ -28,7 +28,7 @@
             android:id="@+id/student_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="@dimen/text_size_b"
             android:textAlignment="center"
             android:textColor="#002060"
             android:textStyle="bold" />
@@ -37,10 +37,10 @@
     </LinearLayout>
 
     <View
-        android:layout_width="300dp"
-        android:layout_height="2pt"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
+        android:layout_width="@dimen/view_width_s"
+        android:layout_height="@dimen/view_height"
+        android:layout_marginTop="@dimen/margin_m"
+        android:layout_marginBottom="@dimen/margin_s"
         android:layout_gravity="center"
         android:background="#002060" />
 
@@ -48,41 +48,41 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="6dp"
+        android:padding="@dimen/padding_s"
         android:layout_gravity="center"
         android:background="@drawable/btn_border_navy"
         android:orientation="vertical"
        >
 
         <ScrollView
-            android:layout_width="280dp"
-            android:layout_height="340dp"
+            android:layout_width="@dimen/sa_list_width"
+            android:layout_height="@dimen/sa_list_height"
             >
 
             <LinearLayout
-                android:layout_width="280dp"
+                android:layout_width="@dimen/sa_list_width"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <ListView
                     android:id="@+id/attendacne_data"
-                    android:layout_width="280dp"
-                    android:layout_height="340dp" />
+                    android:layout_width="@dimen/sa_list_width"
+                    android:layout_height="@dimen/sa_list_height" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
 
     <View
-        android:layout_width="300dp"
-        android:layout_height="2pt"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_width="@dimen/view_width_s"
+        android:layout_height="@dimen/view_height"
+        android:layout_marginTop="@dimen/margin_s"
+        android:layout_marginBottom="@dimen/margin_s"
         android:layout_gravity="center"
         android:background="#002060" />
 
     <ImageView
-        android:layout_width="210dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="5dp"
+        android:layout_width="@dimen/sa_img_width"
+        android:layout_height="@dimen/sa_img_height"
+        android:layout_marginTop="@dimen/margin_s"
         android:layout_gravity="center"
         android:scaleType="fitXY"
         android:src="@drawable/at_check_stu_img" />
