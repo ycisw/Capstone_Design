@@ -45,8 +45,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="@dimen/rs_list_width"
             android:layout_height="wrap_content"
-            android:hint="학생 이름"
-            android:textColorHint="#3F51B5">
+            android:hint="@string/stu_name"
+            android:textColorHint="@color/text">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/add_sname"
@@ -62,8 +62,8 @@
 
             android:layout_width="@dimen/rs_list_width"
             android:layout_height="wrap_content"
-            android:hint="학생 전화번호"
-            android:textColorHint="#3F51B5">
+            android:hint="@string/stu_phone"
+            android:textColorHint="@color/text">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/add_sphone"
@@ -77,8 +77,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="@dimen/rs_list_width"
             android:layout_height="wrap_content"
-            android:hint="학부모 성함"
-            android:textColorHint="#3F51B5">
+            android:hint="@string/par_name"
+            android:textColorHint="@color/text">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/add_pname"
@@ -94,8 +94,8 @@
             android:layout_width="@dimen/rs_list_width"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:hint="학부모 전화번호"
-            android:textColorHint="#3F51B5">
+            android:hint="@string/par_phone"
+            android:textColorHint="@color/text">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/add_pphone"
@@ -114,12 +114,12 @@
         android:layout_height="@dimen/rs_btn_height"
         android:layout_marginTop="@dimen/margin_m"
         android:textSize="@dimen/text_size_b"
-        android:backgroundTint="#9148C8"
-        android:background="@drawable/btn_navy"
+        android:backgroundTint="@color/purple"
+        android:background="@drawable/btn_effect_purple"
         android:layout_gravity="center"
-        android:text="등록하기"
+        android:text="@string/reg_stu"
         android:fontFamily="@font/good"
-        android:textColor="#FFFFFFFF"
+        android:textColor="@color/white"
      />
 
 </LinearLayout>

@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:textSize="@dimen/text_size_b"
             android:textAlignment="center"
-            android:textColor="#002060"
+            android:textColor="@color/navy"
             android:textStyle="bold" />
 
 
@@ -40,9 +40,9 @@
         android:layout_width="@dimen/view_width_s"
         android:layout_height="@dimen/view_height"
         android:layout_marginTop="@dimen/margin_m"
-        android:layout_marginBottom="@dimen/margin_s"
+        android:layout_marginBottom="@dimen/margin"
         android:layout_gravity="center"
-        android:background="#002060" />
+        android:background="@color/navy" />
 
 
     <LinearLayout
@@ -74,10 +74,10 @@
     <View
         android:layout_width="@dimen/view_width_s"
         android:layout_height="@dimen/view_height"
-        android:layout_marginTop="@dimen/margin_s"
+        android:layout_marginTop="@dimen/margin"
         android:layout_marginBottom="@dimen/margin_s"
         android:layout_gravity="center"
-        android:background="#002060" />
+        android:background="@color/navy" />
 
     <ImageView
         android:layout_width="@dimen/sa_img_width"

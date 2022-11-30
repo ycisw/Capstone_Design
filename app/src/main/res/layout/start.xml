@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFFFF"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".Start">
 
@@ -21,7 +20,8 @@
             android:layout_height="@dimen/st_img_height"
             android:layout_gravity="center"
             android:scaleType="fitXY"
-            android:src="@drawable/start_img" />
+            android:src="@drawable/start_img"
+            android:contentDescription="@string/start_img_description" />
 
 
         <ImageView
@@ -29,7 +29,8 @@
             android:layout_height="@dimen/st_header_height"
             android:layout_gravity="center"
             android:scaleType="fitXY"
-            android:src="@drawable/start_header" />
+            android:src="@drawable/start_header"
+            android:contentDescription="@string/start_header_description"/>
     </LinearLayout>
 
     <LinearLayout
@@ -45,8 +46,8 @@
             android:layout_marginTop="@dimen/margin_m"
             android:textSize="@dimen/text_size_s"
             android:layout_gravity="center"
-            android:background="@drawable/btn_navy"
-            android:backgroundTint="#002060"
+            android:background="@drawable/btn_effect_navy"
+            android:backgroundTint="@color/navy"
             android:fontFamily="@font/good"
             android:text="@string/start_btn_t"
             android:textAlignment="center"
@@ -61,12 +62,12 @@
             android:layout_marginTop="@dimen/margin_b"
             android:textSize="@dimen/text_size_s"
             android:layout_gravity="center"
-            android:background="@drawable/btn_navy"
-            android:backgroundTint="#9148C8"
+            android:background="@drawable/btn_effect_purple"
+            android:backgroundTint="@color/purple"
             android:fontFamily="@font/good"
             android:text="@string/start_btn_p"
             android:textAlignment="center"
-            android:textColor="#FFFFFFFF"
+            android:textColor="@color/white"
           />
 
 
@@ -82,7 +83,8 @@
             android:layout_height="@dimen/st_credit_height"
             android:layout_margin="@dimen/margin_s"
             android:layout_gravity="bottom"
-            android:src="@drawable/start_credit" />
+            android:src="@drawable/start_credit"
+            android:contentDescription="@string/start_credit_description"/>
     </LinearLayout>
 
 </LinearLayout>

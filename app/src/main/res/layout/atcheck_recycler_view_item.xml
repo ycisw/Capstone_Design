@@ -10,8 +10,8 @@
 
 
     <TextView
-        android:textColorHint="#021C4E"
-        android:textColor="#021C4E"
+        android:textColorHint="@color/navy"
+        android:textColor="@color/navy"
         android:maxLength="3"
         android:fontFamily="@font/good"
         android:layout_gravity="center"

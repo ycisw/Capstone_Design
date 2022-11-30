@@ -26,8 +26,8 @@
         <item name="boxStrokeColor">#E696FF</item> // Focus 상태일때 밑줄 색.
         <item name="android:textCursorDrawable">@color/black</item>  // cursor 색.
 
-        <item name="android:textColorHint">@color/theme1</item>  // hint 색
-        <item name="hintTextColor">@color/theme1</item>   // floating hint 색
+        <item name="android:textColorHint">@color/navy</item>  // hint 색
+        <item name="hintTextColor">@color/navy</item>   // floating hint 색
 
     </style>
 

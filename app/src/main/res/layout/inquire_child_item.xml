@@ -10,7 +10,7 @@
         android:padding="5dp"
         android:background="@drawable/child_at_item_layout"
         android:id="@+id/inquire_child"
-        android:textColor="#9148C8"
+        android:textColor="@color/purple"
         android:layout_gravity="center"
         android:fontFamily="@font/imcresoojin"
         android:text="이름"

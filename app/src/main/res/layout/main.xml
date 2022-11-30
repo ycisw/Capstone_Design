@@ -32,7 +32,7 @@
             android:textColor="@color/black"
             android:fontFamily="@font/good"
             android:gravity="left"
-            android:text="menu"
+            android:text="@string/mi_header"
             />
         <View
             android:layout_marginTop="@dimen/margin_s"
@@ -58,9 +58,9 @@
             android:textSize="@dimen/text_size_l"
             android:layout_gravity="center"
             android:fontFamily="@font/good"
-            android:background="@drawable/btn_border_navy"
+            android:background="@drawable/btn_effect_main"
             android:drawableRight="@drawable/main_btn_1"
-            android:text="학생 조회"
+            android:text="@string/mi_stu"
             android:textColor="#002060"
             />
 
@@ -74,9 +74,9 @@
             android:textSize="@dimen/text_size_l"
             android:fontFamily="@font/good"
             android:layout_gravity="center"
-            android:background="@drawable/btn_border_navy"
+            android:background="@drawable/btn_effect_main"
             android:drawableRight="@drawable/main_btn_2"
-            android:text="출결 관리"
+            android:text="@string/mi_at"
             android:textColor="#002060"
             />
 
@@ -89,9 +89,9 @@
             android:textSize="@dimen/text_size_l"
             android:fontFamily="@font/good"
             android:layout_gravity="center"
-            android:background="@drawable/btn_border_navy"
+            android:background="@drawable/btn_effect_main"
             android:drawableRight="@drawable/main_btn_3"
-            android:text="학부모 검색"
+            android:text="@string/mi_par"
             android:textColor="#002060"
           />
     </LinearLayout>

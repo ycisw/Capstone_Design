@@ -25,12 +25,12 @@
         android:layout_height="@dimen/view_height"
         android:layout_marginTop="@dimen/margin_l"
         android:layout_gravity="center"
-        android:background="#A779CA" />
+        android:background="@color/purple" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_m"
+        android:layout_marginTop="@dimen/margin"
         android:padding="@dimen/padding_b"
         android:layout_gravity="center"
         android:background="@drawable/btn_border_purple"
@@ -59,7 +59,7 @@
                 android:textColor="@color/black"
                 android:textAlignment="center"
                 android:layout_gravity="center"
-                android:text="데이터 없음"
+                android:text="@string/empty"
                />
         </LinearLayout>
         <View
@@ -67,7 +67,7 @@
             android:layout_height="@dimen/view_height"
             android:layout_marginBottom="@dimen/margin_b"
             android:layout_gravity="center"
-            android:background="#9148C8" />
+            android:background="@color/purple" />
 
 
 
@@ -82,7 +82,7 @@
                 android:fontFamily="@font/imcresoojin"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_b"
-                android:text="담당 선생님:"
+                android:text="@string/tea_name"
               />
             <TextView
                 android:id="@+id/teacher_name"
@@ -91,7 +91,7 @@
                 android:textSize="@dimen/text_size_b"
                 android:fontFamily="@font/imcresoojin"
                 android:gravity="center"
-                android:text="데이터 없음"
+                android:text="@string/empty"
              />
         </LinearLayout>
 
@@ -106,7 +106,7 @@
                 android:textSize="@dimen/text_size_b"
                 android:fontFamily="@font/imcresoojin"
                 android:textColor="@color/black"
-                android:text="학생 휴대폰:"
+                android:text="@string/stu_phone"
               />
             <TextView
                 android:id="@+id/student_phone"
@@ -115,7 +115,7 @@
                 android:textSize="@dimen/text_size_b"
                 android:fontFamily="@font/imcresoojin"
                 android:gravity="center"
-                android:text="데이터 없음"
+                android:text="@string/empty"
              />
         </LinearLayout>
 
@@ -127,7 +127,7 @@
             android:layout_height="@dimen/view_height"
             android:layout_marginBottom="@dimen/margin_s"
             android:layout_gravity="center"
-            android:background="#9148C8" />
+            android:background="@color/purple" />
 
 
 
@@ -141,7 +141,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/text_size_b"
                     android:fontFamily="@font/imcresoojin"
-                    android:text="학부모 성함:"
+                    android:text="@string/par_name"
                     android:textColor="@color/black"
                    />
 
@@ -153,7 +153,7 @@
                     android:fontFamily="@font/imcresoojin"
                     android:textAlignment="center"
                     android:layout_gravity="center"
-                    android:text="데이터 없음"
+                    android:text="@string/empty"
               />
 
             </LinearLayout>
@@ -168,7 +168,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/text_size_b"
                         android:fontFamily="@font/imcresoojin"
-                        android:text="학부모 연락처:"
+                        android:text="@string/par_phone"
                         android:textColor="@color/black"
                      />
 
@@ -180,7 +180,7 @@
                         android:fontFamily="@font/imcresoojin"
                         android:textAlignment="center"
                         android:layout_gravity="center"
-                        android:text="데이터 없음"
+                        android:text="@string/empty"
                   />
                 </LinearLayout>
 
@@ -192,9 +192,9 @@
     <View
         android:layout_width="@dimen/view_width_l"
         android:layout_height="@dimen/view_height"
-        android:layout_marginTop="@dimen/margin_m"
+        android:layout_marginTop="@dimen/margin"
         android:layout_gravity="center"
-        android:background="#A779CA" />
+        android:background="@color/purple" />
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -211,8 +211,9 @@
             android:fontFamily="@font/good"
             android:id="@+id/student_update"
             android:textColor="@color/white"
-            android:background="@drawable/at_in_btn"
-            android:text="학생 수정" />
+            android:background="@drawable/btn_effect_navy"
+            android:backgroundTint="@color/navy"
+            android:text="@string/upd_stu" />
 
         <Button
             android:id="@+id/student_delete"
@@ -220,9 +221,9 @@
             android:layout_height="@dimen/si_btn_height"
             android:textSize="@dimen/text_size_b"
             android:fontFamily="@font/good"
-            android:background="@drawable/at_out_btn"
-            android:backgroundTint="#DC1616"
-            android:text="학생 삭제"
+            android:background="@drawable/effect_red"
+            android:backgroundTint="@color/red"
+            android:text="@string/del_stu"
             android:textColor="@color/white" />
     </LinearLayout>
 

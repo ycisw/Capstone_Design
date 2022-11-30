@@ -4,32 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".ChildInfo">
 
 
         <ImageButton
             android:id="@+id/back2"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
+            android:layout_width="@dimen/back_btn_size"
+            android:layout_height="@dimen/back_btn_size"
+            android:layout_margin="@dimen/margin_s"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
             android:src="@drawable/btn_back" />
 
     <View
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginBottom="@dimen/margin"
+        android:layout_marginTop="@dimen/margin_l"
         android:layout_gravity="center"
-        android:layout_width="300dp"
-        android:layout_height="2pt"
-        android:background="#A779CA" />
+        android:layout_width="@dimen/view_width_s"
+        android:layout_height="@dimen/view_height"
+        android:background="@color/purple" />
 
 
     <LinearLayout
 
-        android:padding="6dp"
+        android:padding="@dimen/padding_s"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,10 +43,10 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="@dimen/margin_m"
                 android:layout_gravity="center"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="@dimen/ci_profile_size"
+                android:layout_height="@dimen/ci_profile_size"
                 android:src="@drawable/info_profile"
                 android:scaleType="fitXY"
                 />
@@ -58,121 +58,115 @@
                 android:id="@+id/student_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="데이터 없음"
-                android:textSize="30dp" />
+                android:text="@string/empty"
+                android:textSize="@dimen/text_size_l" />
         </LinearLayout>
         <View
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="@dimen/margin_m"
             android:layout_gravity="center"
-            android:layout_width="270dp"
-            android:layout_height="1dp"
-            android:background="#9148C8" />
-
+            android:layout_width="@dimen/ci_view_width"
+            android:layout_height="@dimen/view_height"
+            android:background="@color/purple" />
 
 
         <LinearLayout
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="@dimen/margin_m"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
                 android:fontFamily="@font/imcresoojin"
                 android:textColor="@color/black"
-                android:layout_width="110dp"
+                android:layout_width="@dimen/ci_text_width"
                 android:layout_height="wrap_content"
-                android:text="학생 휴대폰:"
-                android:textSize="20dp"/>
+                android:text="@string/stu_phone"
+                android:textSize="@dimen/text_size_b"/>
             <TextView
                 android:fontFamily="@font/imcresoojin"
-                android:layout_width="160dp"
+                android:layout_width="@dimen/ci_data_width"
                 android:layout_height="wrap_content"
                 android:id="@+id/student_phone"
                 android:gravity="center"
                 android:textColor="@color/black"
-                android:text="데이터 없음"
-                android:textSize="20dp"/>
+                android:text="@string/empty"
+                android:textSize="@dimen/text_size_b"/>
         </LinearLayout>
 
 
-
-
-
         <LinearLayout
-            android:layout_marginVertical="5dp"
+            android:layout_marginVertical="@dimen/margin_m"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
                 android:fontFamily="@font/imcresoojin"
-                android:layout_width="110dp"
+                android:layout_width="@dimen/si_text_width"
                 android:layout_height="wrap_content"
-                android:text="담당 교사:"
+                android:text="@string/tea_name"
                 android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:textSize="@dimen/text_size_b" />
 
             <TextView
                 android:fontFamily="@font/imcresoojin"
                 android:textAlignment="center"
                 android:layout_gravity="center"
                 android:id="@+id/teacher_name"
-                android:layout_width="160dp"
+                android:layout_width="@dimen/ci_data_width"
                 android:textColor="@color/black"
                 android:layout_height="wrap_content"
-                android:text="데이터 없음"
-                android:textSize="20dp" />
+                android:text="@string/empty"
+                android:textSize="@dimen/text_size_b" />
 
         </LinearLayout>
         <LinearLayout
-            android:layout_marginVertical="5dp"
+            android:layout_marginVertical="@dimen/margin_m"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
                 android:fontFamily="@font/imcresoojin"
-                android:layout_width="110dp"
+                android:layout_width="@dimen/ci_text_width"
                 android:layout_height="wrap_content"
-                android:text="교사 연락처:"
+                android:text="@string/tea_phone"
                 android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:textSize="@dimen/text_size_b" />
 
             <Button
                 android:id="@+id/teacher_phone"
-                android:layout_width="160dp"
+                android:layout_width="@dimen/ci_data_width"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_margin="0dp"
-                android:height="20dp"
                 android:background="@color/white"
                 android:fontFamily="@font/imcresoojin"
                 android:textColor="@color/black"
-                android:text="데이터 없음"
+                android:text="@string/empty"
                 android:textAlignment="center"
-                android:textSize="20dp" />
+                android:textSize="@dimen/text_size_b" />
 
         </LinearLayout>
     </LinearLayout>
     <View
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginBottom="@dimen/margin_m"
+        android:layout_marginTop="@dimen/margin"
         android:layout_gravity="center"
-        android:layout_width="300dp"
-        android:layout_height="2pt"
-        android:background="#A779CA" />
+        android:layout_width="@dimen/view_width_s"
+        android:layout_height="@dimen/view_height"
+        android:background="@color/purple" />
 
 
     <Button
-        android:layout_marginTop="10dp"
-        android:layout_width="280dp"
-        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/margin_s"
+        android:layout_width="@dimen/ci_btn_width"
+        android:layout_height="@dimen/ci_btn_height"
         android:layout_gravity="center"
         android:id="@+id/student_attendance"
-        android:text="출석 조회"
-        android:textSize="20dp"
+        android:text="@string/at"
+        android:textSize="@dimen/text_size_b"
         android:fontFamily="@font/good"
-        android:backgroundTint="#9148C8"
+        android:backgroundTint="@color/purple"
         android:textColor="@color/white"
-        android:background="@drawable/btn_border_purple">
+        android:background="@drawable/btn_effect_purple">
     </Button>
 
     <LinearLayout
@@ -181,13 +175,13 @@
         android:gravity="bottom"
         android:orientation="horizontal">
     <ImageView
-        android:layout_width="140dp"
-        android:layout_height="100dp"
+        android:layout_width="@dimen/ic_img1_width"
+        android:layout_height="@dimen/ic_img1_height"
         android:src="@drawable/student_img_down1"
         android:scaleType="fitXY"/>
     <ImageView
-        android:layout_width="130dp"
-        android:layout_height="120dp"
+        android:layout_width="@dimen/ic_img2_width"
+        android:layout_height="@dimen/ic_img2_height"
         android:src="@drawable/student_img_down2"
         android:scaleType="fitXY"/>
     </LinearLayout>

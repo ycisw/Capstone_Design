@@ -34,14 +34,14 @@
     <View
         android:layout_width="@dimen/view_width_l"
         android:layout_height="@dimen/view_height"
-        android:layout_marginBottom="@dimen/margin_s"
+        android:layout_marginBottom="@dimen/margin"
         android:layout_marginTop="@dimen/margin_m"
         android:layout_gravity="center"
-        android:background="#9148C8" />
+        android:background="@color/purple" />
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/is_list_width"
+        android:layout_height="@dimen/is_list_height"
         android:padding="@dimen/padding_s"
         android:background="@drawable/btn_border_purple"
         android:layout_gravity="center"
@@ -70,11 +70,11 @@
                     android:padding="@dimen/padding_s"
                     android:gravity="center"
                     android:textColor="@color/white"
-                    android:backgroundTint="#434C7E"
+                    android:backgroundTint="@color/navy"
                     android:background="@drawable/inquire_stu_btn_stu_name"
                     android:fontFamily="@font/good"
                     android:layout_gravity="center"
-                    android:text="학생"
+                    android:text="@string/ip_stu"
                     android:textSize="@dimen/text_size_b"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -87,7 +87,7 @@
                     android:background="@drawable/inquire_stu_btn_parent_name"
                     android:layout_gravity="center"
                     android:fontFamily="@font/good"
-                    android:text="보호자"
+                    android:text="@string/ip_par"
                     android:textSize="20dp"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -101,7 +101,7 @@
                     android:textColor="@color/white"
                     android:background="@drawable/inquire_stu_btn_parent_phone"
                     android:layout_gravity="center"
-                    android:text="보호자 전화번호"
+                    android:text="@string/is_phone"
                  />
 
             </TableRow>
@@ -115,7 +115,7 @@
             android:layout_marginBottom="@dimen/margin_m"
             android:layout_marginTop="@dimen/margin"
             android:layout_gravity="center"
-            android:background="#9148C8" />
+            android:background="@color/purple" />
         <ListView
             android:layout_width="@dimen/is_list_width"
             android:layout_height="wrap_content"
@@ -130,21 +130,21 @@
         android:layout_width="@dimen/view_width_l"
         android:layout_height="@dimen/view_height"
         android:layout_marginBottom="@dimen/margin_m"
-        android:layout_marginTop="@dimen/margin_s"
+        android:layout_marginTop="@dimen/margin"
         android:layout_gravity="center"
-        android:background="#9148C8" />
+        android:background="@color/purple" />
 
     <Button
         android:layout_width="@dimen/is_btn_width"
         android:layout_height="@dimen/is_btn_height"
         android:layout_margin="@dimen/margin_m"
         android:textSize="@dimen/text_size_b"
-        android:backgroundTint="#9148C8"
+        android:backgroundTint="@color/purple"
         android:layout_gravity="center"
         android:id="@+id/student_add"
-        android:background="@drawable/btn_navy"
+        android:background="@drawable/btn_effect_purple"
         android:textAlignment="center"
-        android:text="학생추가"
+        android:text="@string/is_btn"
         android:fontFamily="@font/good"
         android:textColor="@color/white"
        />

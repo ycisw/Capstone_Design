@@ -10,10 +10,10 @@
 
     <ImageButton
         android:id="@+id/back5"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/back_btn_size"
+        android:layout_height="@dimen/back_btn_size"
         android:layout_gravity="left"
-        android:layout_margin="5dp"
+        android:layout_margin="@dimen/margin_s"
         android:background="#00000000"
         android:scaleType="fitXY"
         android:src="@drawable/btn_back" />
@@ -24,9 +24,9 @@
         android:layout_gravity="center">
 
         <ImageView
-            android:layout_width="160dp"
-            android:layout_height="50dp"
-            android:layout_marginRight="10dp"
+            android:layout_width="@dimen/ip_header_width"
+            android:layout_height="@dimen/ip_header_height"
+            android:layout_marginRight="@dimen/margin_m"
             android:scaleType="fitXY"
             android:src="@drawable/inquire_parent_header" />
 
@@ -39,12 +39,12 @@
     </LinearLayout>
 
     <View
-        android:layout_width="310dp"
-        android:layout_height="5dp"
+        android:layout_width="@dimen/ip_view_width"
+        android:layout_height="@dimen/view_height"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
-        android:backgroundTint="#002060"
+        android:layout_marginTop="@dimen/margin_s"
+        android:layout_marginBottom="@dimen/margin"
+        android:backgroundTint="@color/navy"
         android:background="@drawable/btn_border_navy" />
 
     <LinearLayout
@@ -59,20 +59,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="@dimen/margin_m">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="220dp"
+                android:layout_width="@dimen/ip_text_width"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:hint="학생 이름을 입력해주세요"
-                android:textColorHint="#3F51B5">
+                android:layout_marginLeft="@dimen/margin_s"
+                android:hint="@string/ip_hint"
+                android:textColorHint="@color/text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/search_parent"
-                    android:layout_width="220dp"
+                    android:layout_width="@dimen/ip_text_width"
                     android:fontFamily="@font/imcresoojin"
-                    android:layout_height="40dp"
+                    android:layout_height="@dimen/ip_text_height"
                     android:inputType="textWebEditText"
                     android:layout_gravity="center" />
 
@@ -82,100 +82,97 @@
             <Button
                 android:fontFamily="@font/good"
                 android:id="@+id/search_btn"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_width="@dimen/ip_btn_width"
+                android:layout_height="@dimen/ip_btn_height"
                 android:layout_gravity="center"
-                android:layout_marginLeft="3dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/btn_navy"
-                android:text="조회"
+                android:layout_marginLeft="@dimen/margin_s"
+                android:layout_marginRight="@dimen/margin_m"
+                android:background="@drawable/btn_effect_navy"
+                android:backgroundTint="@color/navy"
+                android:text="@string/ip_btn"
                 android:textColor="@color/white" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginTop="2dp">
+
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="@dimen/margin"
                 android:layout_gravity="center"
-                android:background="#002060" />
+                android:background="@color/navy" />
 
-        </LinearLayout>
+
 
         <LinearLayout
-            android:layout_width="260dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/ip_lay_width"
+            android:layout_height="@dimen/ip_lay_height"
             android:layout_gravity="center">
 
             <LinearLayout
-                android:layout_width="130dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/ip_lay_sub_width"
+                android:layout_height="@dimen/ip_lay_height"
                 android:layout_weight="1"
                 android:gravity="center">
 
                 <TextView
                     android:fontFamily="@font/imcresoojin"
-                    android:layout_width="70dp"
-                    android:layout_height="25dp"
+                    android:layout_width="@dimen/ip_column_width"
+                    android:layout_height="@dimen/ip_column_height"
                     android:background="@drawable/btn_border_navy"
-                    android:backgroundTint="#434C7E"
+                    android:backgroundTint="@color/navy"
                     android:gravity="center"
                     android:textAlignment="center"
-                    android:text="학생"
-                    android:textColor="#ffffff"
-                    android:textSize="20dp" />
+                    android:text="@string/ip_stu"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_s" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="130dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/ip_lay_sub_width"
+                android:layout_height="@dimen/ip_lay_height"
                 android:layout_weight="1"
                 android:gravity="center">
 
                 <TextView
-                    android:layout_width="70dp"
-                    android:layout_height="25dp"
+                    android:layout_width="@dimen/ip_column_width"
+                    android:layout_height="@dimen/ip_column_height"
                     android:background="@drawable/btn_border_purple"
-                    android:backgroundTint="#9148C8"
+                    android:backgroundTint="@color/purple"
                     android:gravity="center"
                     android:textAlignment="center"
-                    android:text="보호자"
+                    android:text="@string/ip_par"
                     android:fontFamily="@font/imcresoojin"
-                    android:textColor="#ffffff"
-                    android:textSize="20dp" />
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_s" />
             </LinearLayout>
         </LinearLayout>
 
         <ScrollView
-            android:layout_width="260dp"
-            android:layout_height="300dp"
+            android:layout_width="@dimen/ip_list_width"
+            android:layout_height="@dimen/ip_list_height"
             android:layout_gravity="center"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="@dimen/margin_m">
 
             <LinearLayout
-                android:layout_width="260dp"
-                android:layout_height="300dp"
+                android:layout_width="@dimen/ip_list_width"
+                android:layout_height="@dimen/ip_list_height"
                 android:orientation="horizontal">
 
                 <ListView
                     android:id="@+id/listView2"
-                    android:layout_width="260dp"
-                    android:layout_height="300dp" />
+                    android:layout_width="@dimen/ip_list_width"
+                    android:layout_height="@dimen/ip_list_height" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
 
     <View
-        android:layout_width="310dp"
-        android:layout_height="5dp"
+        android:layout_width="@dimen/ip_view_width"
+        android:layout_height="@dimen/view_height"
         android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:backgroundTint="#002060"
+        android:layout_marginTop="@dimen/margin"
+        android:backgroundTint="@color/navy"
         android:background="@drawable/btn_border_navy" />
 
 </LinearLayout>

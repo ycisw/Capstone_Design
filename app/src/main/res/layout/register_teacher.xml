@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#FFFFFFFF"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".RegisterTeacher">
 
@@ -46,7 +46,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:hint="@string/rg_id"
-                android:textColorHint="#3F51B5">
+                android:textColorHint="@color/text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_id"
@@ -69,7 +69,7 @@
                 android:layout_gravity="center"
                 android:hint="@string/rg_pass"
                 app:passwordToggleEnabled="true"
-                android:textColorHint="#3F51B5">
+                android:textColorHint="@color/text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_password"
@@ -93,7 +93,7 @@
                 android:layout_gravity="center"
                 android:hint="@string/rg_pass_conf"
                 app:passwordToggleEnabled="true"
-                android:textColorHint="#3F51B5">
+                android:textColorHint="@color/text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_confirm"
@@ -116,7 +116,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:hint="@string/rg_name"
-                android:textColorHint="#3F51B5">
+                android:textColorHint="@color/text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_name"
@@ -138,7 +138,7 @@
                 android:layout_width="@dimen/rt_mini_text_width"
                 android:layout_height="@dimen/rt_text_height"
                 android:hint="@string/rg_phone"
-                android:textColorHint="#3F51B5">
+                android:textColorHint="@color/text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_phone"
@@ -146,7 +146,7 @@
                     android:fontFamily="@font/imcresoojin"
                     android:layout_height="match_parent"
                     android:inputType="phone"
-                    android:backgroundTint="#9148C8" />
+                    android:backgroundTint="@color/purple" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
@@ -155,7 +155,7 @@
                 android:layout_height="match_parent"
                 android:textSize="@dimen/text_size_s"
                 android:fontFamily="@font/good"
-                android:backgroundTint="#9148C8"
+                android:backgroundTint="@color/purple"
                 android:text="@string/rg_phone_btn"
                 android:textColor="@color/white"
                 />
@@ -173,14 +173,14 @@
                 android:layout_width="@dimen/rt_mini_text_width"
                 android:layout_height="@dimen/rt_text_height"
                 android:hint="@string/rg_conf"
-                android:textColorHint="#3F51B5">
+                android:textColorHint="@color/text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_validation_code"
                     android:layout_width="@dimen/rt_mini_text_width"
                     android:fontFamily="@font/imcresoojin"
                     android:layout_height="match_parent"
-                    android:backgroundTint="#9148C8"
+                    android:backgroundTint="@color/purple"
                     android:inputType="number"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -190,7 +190,7 @@
                 android:layout_height="match_parent"
                 android:textSize="@dimen/text_size_s"
                 android:fontFamily="@font/good"
-                android:backgroundTint="#9148C8"
+                android:backgroundTint="@color/purple"
                 android:text="@string/rg_conf_btn"
                 android:textColor="@color/white"
                />
@@ -209,7 +209,8 @@
                 android:layout_marginBottom="@dimen/margin_s"
                 android:textSize="@dimen/text_size_b"
                 android:layout_gravity="center"
-                android:background="@drawable/btn_navy"
+                android:background="@drawable/btn_effect_navy"
+                android:backgroundTint="@color/navy"
                 android:fontFamily="@font/good"
                 android:text="@string/reg"
                 android:textColor="@color/white"

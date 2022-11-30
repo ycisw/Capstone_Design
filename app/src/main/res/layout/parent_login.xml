@@ -31,106 +31,105 @@
 
             android:layout_width="@dimen/pl_img_width"
             android:layout_height="@dimen/pl_img_height"
-            android:scaleType="fitXY"
             android:layout_gravity="center"
+            android:scaleType="fitXY"
             android:src="@drawable/parent_login_img" />
 
-
-
-
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left"
-        >
-        <ImageView
-            android:layout_width="@dimen/pl_header_width"
-            android:layout_height="@dimen/pl_header_height"
-            android:layout_marginLeft="@dimen/pl_header_margin"
-            android:scaleType="fitXY"
-            android:src="@drawable/parent_login_header" />
-    </LinearLayout>
-
 
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="@dimen/padding_s"
-        android:orientation="vertical"
+
         android:layout_gravity="center"
-        android:background="@drawable/btn_border_purple">
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="@dimen/pl_header_width"
+            android:layout_height="@dimen/pl_header_height"
+            android:layout_marginRight="@dimen/pl_header_margin"
+            android:scaleType="fitXY"
+            android:src="@drawable/parent_login_header" />
+
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            >
+            android:background="@drawable/btn_border_purple"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_s">
 
-            <com.google.android.material.textfield.TextInputLayout
 
-                android:layout_width="@dimen/pl_text_width"
-                android:layout_height="@dimen/pl_text_height"
-                android:hint="@string/pl_phone"
-                android:textColorHint="#3F51B5">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/parent_login_phone"
+                <com.google.android.material.textfield.TextInputLayout
+
                     android:layout_width="@dimen/pl_text_width"
-                    android:fontFamily="@font/imcresoojin"
-                    android:layout_height="wrap_content"
-                    android:inputType="phone"
-                    android:backgroundTint="#9148C8" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_height="@dimen/pl_text_height"
+                    android:hint="@string/pl_phone"
+                    android:textColorHint="#3F51B5">
 
-            <Button
-                android:id="@+id/parent_login_send_validation"
-                android:layout_width="@dimen/pl_mini_btn_width"
-                android:layout_height="@dimen/pl_text_height"
-                android:layout_marginTop="@dimen/m_margin_m"
-                android:textSize="@dimen/text_size_s"
-                android:backgroundTint="#9148C8"
-                android:text="@string/pl_phone_btn"
-                android:fontFamily="@font/good"
-                android:textColor="@color/white"
-               />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/parent_login_phone"
+                        android:layout_width="@dimen/pl_text_width"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/purple"
+                        android:fontFamily="@font/imcresoojin"
+                        android:inputType="phone" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/parent_login_send_validation"
+                    android:layout_width="@dimen/pl_mini_btn_width"
+                    android:layout_height="@dimen/pl_text_height"
+                    android:layout_marginTop="@dimen/m_margin_m"
+                    android:backgroundTint="@color/purple"
+                    android:fontFamily="@font/good"
+                    android:text="@string/pl_phone_btn"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_s" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:theme="@style/EditText">
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                    android:layout_width="@dimen/pl_text_width"
+                    android:layout_height="@dimen/pl_text_height"
+                    android:hint="@string/pl_conf"
+                    android:textColorHint="#3F51B5">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/parent_login_validation_code"
+                        android:layout_width="@dimen/pl_text_width"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/purple"
+                        android:fontFamily="@font/imcresoojin"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/parent_login_validation"
+                    android:layout_width="@dimen/pl_mini_btn_width"
+                    android:layout_height="@dimen/pl_text_height"
+                    android:backgroundTint="@color/purple"
+                    android:fontFamily="@font/good"
+                    android:text="@string/pl_conf_btn"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_s" />
+            </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:theme="@style/EditText"
-            >
 
-            <com.google.android.material.textfield.TextInputLayout
-
-                android:layout_width="@dimen/pl_text_width"
-                android:layout_height="@dimen/pl_text_height"
-                android:hint="@string/pl_conf"
-                android:textColorHint="#3F51B5">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/parent_login_validation_code"
-                    android:layout_width="@dimen/pl_text_width"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:fontFamily="@font/imcresoojin"
-                    android:backgroundTint="#9148C8" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <Button
-                android:id="@+id/parent_login_validation"
-                android:layout_width="@dimen/pl_mini_btn_width"
-                android:layout_height="@dimen/pl_text_height"
-                android:textSize="@dimen/text_size_s"
-                android:backgroundTint="#9148C8"
-                android:text="@string/pl_conf_btn"
-                android:fontFamily="@font/good"
-                android:textColor="@color/white"
-               />
-        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -145,13 +144,13 @@
             android:layout_width="@dimen/pl_btn_width"
             android:layout_height="@dimen/pl_btn_height"
             android:layout_marginTop="@dimen/margin_s"
-            android:textSize="@dimen/text_size_s"
+            android:background="@drawable/btn_effect_purple"
+            android:backgroundTint="@color/purple"
             android:fontFamily="@font/good"
-            android:backgroundTint="#9148C8"
             android:text="@string/pl_btn"
             android:textAlignment="center"
             android:textColor="@color/white"
-           />
+            android:textSize="@dimen/text_size_s" />
 
 
     </LinearLayout>
