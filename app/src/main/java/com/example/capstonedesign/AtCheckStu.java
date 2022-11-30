@@ -67,7 +67,7 @@ public class AtCheckStu extends AppCompatActivity{
                 sb.append(checked.getStudent().getName());
                 sb.append(",");
             }
-            Toast.makeText(this,sb.toString() + "학생들이 등원했습니다.",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"등원버튼 클릭",Toast.LENGTH_SHORT).show(); // 요부분 수정 해야함
             AttendanceService.attendanceToday(studentIdList, new NetworkLogic<>( //등원처리
                     none -> {},
                     none -> {}
@@ -83,7 +83,7 @@ public class AtCheckStu extends AppCompatActivity{
                 sb.append(checked.getStudent().getName());
                 sb.append(",");
             }
-            Toast.makeText(this,sb.toString() + "학생들이 하원했습니다.",Toast.LENGTH_SHORT).show();
+           Toast.makeText(this,"하원버튼 클릭",Toast.LENGTH_SHORT).show(); // 요부분 수정 해야함
             AttendanceService.leaveAcademyToday(studentIdList, new NetworkLogic<>( //하원처리
                     none -> {},
                     none -> {}

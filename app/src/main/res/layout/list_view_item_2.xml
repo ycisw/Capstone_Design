@@ -21,7 +21,7 @@
                 android:id="@+id/search_student_name"
                 android:layout_width="100dp"
                 android:layout_height="30dp"
-
+                android:maxLength="3"
                 android:background="@drawable/btn_border_navy"
                 android:fontFamily="@font/imcresoojin"
                 android:gravity="center"
@@ -42,7 +42,7 @@
                 android:id="@+id/search_parent_name"
                 android:layout_width="100dp"
                 android:layout_height="30dp"
-
+                android:maxLength="3"
                 android:background="@drawable/btn_border_purple"
                 android:fontFamily="@font/imcresoojin"
                 android:gravity="center"
