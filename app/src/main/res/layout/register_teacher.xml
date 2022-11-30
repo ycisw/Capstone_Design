@@ -50,6 +50,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_id"
+                    android:fontFamily="@font/imcresoojin"
                     android:layout_width="@dimen/rt_text_width"
                     android:layout_height="match_parent"
                     android:inputType="textWebEditText"/>
@@ -73,6 +74,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_password"
                     android:layout_width="@dimen/rt_text_width"
+                    android:fontFamily="@font/imcresoojin"
                     android:layout_height="match_parent"
                     android:inputType="textWebPassword"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -96,6 +98,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_confirm"
                     android:layout_width="@dimen/rt_text_width"
+                    android:fontFamily="@font/imcresoojin"
                     android:layout_height="match_parent"
                     android:inputType="textWebPassword"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -118,6 +121,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_name"
                     android:layout_width="@dimen/rt_text_width"
+                    android:fontFamily="@font/imcresoojin"
                     android:layout_height="match_parent"
                     android:inputType="textWebEditText"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -139,6 +143,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_phone"
                     android:layout_width="@dimen/rt_mini_text_width"
+                    android:fontFamily="@font/imcresoojin"
                     android:layout_height="match_parent"
                     android:inputType="phone"
                     android:backgroundTint="#9148C8" />
@@ -149,6 +154,7 @@
                 android:layout_width="@dimen/rt_mini_btn_width"
                 android:layout_height="match_parent"
                 android:textSize="@dimen/text_size_s"
+                android:fontFamily="@font/good"
                 android:backgroundTint="#9148C8"
                 android:text="@string/rg_phone_btn"
                 android:textColor="@color/white"
@@ -172,6 +178,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_validation_code"
                     android:layout_width="@dimen/rt_mini_text_width"
+                    android:fontFamily="@font/imcresoojin"
                     android:layout_height="match_parent"
                     android:backgroundTint="#9148C8"
                     android:inputType="number"/>
@@ -182,6 +189,7 @@
                 android:layout_width="@dimen/rt_mini_btn_width"
                 android:layout_height="match_parent"
                 android:textSize="@dimen/text_size_s"
+                android:fontFamily="@font/good"
                 android:backgroundTint="#9148C8"
                 android:text="@string/rg_conf_btn"
                 android:textColor="@color/white"
@@ -193,7 +201,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center">
-
             <Button
                 android:id="@+id/register_register_button"
                 android:layout_width="@dimen/rt_btn_width"
@@ -203,7 +210,7 @@
                 android:textSize="@dimen/text_size_b"
                 android:layout_gravity="center"
                 android:background="@drawable/btn_navy"
-                android:fontFamily="@font/imcresoojin"
+                android:fontFamily="@font/good"
                 android:text="@string/reg"
                 android:textColor="@color/white"
                 />

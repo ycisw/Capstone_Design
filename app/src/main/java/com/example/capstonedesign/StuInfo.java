@@ -40,7 +40,6 @@ public class StuInfo extends AppCompatActivity {
         TextView teacher_name = findViewById(R.id.teacher_name);
         TextView student_name = findViewById(R.id.student_name);
         TextView student_phone = findViewById(R.id.student_phone);
-        TextView student_id = findViewById(R.id.student_id);
 
         TextView parent_name = findViewById(R.id.parent_name);
         TextView parent_phone = findViewById(R.id.parent_phone);
@@ -57,7 +56,6 @@ public class StuInfo extends AppCompatActivity {
                     student1.setStudent(studentParent.getStudent());
                     student_name.setText(student1.getStudent().getName());
                     student_phone.setText(student1.getStudent().getPhone());
-                    student_id.setText(student1.getStudent().getId().toString());
                     student1.setParent(studentParent.getParent());
                     parent_name.setText(student1.getParent().getName());
                     parent_phone.setText(student1.getParent().getPhone());

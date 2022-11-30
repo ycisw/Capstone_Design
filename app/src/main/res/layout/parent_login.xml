@@ -78,13 +78,13 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/parent_login_phone"
                     android:layout_width="@dimen/pl_text_width"
+                    android:fontFamily="@font/imcresoojin"
                     android:layout_height="wrap_content"
                     android:inputType="phone"
                     android:backgroundTint="#9148C8" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-
                 android:id="@+id/parent_login_send_validation"
                 android:layout_width="@dimen/pl_mini_btn_width"
                 android:layout_height="@dimen/pl_text_height"
@@ -116,6 +116,7 @@
                     android:layout_width="@dimen/pl_text_width"
                     android:layout_height="wrap_content"
                     android:inputType="number"
+                    android:fontFamily="@font/imcresoojin"
                     android:backgroundTint="#9148C8" />
             </com.google.android.material.textfield.TextInputLayout>
 
