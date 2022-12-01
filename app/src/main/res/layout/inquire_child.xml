@@ -22,7 +22,7 @@
         android:layout_width="@dimen/ic_header_width"
         android:layout_height="@dimen/ic_header_height"
         android:scaleType="fitXY"
-        android:layout_marginTop="@dimen/margin_l"
+        android:layout_marginTop="40dp"
         android:src="@drawable/inquire_child_header"/>
 
     <View

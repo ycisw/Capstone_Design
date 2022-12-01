@@ -50,7 +50,7 @@
                 android:layout_width="@dimen/rs_list_width"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/imcresoojin"
-                android:inputType="textWebPassword" />
+                android:inputType="textWebEditText" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
