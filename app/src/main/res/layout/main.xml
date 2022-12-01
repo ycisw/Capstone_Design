@@ -18,6 +18,7 @@
         android:src="@drawable/btn_back" />
 
     <LinearLayout
+        android:layout_marginTop="@dimen/margin_b"
         android:layout_gravity="center"
         android:orientation="vertical"
         android:layout_width="wrap_content"
@@ -45,7 +46,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
+        android:gravity="bottom"
         android:layout_marginTop="@dimen/margin_b"
         android:orientation="vertical">
 
@@ -53,7 +55,7 @@
             android:id="@+id/main_page_student_management_link"
             android:layout_width="@dimen/mi_btn_width"
             android:layout_height="@dimen/mi_btn_height"
-            android:layout_margin="@dimen/margin_s"
+            android:layout_marginBottom="@dimen/margin_b"
             android:padding="@dimen/padding_b"
             android:textSize="@dimen/text_size_l"
             android:layout_gravity="center"
@@ -68,8 +70,8 @@
             android:id="@+id/main_page_attendance_link"
             android:layout_width="@dimen/mi_btn_width"
             android:layout_height="@dimen/mi_btn_height"
-            android:layout_marginTop="@dimen/margin_s"
-            android:layout_marginBottom="@dimen/margin_s"
+            android:layout_marginTop="@dimen/margin_b"
+            android:layout_marginBottom="@dimen/margin_b"
             android:padding="@dimen/padding_b"
             android:textSize="@dimen/text_size_l"
             android:fontFamily="@font/good"
@@ -84,7 +86,7 @@
             android:id="@+id/main_page_search_parent_link"
             android:layout_width="@dimen/mi_btn_width"
             android:layout_height="@dimen/mi_btn_height"
-            android:layout_margin="@dimen/margin_s"
+            android:layout_marginTop="@dimen/margin_b"
             android:padding="@dimen/padding_b"
             android:textSize="@dimen/text_size_l"
             android:fontFamily="@font/good"
