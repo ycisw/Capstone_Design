@@ -54,21 +54,12 @@
         android:orientation="vertical"
        >
 
-        <ScrollView
-            android:layout_width="@dimen/sa_list_width"
-            android:layout_height="@dimen/sa_list_height"
-            >
-
-            <LinearLayout
-                android:layout_width="@dimen/sa_list_width"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <ListView
-                    android:id="@+id/attendacne_data"
-                    android:layout_width="@dimen/sa_list_width"
-                    android:layout_height="@dimen/sa_list_height" />
-            </LinearLayout>
-        </ScrollView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/attendance_delete_recyclerview"
+            android:layout_width="@dimen/as_list_width"
+            android:layout_height="@dimen/as_list_height"
+            android:layout_gravity="center"
+            android:scrollbars="vertical" />
     </LinearLayout>
 
     <View
@@ -78,6 +69,28 @@
         android:layout_marginBottom="@dimen/margin_s"
         android:layout_gravity="center"
         android:background="@color/navy" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_b"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="@dimen/rt_btn_width"
+            android:layout_height="@dimen/as_btn_height"
+            android:layout_margin="@dimen/margin_s"
+            android:textSize="@dimen/text_size_b"
+            android:fontFamily="@font/imcresoojin"
+            android:background="@drawable/effect_red"
+            android:backgroundTint="@color/red"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:id="@+id/delete_attendance_button"
+            android:text="삭      제"/>
+
+    </LinearLayout>
 
     <ImageView
         android:layout_width="@dimen/sa_img_width"
