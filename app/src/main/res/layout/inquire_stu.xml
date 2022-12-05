@@ -32,7 +32,7 @@
 
     </LinearLayout>
     <View
-        android:layout_width="@dimen/view_width_l"
+        android:layout_width="@dimen/view_width_s"
         android:layout_height="@dimen/view_height"
         android:layout_marginBottom="@dimen/margin"
         android:layout_marginTop="@dimen/margin_m"
@@ -66,8 +66,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:padding="@dimen/padding_s"
+                    android:layout_marginLeft="30dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:background="@drawable/btn_border_navy"
@@ -79,7 +82,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
-                    android:padding="@dimen/padding_s"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:background="@drawable/btn_border_purple"
@@ -95,14 +101,14 @@
         </TableLayout>
 
         <View
-            android:layout_width="@dimen/view_width_l"
+            android:layout_width="280dp"
             android:layout_height="@dimen/view_height"
             android:layout_marginBottom="@dimen/margin_m"
             android:layout_marginTop="@dimen/margin"
             android:layout_gravity="center"
             android:background="@color/purple" />
         <ListView
-            android:layout_width="@dimen/is_list_width"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:divider="@color/white"
             android:layout_gravity="center"
@@ -112,7 +118,7 @@
 
     </LinearLayout>
     <View
-        android:layout_width="@dimen/view_width_l"
+        android:layout_width="@dimen/view_width_s"
         android:layout_height="@dimen/view_height"
         android:layout_marginBottom="@dimen/margin_m"
         android:layout_marginTop="@dimen/margin"
