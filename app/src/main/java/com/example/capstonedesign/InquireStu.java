@@ -71,7 +71,7 @@ public class InquireStu extends AppCompatActivity {
                 result -> {
                     adapter.getListViewItemList().clear();
                     for(StudentParent studentParent : result){
-                        adapter.addItem(studentParent.getStudent().getId(),studentParent.getStudent().getName(),studentParent.getParent().getName(),studentParent.getParent().getPhone());
+                        adapter.addItem(studentParent.getStudent().getId(),studentParent.getStudent().getName(),studentParent.getParent().getName());
                     }
                     adapter.notifyDataSetChanged();
                 },
