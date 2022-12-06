@@ -4,8 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.capstonedesign.server.domain.login.LoginForm;
@@ -46,6 +51,7 @@ public class TeacherLogin extends AppCompatActivity {
 
     }
 
+
     /**
      * 로그인
      * @param loginForm 아이디와 비밀번호를 통해 로그인합니다.
@@ -56,16 +62,42 @@ public class TeacherLogin extends AppCompatActivity {
         LoginService.login(loginForm, new NetworkLogic<>(
                 //성공시 로직
                 loginResult -> {
-                    Toast.makeText(this,"로그인이 완료되었습니다.",Toast.LENGTH_SHORT).show();
+                    toastSucess("로그인이 완료되었습니다.");
                     startActivity(new Intent(TeacherLogin.this, Main.class)); //다음 화면으로 이동
 
                 },
                 //실패시 로직
                 loginResult -> {
-                    Toast.makeText(this, "회원정보가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
+                   toastError("회원정보가 일치하지 않습니다.");
                 }
         ));
     }
+
+
+    private void toastError(String message){
+        LayoutInflater inflater = getLayoutInflater();
+        View ToastLayout = inflater.inflate(R.layout.toast_error, (ViewGroup) findViewById(R.id.toast_error));
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setView(ToastLayout);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        TextView text = ToastLayout.findViewById((R.id.TextView_toast_design));
+        text.setText(message);
+        toast.show();
+    }
+
+    private void toastSucess(String message){
+        LayoutInflater inflater = getLayoutInflater();
+        View ToastLayout = inflater.inflate(R.layout.toast_sucess, (ViewGroup) findViewById(R.id.toast_sucess));
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setView(ToastLayout);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        TextView text = ToastLayout.findViewById((R.id.TextView_toast_design));
+        text.setText(message);
+        toast.show();
+    }
+
 
     @Override
     public void onBackPressed() {

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/toast_sucess"
+    android:background="@drawable/toast_border"
+    android:backgroundTint="#83CF90"
+    >
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_margin="5dp"
+        android:src="@drawable/sucess"></ImageView>
+
+    <TextView
+        android:id="@+id/TextView_toast_design"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical"
+        android:textSize="15dp"
+        android:hint="성공 출력 메세지"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+      />
+
+</LinearLayout>

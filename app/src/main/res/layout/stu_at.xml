@@ -78,7 +78,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:layout_width="@dimen/rt_btn_width"
+            android:layout_width="280dp"
             android:layout_height="@dimen/as_btn_height"
             android:layout_margin="@dimen/margin_s"
             android:textSize="@dimen/text_size_b"

@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
@@ -71,11 +74,11 @@ public class ParentLogin extends AppCompatActivity {
         ParentService.validation(validationCode.getText().toString(), new NetworkLogic<>(
                 //성공
                 result -> {
-                    Toast.makeText(this, "인증 성공", Toast.LENGTH_SHORT).show();
+                    toastSucess("인증 성공");
                 },
                 //실패
                 result -> {
-                    Toast.makeText(this, "인증 실패", Toast.LENGTH_SHORT).show();
+                    toastError("인증 실패");
                 }
         ));
     }
@@ -88,11 +91,11 @@ public class ParentLogin extends AppCompatActivity {
         ParentService.sendValidation(phone.getText().toString(), new NetworkLogic<>(
                 //성공
                 none -> {
-                    Toast.makeText(this, "인증번호 송신", Toast.LENGTH_SHORT).show();
+                    toastAlert("인증번호 송신");
                 },
                 //실패
                 none -> {
-                    Toast.makeText(this, "네트워크 통신이 원활하지 않습니다.", Toast.LENGTH_SHORT).show();
+                    toastError("네트워크 통신이 원활하지 않습니다.");
                 }
         ));
     }
@@ -105,13 +108,49 @@ public class ParentLogin extends AppCompatActivity {
         ParentService.login(loginForm, new NetworkLogic<>(
                 //로그인 성공시
                 result -> {
-                    Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show();
+                    toastSucess("로그인 성공");
                     startActivity(new Intent(this, InquireChild.class));
                 },
                 //로그인 실패시
                 result -> {
-                    Toast.makeText(this, "회원정보가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
+                    toastError("회원정보가 일치하지 않습니다.");
                 }
         ));
+    }
+
+    private void toastError(String message){
+        LayoutInflater inflater = getLayoutInflater();
+        View ToastLayout = inflater.inflate(R.layout.toast_error, (ViewGroup) findViewById(R.id.toast_error));
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setView(ToastLayout);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        TextView text = ToastLayout.findViewById((R.id.TextView_toast_design));
+        text.setText(message);
+        toast.show();
+    }
+
+    private void toastSucess(String message){
+        LayoutInflater inflater = getLayoutInflater();
+        View ToastLayout = inflater.inflate(R.layout.toast_sucess, (ViewGroup) findViewById(R.id.toast_sucess));
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setView(ToastLayout);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        TextView text = ToastLayout.findViewById((R.id.TextView_toast_design));
+        text.setText(message);
+        toast.show();
+    }
+
+    private void toastAlert(String message){
+        LayoutInflater inflater = getLayoutInflater();
+        View ToastLayout = inflater.inflate(R.layout.toast_alert, (ViewGroup) findViewById(R.id.toast_alert));
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setView(ToastLayout);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        TextView text = ToastLayout.findViewById((R.id.TextView_toast_design));
+        text.setText(message);
+        toast.show();
     }
 }

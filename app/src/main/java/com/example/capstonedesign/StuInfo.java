@@ -6,6 +6,9 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -85,7 +88,7 @@ public class StuInfo extends AppCompatActivity {
 
                 StudentService.withdraw(student1.getStudent().getId(), new NetworkLogic<>(
                      none -> {
-                        Toast.makeText(this, "성공", Toast.LENGTH_SHORT).show();
+                        toastSucess("성공");
                     },
                     none -> {}
                 ));
@@ -143,11 +146,11 @@ public class StuInfo extends AppCompatActivity {
                     intent.putExtra("sid", student1.getStudent().getId());
                     startActivity(intent);
                 }else{
-                    Toast.makeText(this,"모든 정보가 다 입력되어야 합니다.",Toast.LENGTH_SHORT);
+                    toastError("모든 정보가 다 입력되어야 합니다.");
                 }
             });
         }catch(NullPointerException e){
-            Toast.makeText(this,"다시 입력해주세요",Toast.LENGTH_SHORT);
+            toastError("다시 입력해주세요");
         }
 
 
@@ -157,5 +160,41 @@ public class StuInfo extends AppCompatActivity {
             finishAffinity();
             startActivity(intent);
         });
+    }
+
+    private void toastError(String message){
+        LayoutInflater inflater = getLayoutInflater();
+        View ToastLayout = inflater.inflate(R.layout.toast_error, (ViewGroup) findViewById(R.id.toast_error));
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setView(ToastLayout);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        TextView text = ToastLayout.findViewById((R.id.TextView_toast_design));
+        text.setText(message);
+        toast.show();
+    }
+
+    private void toastSucess(String message){
+        LayoutInflater inflater = getLayoutInflater();
+        View ToastLayout = inflater.inflate(R.layout.toast_sucess, (ViewGroup) findViewById(R.id.toast_sucess));
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setView(ToastLayout);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        TextView text = ToastLayout.findViewById((R.id.TextView_toast_design));
+        text.setText(message);
+        toast.show();
+    }
+
+    private void toastAlert(String message){
+        LayoutInflater inflater = getLayoutInflater();
+        View ToastLayout = inflater.inflate(R.layout.toast_alert, (ViewGroup) findViewById(R.id.toast_alert));
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setView(ToastLayout);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        TextView text = ToastLayout.findViewById((R.id.TextView_toast_design));
+        text.setText(message);
+        toast.show();
     }
 }

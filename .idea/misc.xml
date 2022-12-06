@@ -18,6 +18,7 @@
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/attendance_out_btn.xml" value="0.1865" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/border_purple.xml" value="0.1205" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/btn_back.xml" value="0.2685" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/btn_border.xml" value="0.1685" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/btn_border_navy.xml" value="0.1865" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/btn_border_purple.xml" value="0.1015" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/btn_border_red.xml" value="0.2245" />
@@ -30,6 +31,7 @@
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/effect.xml" value="0.1535" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/effect_purple.xml" value="0.2245" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/effet_btn.xml" value="0.1" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/error.xml" value="0.2385" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.293" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/ic_baseline_arrow_t1.xml" value="0.1265" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/ic_baseline_arrow_t2.xml" value="0.2635" />
@@ -62,6 +64,8 @@
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/student_checking_page_layout_studentname.xml" value="0.2445" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/student_profile_backround.xml" value="0.1865" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/sub2_background.xml" value="0.1865" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/sucess.xml" value="0.2385" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/toast_border.xml" value="0.2385" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/zc_menu_camera.xml" value="0.2245" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/zc_menu_gallery.xml" value="0.2245" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/drawable/zcon_background.xml" value="0.2245" />
@@ -100,10 +104,14 @@
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/register_teacher.xml" value="0.4" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/start.xml" value="0.20478837109876016" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/startpage_button.xml" value="0.270703125" />
-        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/stu_at.xml" value="0.45588235294117646" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/stu_at.xml" value="0.264" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/stu_at_item.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/stu_info.xml" value="0.33" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/teacher_login.xml" value="0.5" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/toast.xml" value="0.4" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/toast_alert.xml" value="0.29713552800342025" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/toast_error.xml" value="0.20478837109876016" />
+        <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/toast_sucess.xml" value="0.2" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/layout/upd_stu_dialog.xml" value="0.5" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/menu/activity_main_drawer.xml" value="0.18489583333333334" />
         <entry key="..\:/Users/82102/AndroidStudioProjects/Capstone_Design/app/src/main/res/menu/main_activity2.xml" value="0.24947916666666667" />

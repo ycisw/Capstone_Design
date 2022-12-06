@@ -3,10 +3,13 @@ package com.example.capstonedesign;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
@@ -60,7 +63,7 @@ int count = 0;
                         phone.getText().toString());
                 register(teacherAddForm); //회원가입
             } else {
-                Toast.makeText(this, "비밀번호가 일치하지 않습니다", Toast.LENGTH_SHORT).show();
+                toastError("비밀번호가 일치하지 않습니다");
                 finish();
             }
         });
@@ -83,7 +86,7 @@ int count = 0;
         TeacherService.register(teacherAddForm, new NetworkLogic<TeacherAddResult>(
                 //성공시 로직
                 teacherAddResult -> {
-                    Toast.makeText(this, "회원가입 성공", Toast.LENGTH_SHORT).show();
+                    toastSucess("회원가입 성공");
                     finish();
                 },
                 //실패시 로직
@@ -92,7 +95,7 @@ int count = 0;
                     String message=result.getMessage().equals(TeacherAddResultConst.DUPLICATE_ID)?
                         "이미 등록된 아이디입니다.":
                         "모든 항목을 입력해 주세요";
-                    Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+                    toastError(message);
                 }
         ));
     }
@@ -105,11 +108,11 @@ int count = 0;
         TeacherService.sendValidation(phone.getText().toString(), new NetworkLogic<>(
                 //성공
                 none -> {
-                    Toast.makeText(this, "인증번호 송신", Toast.LENGTH_SHORT).show();
+                    toastAlert("인증번호 송신");
                 },
                 //실패
                 none -> {
-                    Toast.makeText(this, "네트워크 통신이 원활하지 않습니다.", Toast.LENGTH_SHORT).show();
+                toastError("네트워크 통신이 원활하지 않습니다.");
                 }
         ));
     }
@@ -122,12 +125,48 @@ int count = 0;
         TeacherService.validation(validationCode.getText().toString(), new NetworkLogic<>(
                 //성공
                 result -> {
-                    Toast.makeText(this, "인증 성공", Toast.LENGTH_SHORT).show();
+                    toastSucess("인증 성공");
                 },
                 //실패
                 result -> {
-                    Toast.makeText(this, "인증 실패", Toast.LENGTH_SHORT).show();
+                    toastError("인증 실패");
                 }
         ));
+    }
+
+    private void toastError(String message){
+        LayoutInflater inflater = getLayoutInflater();
+        View ToastLayout = inflater.inflate(R.layout.toast_error, (ViewGroup) findViewById(R.id.toast_error));
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setView(ToastLayout);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        TextView text = ToastLayout.findViewById((R.id.TextView_toast_design));
+        text.setText(message);
+        toast.show();
+    }
+
+    private void toastSucess(String message){
+        LayoutInflater inflater = getLayoutInflater();
+        View ToastLayout = inflater.inflate(R.layout.toast_sucess, (ViewGroup) findViewById(R.id.toast_sucess));
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setView(ToastLayout);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        TextView text = ToastLayout.findViewById((R.id.TextView_toast_design));
+        text.setText(message);
+        toast.show();
+    }
+
+    private void toastAlert(String message){
+        LayoutInflater inflater = getLayoutInflater();
+        View ToastLayout = inflater.inflate(R.layout.toast_alert, (ViewGroup) findViewById(R.id.toast_alert));
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setView(ToastLayout);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        TextView text = ToastLayout.findViewById((R.id.TextView_toast_design));
+        text.setText(message);
+        toast.show();
     }
 }

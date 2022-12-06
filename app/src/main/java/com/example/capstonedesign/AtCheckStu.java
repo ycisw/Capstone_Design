@@ -8,8 +8,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.capstonedesign.server.domain.network.NetworkLogic;
@@ -62,12 +66,16 @@ public class AtCheckStu extends AppCompatActivity{
         checkButton.setOnClickListener(v -> {
             List<Long> studentIdList = new ArrayList<>();
             StringBuilder sb = new StringBuilder(); //토스트 출력때문에 사용
+
             for (StudentParent checked : adapter.getCheckSet()) { //체크된 요소들 어뎁터에 있음
                 studentIdList.add(checked.getStudent().getId());
-                sb.append(checked.getStudent().getName());
-                sb.append(",");
+                sb.append(checked.getStudent().getName()+" ");
+                if(studentIdList.size() != 1){
+                    sb.append("외 " + (studentIdList.size()-1) +"명");
+                    break;
+                }
             }
-            Toast.makeText(this,"등원버튼 클릭",Toast.LENGTH_SHORT).show(); // 요부분 수정 해야함
+            toastAlert("등원 메세지 전송");
             AttendanceService.attendanceToday(studentIdList, new NetworkLogic<>( //등원처리
                     none -> {},
                     none -> {}
@@ -81,14 +89,50 @@ public class AtCheckStu extends AppCompatActivity{
             for (StudentParent checked : adapter.getCheckSet()) {
                 studentIdList.add(checked.getStudent().getId());
                 sb.append(checked.getStudent().getName());
-                sb.append(",");
+                sb.append(" ");
             }
-           Toast.makeText(this,"하원버튼 클릭",Toast.LENGTH_SHORT).show(); // 요부분 수정 해야함
+            toastAlert("하원 메세지 전송");
             AttendanceService.leaveAcademyToday(studentIdList, new NetworkLogic<>( //하원처리
                     none -> {},
                     none -> {}
             ));
         });
+    }
+
+
+    private void toastError(String message){
+        LayoutInflater inflater = getLayoutInflater();
+        View ToastLayout = inflater.inflate(R.layout.toast_error, (ViewGroup) findViewById(R.id.toast_error));
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setView(ToastLayout);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        TextView text = ToastLayout.findViewById((R.id.TextView_toast_design));
+        text.setText(message);
+        toast.show();
+    }
+
+    private void toastSucess(String message){
+        LayoutInflater inflater = getLayoutInflater();
+        View ToastLayout = inflater.inflate(R.layout.toast_sucess, (ViewGroup) findViewById(R.id.toast_sucess));
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setView(ToastLayout);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        TextView text = ToastLayout.findViewById((R.id.TextView_toast_design));
+        text.setText(message);
+        toast.show();
+    }
+    private void toastAlert(String message){
+        LayoutInflater inflater = getLayoutInflater();
+        View ToastLayout = inflater.inflate(R.layout.toast_alert, (ViewGroup) findViewById(R.id.toast_alert));
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setView(ToastLayout);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        TextView text = ToastLayout.findViewById((R.id.TextView_toast_design));
+        text.setText(message);
+        toast.show();
     }
 
     @Override
